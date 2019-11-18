@@ -1,0 +1,274 @@
+body.delivery-address {
+	@include global {
+		#pnlHomeDelivery {
+			.box {
+				box-sizing: border-box;
+				padding: 15px !important;
+				width: 100%;
+			}
+			.address {
+				@include flexbox(flex, row, wrap, flex-start, initial, flex-start);
+				&:before {
+					display: $dn;
+				}
+				> li {
+					border: 1px solid color(light);
+					height: auto !important;
+					margin: 10px auto;
+					padding: 15px;
+					width: calc(100% / 3 - 20px);
+					@include radius($rs);
+
+					.info {
+						padding: 0;
+						.details {
+							.name {
+								color: color(dark);
+								font-size: pxtorem(14px);
+								font-weight: $bold;
+								text-transform: uppercase;
+							}
+
+							.adr {
+								span {
+									color: color(dark);
+									font-size: pxtorem(14px);
+								}
+
+								strong {
+									color: color(dark);
+									font-size: pxtorem(14px);
+									font-weight: $regular;
+									margin-right: 5px;
+								}
+							}
+						}
+
+						.actions {
+							.btn {
+								background: none;
+								margin: 0;
+								text-indent: 0;
+								width: auto;
+
+								&:before {
+									display: $dn;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.cadaster {
+				margin: 0px;
+				padding: 0px;
+
+				fieldset {
+					display: $db;
+					padding: 0;
+					width: 100%;
+				}
+
+				.atention {
+					float: $fn;
+					font-size: pxtorem(14px);
+					font-weight: $regular;
+					position: $pr;
+					right: 0;
+					text-align: center;
+					top: 0;
+				}
+
+				.fl,
+				.fr-dados {
+					border: 1px solid color(light);
+					display: $dib;
+					float: $fn;
+					margin: 0;
+					min-height: 415px;
+					padding: 0;
+					vertical-align: top;
+					width: calc(100% / 2 - 12px);
+					@include radius($rs);
+				}
+
+				.field {
+					border: none !important;
+					display: $dib;
+					float: $fn;
+					height: auto;
+					margin: 0 0 15px;
+					min-height: auto !important;
+					overflow: visible;
+					padding: 10px;
+					position: $pr;
+					width: 100%;
+
+					&.fl,
+					&.fr {
+						display: $dib;
+						margin: 0;
+						width: 200px;
+					}
+
+					p {
+						color: color(primary);
+						font-size: pxtorem(14px);
+						margin-bottom: 5px;
+					}
+
+					input,
+					select {
+						width: 100% !important;
+					}
+
+					&.input-cpf {
+						width: auto !important;
+					}
+
+					&.nasc {
+						left: 0;
+						position: $pr;
+
+						.date {
+							input {
+								margin-right: 5px;
+								padding: 5px !important;
+								text-align: center;
+								width: 48px;
+							}
+						}
+					}
+
+					&.input-sexo {
+						left: 0;
+					}
+
+					.phone {
+						overflow: visible;
+						padding: 0;
+						input {
+							display: $dib;
+							float: $fn;
+							position: $pr;
+							&:nth-child(1) {
+								float: $fn;
+								margin-right: 5px;
+								padding: 10px 5px !important;
+								text-align: center;
+								width: 42px !important;
+							}
+
+							&:nth-child(2) {
+								width: 120px !important;
+							}
+						}
+					}
+				}
+
+				.fl {
+					margin-right: 10px;
+				}
+
+				.fr-dados {
+					margin-left: 10px;
+
+					.fl,
+					.fr {
+						display: $dib;
+						margin-bottom: 10px;
+						margin-left: 0 !important;
+						margin-right: 0 !important;
+						width: 200px;
+					}
+				}
+			}
+
+			.actions {
+				clear: both;
+				float: $fn;
+				height: auto;
+				margin: 20px 0;
+				text-align: center;
+				width: 100%;
+
+				.btn {
+					display: $dib !important;
+					left: 0;
+					margin: 0 10px 10px;
+					position: $pr;
+					width: 200px;
+				}
+			}
+		}
+	}
+
+	@include desktop {
+	}
+
+	@include mobile {
+		#pnlHomeDelivery {
+			.address {
+				> li {
+					width: 100%;
+				}
+			}
+
+			.cadaster {
+				margin: 0px;
+				padding: 0px;
+
+				fieldset {
+					display: $db;
+					padding: 0;
+					width: 100%;
+				}
+
+				.fl,
+				.fr-dados {
+					margin-bottom: 15px;
+					margin-left: 0;
+					margin-right: 0;
+					min-height: auto;
+					width: 100%;
+				}
+
+				.field {
+					&.fl,
+					&.fr {
+						width: 100%;
+					}
+
+					.phone {
+						overflow: visible;
+						padding: 0;
+						input {
+							display: $dib;
+							float: $fn;
+							position: $pr;
+							&:nth-child(1) {
+								float: $fn;
+								margin-right: 5px;
+								padding: 10px 5px !important;
+								text-align: center;
+								width: 42px !important;
+							}
+
+							&:nth-child(2) {
+								width: 78% !important;
+							}
+						}
+					}
+				}
+
+				.fr-dados {
+					.fl,
+					.fr {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

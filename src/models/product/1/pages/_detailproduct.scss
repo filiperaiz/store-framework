@@ -1,0 +1,1785 @@
+﻿body.product:not(.quickview) {
+    @include global {
+        #main {
+            .container {
+                .content {
+                    padding-top: 15px;
+                }
+
+                .b-top {
+                    display: $df;
+                    float: $fn;
+                    margin: 0px auto 20px;
+                    max-width: 100%;
+                    padding: 0;
+                    width: 100%;
+
+                    ul {
+                        li {
+                            margin-bottom: 0;
+                            a {
+                                img {
+                                    display: $db;
+                                    height: auto;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .info-left {
+                    margin-right: 20px;
+                    padding-top: 0px;
+                    position: $pr;
+                    width: 100%;
+                }
+
+                .info-center {
+                    align-content: flex-start;
+                    align-items: flex-start;
+                    display: $df;
+                    flex: 1;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    padding: 0;
+                    position: $pr;
+                }
+
+                .info-right {
+                    max-width: 100%;
+                    padding-top: 0;
+                    width: 100%;
+                }
+
+                #info-product {
+                    align-content: flex-start;
+                    align-items: flex-start;
+                    border-bottom: none;
+                    display: $df;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    margin-top: 0px;
+                    padding-bottom: 20px;
+                    width: 100%;
+
+                    .infos {
+                        align-content: flex-start;
+                        align-items: flex-start;
+                        display: $df;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        margin-bottom: 0px;
+                        padding-right: 150px;
+                        position: $pr;
+                        width: 100%;
+                    }
+
+                    .name {
+                        color: color(dark);
+                        display: $db;
+                        font-family: $base;
+                        font-size: pxtorem(24px);
+                        font-weight: $regular;
+                        height: auto;
+                        line-height: 1.4;
+                        margin: 0 0 10px;
+                        padding: 0;
+                        text-align: left;
+                        text-transform: capitalize;
+                    }
+
+                    .fab-cod {
+                        align-content: center;
+                        align-items: center;
+                        display: $df;
+                        flex-direction: row;
+                        font-size: 12px;
+                        height: auto;
+                        justify-content: flex-start;
+                        margin: 0 0 10px;
+                        overflow: visible;
+                        padding: 0;
+
+                        .item {
+                            border: none;
+                            color: color(dark);
+                            display: $df;
+                            float: $fn;
+                            font-size: pxtorem(14px);
+                            line-height: 1.2;
+                            margin: 0;
+                            padding-left: 0;
+
+                            span,
+                            a {
+                                color: color(primary);
+                                font-size: pxtorem(14px);
+                                margin-left: 5px;
+                            }
+
+                            &:before {
+                                color: color(dark);
+                                content: '|';
+                                font-size: pxtorem(12px);
+                                font-weight: $solid;
+                                line-height: 1.2;
+                                margin: 0 5px;
+                                width: auto;
+                            }
+
+                            &:first-child {
+                                &:before {
+                                    display: $dn;
+                                }
+                            }
+                        }
+                    }
+
+                    .stamp {
+                        align-content: center;
+                        align-items: center;
+                        display: $df;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        float: $fn;
+                        height: auto;
+                        justify-content: flex-end;
+                        margin: 0;
+                        padding: 5px;
+                        position: $pa;
+                        right: 0;
+                        top: 0;
+                        width: 150px;
+
+                        #ulSelos {
+                            display: $dib;
+                            text-align: center;
+                            .linkProduto {
+                                display: $dib;
+                                float: $fn;
+                                margin: 2px;
+                                padding: 0;
+                            }
+                        }
+
+                        #lblOutros {
+                            display: $dn;
+                            margin-left: 3px;
+                        }
+                    }
+
+                    .reviewaggregate {
+                        align-content: center;
+                        align-items: center;
+                        border: none;
+                        display: $df;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        float: $fn;
+                        justify-content: flex-start;
+                        margin: 0 0 10px 0;
+                        max-width: 100%;
+                        padding: 0;
+                        width: 100%;
+
+                        #hplRating {
+                            margin-left: 0;
+                            margin-right: 1px;
+                        }
+
+                        .count {
+                            &:last-child {
+                                margin-top: 0;
+                                text-align: center;
+                                text-decoration: underline;
+                                text-transform: none;
+                                width: auto;
+
+                                a {
+                                    font-size: pxtorem(14px);
+                                    font-weight: $bold;
+                                    height: auto;
+                                    line-height: 1.6;
+                                    width: auto;
+                                }
+                            }
+                        }
+
+                        @include hover {
+                            a {
+                                color: color(secondary);
+                            }
+                        }
+                    }
+
+                    .wishlist {
+                        display: $df;
+                        margin: 0 0 10px 0;
+
+                        a {
+                            align-items: center;
+                            display: $df;
+                            font-size: pxtorem(14px);
+                            font-weight: $bold;
+                            justify-content: flex-start;
+
+                            span {
+                                text-decoration: underline;
+                            }
+
+                            &:before {
+                                color: color(primary);
+                                content: $fa-var-heart;
+                                font-family: $icons;
+                                font-size: pxtorem(20px);
+                                font-weight: $solid;
+                                margin-right: 10px;
+                                text-decoration: none;
+                            }
+
+                            @include hover {
+                                color: color(secondary);
+
+                                &:before {
+                                    color: color(secondary);
+                                }
+                            }
+                        }
+
+                        .list-container {
+                            background: #fff;
+                            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+                            display: $dn;
+                            left: 0;
+                            padding: 10px;
+                            position: absolute;
+                            top: 22px;
+                            width: 250px;
+                            z-index: 1;
+
+                            .form {
+                                > a {
+                                    color: color(primary);
+                                    font-size: pxtorem(14px);
+                                    text-decoration: none;
+
+                                    &:before {
+                                        display: $dn;
+                                    }
+
+                                    @include hover {
+                                        color: color(primary, dark);
+                                    }
+                                }
+                            }
+
+                            .field {
+                                display: $df;
+                                margin: 0 0 10px;
+                                padding: 0;
+
+                                label {
+                                    align-content: center;
+                                    align-items: center;
+                                    display: $df;
+                                    justify-content: flex-start;
+
+                                    input {
+                                        top: 0;
+                                    }
+                                }
+                            }
+
+                            .actions {
+                                display: $df;
+                                flex-direction: row;
+                                margin: 20px 0 0;
+
+                                .btn {
+                                    color: color(light, light);
+                                    justify-content: center;
+                                    width: 100px;
+
+                                    &:before {
+                                        display: $dn;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .delivery {
+                        display: $df;
+                        margin: 0 30px 0 0;
+                        width: 250px;
+                        a {
+                            align-items: center;
+                            display: $df;
+                            font-size: pxtorem(14px);
+                            font-weight: $bold;
+                            justify-content: flex-start;
+                            span {
+                                text-decoration: underline;
+                            }
+
+                            &:before {
+                                color: color(primary);
+                                content: $fa-var-truck;
+                                font-family: $icons;
+                                font-size: pxtorem(20px);
+                                font-weight: $solid;
+                                margin-right: 10px;
+                                text-decoration: none;
+                            }
+
+                            @include hover {
+                                color: color(secondary);
+
+                                &:before {
+                                    color: color(secondary);
+                                }
+                            }
+                        }
+                    }
+
+                    .selo-desconto {
+                        align-items: center;
+                        background-color: color(primary);
+                        color: color(light, light);
+                        display: $df;
+                        flex-direction: column;
+                        font-size: pxtorem(18px);
+                        font-weight: $bold;
+                        height: 60px;
+                        justify-content: center;
+                        line-height: 1;
+                        padding: 0;
+                        position: $pa;
+                        right: 5px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        top: 5px;
+                        width: 60px;
+                        z-index: 99;
+                        @include radius($rf);
+                    }
+
+                    .responsive-prod-images {
+                        order: 1;
+                    }
+
+                    #infoPrices {
+                        background: transparent;
+                        margin: 20px 0 20px;
+                        order: 0;
+                        padding: 0;
+                        text-align: left;
+                        width: 100%;
+                        @include flexbox(flex, column, nowrap, flex-start, flex-start, flex-start);
+                    }
+
+                    .offers {
+                        background-color: transparent;
+                        display: $db;
+                        height: auto;
+                        margin: 0 0 10px 0;
+                        overflow: visible;
+                        padding: 0;
+                        width: 100%;
+
+                        .price-from,
+                        #spanPrecoDe {
+                            background-color: transparent;
+                            color: color(primary);
+                            display: $db;
+                            font-size: pxtorem(16px);
+                            height: auto;
+                            line-height: 1.4;
+                            margin: 0 0 0;
+                            overflow: visible;
+                            padding: 0;
+                            text-decoration: line-through;
+
+                            em {
+                                color: color(dark);
+                                display: $dn;
+                                font-size: pxtorem(16px);
+                                font-style: normal;
+                                margin-right: 5px;
+                                text-decoration: line-through;
+                            }
+                        }
+
+                        .price-to,
+                        #spanPrecoPor {
+                            align-content: center;
+                            align-items: center;
+                            background-color: transparent;
+                            display: $df;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            height: auto !important;
+                            justify-content: flex-start;
+                            line-height: 1.4;
+                            margin-bottom: 0;
+                            padding: 0;
+
+                            span {
+                                color: color(dark);
+                                display: $dn !important;
+                                font-size: pxtorem(16px);
+                                font-style: normal;
+                                font-weight: $regular;
+                                line-height: 1.4;
+                                margin: 0 3px;
+                                text-decoration: line-through;
+                            }
+
+                            em {
+                                color: color(dark);
+                                display: $dn;
+                                font-size: pxtorem(16px);
+                                font-style: normal;
+                                font-weight: $regular;
+                                line-height: 1.4;
+                                margin: 0 3px;
+                            }
+
+                            strong {
+                                color: color(secondary);
+                                display: $db !important;
+                                font-size: pxtorem(26px);
+                                font-style: normal;
+                                font-weight: $bold;
+                                line-height: 1.4;
+                                margin: 0;
+                            }
+                        }
+                    }
+
+                    .desconto-avista {
+                        align-content: center;
+                        align-items: center;
+                        background-color: transparent;
+                        display: $df;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+
+                        height: auto !important;
+                        justify-content: flex-start;
+                        line-height: 1.4;
+                        margin: 0 0 10px 0;
+                        padding: 0;
+                        width: 100%;
+
+                        .value {
+                            color: color(dark);
+                            display: $dib;
+                            font-size: pxtorem(14px);
+                            font-style: normal;
+                            font-weight: $bold;
+                            line-height: 1.4;
+                            margin: 0 3px;
+                            text-decoration: line-through;
+                        }
+
+                        .value-sight {
+                            color: color(dark);
+                            display: $dib;
+                            font-size: pxtorem(14px);
+                            font-style: normal;
+                            font-weight: $bold;
+                            line-height: 1.4;
+                            margin: 0 3px;
+                        }
+
+                        .value-percentage {
+                            color: color(dark);
+                            display: $dib;
+                            font-size: pxtorem(14px);
+                            font-style: normal;
+                            font-weight: $bold;
+                            line-height: 1.4;
+                            margin: 0 3px;
+                        }
+                    }
+
+                    .parcel {
+                        align-content: center;
+                        align-items: center;
+                        background-color: transparent;
+                        display: $df;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        height: auto !important;
+                        justify-content: flex-start;
+                        margin: 0 0 10px 0;
+                        padding: 0;
+                        width: 100%;
+
+                        span {
+                            color: color(dark);
+                            display: $dib;
+                            font-size: pxtorem(16px);
+                            font-style: normal;
+                            font-weight: $regular;
+                            line-height: 1.4;
+                            margin: 0 1px;
+                            text-decoration: none;
+                        }
+
+                        b {
+                            color: color(dark);
+                            display: $dib;
+                            font-size: pxtorem(16px);
+                            font-style: normal;
+                            font-weight: $regular;
+                            line-height: 1.4;
+                            margin: 0 1px;
+                        }
+
+                        strong {
+                            color: color(primary);
+                            display: $dib;
+                            font-size: pxtorem(16px);
+                            font-style: normal;
+                            font-weight: $bold;
+                            line-height: 1.4;
+                            margin: 0 1px;
+                        }
+                    }
+
+                    .save {
+                        align-content: center;
+                        align-items: center;
+                        background-color: transparent;
+                        display: $df;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+
+                        height: auto !important;
+                        justify-content: flex-start;
+
+                        margin: 0 0 10px;
+                        padding: 0;
+                        width: 100%;
+
+                        em {
+                            color: color(dark);
+                            display: $dib;
+                            font-size: pxtorem(16px);
+                            font-style: normal;
+                            font-weight: $regular;
+                            line-height: 1.4;
+                            margin: 0 1px;
+                            text-decoration: none;
+                        }
+
+                        strong {
+                            color: color(dark);
+                            display: $dib;
+                            font-size: pxtorem(16px);
+                            font-style: normal;
+                            font-weight: $regular;
+                            line-height: 1.4;
+                            margin: 0 1px;
+                        }
+                    }
+
+                    .actions {
+                        align-content: flex-start;
+                        align-items: flex-start;
+                        display: $df;
+                        flex-direction: column;
+                        height: auto;
+                        justify-content: flex-start;
+                        margin: 0 0 25px;
+                        width: 100%;
+                    }
+
+                    .txtQuantity {
+                        display: $dn;
+                        margin: 0 15px 0 0;
+                        padding: 0;
+                        position: $pr;
+                        width: auto;
+
+                        .lbl-quantity {
+                            color: color(dark);
+                            display: $db;
+                            float: $fn;
+                            font-family: $title;
+                            font-size: pxtorem(25px);
+                            font-weight: $bold;
+                            letter-spacing: 0;
+                            margin: 0 0 10px 0;
+                            padding: 0;
+                            text-transform: capitalize;
+                        }
+
+                        .qtdBtns {
+                            display: $dib;
+                            float: $fn;
+                            padding: 0;
+                            position: $pa;
+                            right: 15px;
+
+                            a {
+                                color: color(secondary);
+                                display: $db;
+                                font-size: pxtorem(22px);
+                                font-weight: $regular;
+                                line-height: 1;
+                                padding: 0;
+                            }
+
+                            &.down {
+                                bottom: 5px;
+                            }
+
+                            &.up {
+                                top: 40px;
+                            }
+                        }
+
+                        .ipt-quantity {
+                            display: $db;
+                            float: $fn;
+                            font-size: pxtorem(18px);
+                            height: 50px;
+                            margin: 0;
+                            padding-left: 20px !important;
+                            text-align: left;
+                            width: 80px;
+                        }
+                    }
+
+                    #ProductBuy {
+                        margin-bottom: 40px;
+                        width: 100%;
+
+                        .action {
+                            display: $db;
+                            margin: 0;
+                            width: 100%;
+
+                            .message,
+                            .sucess2 {
+                                margin: 5px auto;
+                                max-width: 100%;
+                                width: auto;
+                            }
+                        }
+                        .wishlist {
+                            display: $dn;
+                        }
+
+                        .buy {
+                            background: color(primary) !important;
+                            border: none;
+                            color: color(light, light) !important;
+                            font-family: $base;
+                            padding: 5px 15px !important;
+                            width: 300px;
+
+                            span {
+                                font-size: pxtorem(20px);
+                                font-weight: 400 !important;
+                                letter-spacing: 0;
+                                text-transform: lowercase;
+
+                                &:before {
+                                    display: $dn;
+                                    margin-right: 10px;
+                                    @include set-icon($fa-var-shopping-cart, pxtorem(14px), $solid, color(light, light));
+                                }
+                            }
+
+                            @include hover {
+                                background: color(primary, light) !important;
+                            }
+                        }
+
+                        .notifyme {
+                            display: $dib;
+                            margin: 0;
+                            width: 100%;
+
+                            > span {
+                                display: $dib;
+                                font-size: pxtorem(0);
+                                font-weight: $bold;
+                                line-height: 1.4;
+                                margin-bottom: 0;
+                                margin-right: 10px;
+                                text-align: left;
+                                vertical-align: top;
+
+                                strong {
+                                    display: $db;
+                                    font-size: pxtorem(0);
+                                    line-height: 1.2;
+                                    margin-bottom: 0;
+                                    &:before {
+                                        color: #e2162b;
+                                        content: 'Indisponível';
+                                        font-family: $title;
+                                        font-size: pxtorem(22px);
+                                        text-transform: uppercase;
+                                    }
+                                }
+
+                                &:after {
+                                    color: color(dark);
+                                    content: 'Avise-me quando chegar';
+                                    font-size: pxtorem(12px);
+                                    font-weight: $bold;
+                                    text-transform: none;
+                                }
+                            }
+
+                            label {
+                                color: color(danger);
+                                display: $dib;
+                                float: $fn;
+                                margin-right: 0;
+                                width: 245px;
+
+                                span {
+                                    display: $dn;
+                                }
+
+                                input {
+                                    margin: 0;
+                                    width: 100% !important;
+                                }
+                            }
+
+                            .send {
+                                background: color(primary) !important;
+                                border: none;
+                                color: color(light, light) !important;
+                                display: $dib;
+                                font-family: $base;
+                                font-size: pxtorem(15px);
+                                font-weight: 400 !important;
+                                height: auto;
+                                margin: 0;
+                                min-width: 80px;
+                                text-transform: lowercase;
+                                vertical-align: top;
+                                width: auto;
+
+                                @include hover {
+                                    background: color(primary, light) !important;
+                                }
+                            }
+                        }
+                    }
+
+                    .tools {
+                        align-content: center;
+                        align-items: flex-start;
+                        display: $dn;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: flex-end;
+                        margin: 0 0 15px;
+                        width: 100%;
+
+                        li {
+                            background: none;
+                            float: $fn;
+                            line-height: 1;
+                            margin-bottom: 0;
+                            margin-left: 25px;
+                            padding: 0;
+                            text-align: center;
+                            width: auto;
+
+                            &:before {
+                                display: $dn;
+                            }
+
+                            a {
+                                color: color(dark);
+                                display: $db;
+                                font-size: pxtorem(14px);
+                                font-weight: $regular;
+                                padding: 0;
+                                text-decoration: none;
+                                text-transform: none;
+
+                                &:before {
+                                    background: transparent;
+                                    display: $db;
+                                    margin-bottom: 5px;
+                                    @include set-icon($fa-var-plus, pxtorem(14px), $solid, color(dark));
+                                }
+                            }
+
+                            .list-container {
+                                display: $dn;
+                            }
+
+                            &.rate,
+                            &.add {
+                                display: $dib;
+                                order: 2;
+
+                                a {
+                                    font-size: pxtorem(0);
+                                    &:before {
+                                        @include set-icon($fa-var-heart, pxtorem(14px), $solid, color(dark));
+                                    }
+
+                                    &:after {
+                                        color: color(dark);
+                                        content: 'Adicionar aos favoritos';
+                                        font-size: pxtorem(14px);
+                                        font-weight: $regular;
+                                        text-decoration: underline;
+                                        text-transform: none;
+                                    }
+                                }
+                            }
+
+                            &.delivery {
+                                display: $db;
+                                order: 1;
+                                a {
+                                    font-size: pxtorem(0);
+                                    &:before {
+                                        @include set-icon($fa-var-truck, pxtorem(14px), $solid, color(dark));
+                                    }
+
+                                    &:after {
+                                        color: color(dark);
+                                        content: 'Calcular frete';
+                                        font-size: pxtorem(14px);
+                                        font-weight: $regular;
+                                        text-decoration: underline;
+                                        text-transform: none;
+                                    }
+                                }
+                            }
+
+                            @include hover {
+                                a {
+                                    color: color(primary);
+                                    &:before,
+                                    &:after {
+                                        color: color(primary);
+                                    }
+                                }
+                            }
+                        }
+
+                        #ajaxCommentsReview {
+                            display: $dn;
+                        }
+                    }
+
+                    .skus-product {
+                        background-color: transparent;
+                        border: none;
+                        margin: 0 0 20px;
+
+                        padding: 0;
+
+                        .field {
+                            background: transparent;
+                            border: transparent;
+                            display: $db;
+                            height: auto;
+                            margin: 20px 0 0 0;
+                            overflow: visible;
+                            padding: 0;
+                            position: $pr;
+                            width: auto;
+
+                            &:before {
+                                background-color: color(dark);
+                                content: '';
+                                display: $db;
+                                height: 1px;
+                                max-width: 300px;
+                                position: $pa;
+                                top: 7px;
+                                width: 100%;
+                                z-index: 0;
+                            }
+
+                            label {
+                                background-color: color(light, light);
+                                color: color(primary);
+                                display: $dib;
+                                float: $fn;
+                                font-size: pxtorem(16px);
+                                font-weight: $regular;
+                                margin-bottom: 10px;
+                                margin-right: 0;
+                                margin-top: 0;
+                                padding-right: 5px;
+                                position: $pr;
+                                text-transform: lowercase;
+
+                                span {
+                                    display: $dn;
+                                }
+                            }
+
+                            ul {
+                                display: $db;
+                                float: $fn;
+                                margin-top: 0;
+                                width: auto;
+
+                                li {
+                                    display: $dib;
+                                    float: $fn;
+                                    margin-right: 5px;
+                                    position: $pr;
+                                    width: auto;
+
+                                    a {
+                                        align-content: center;
+                                        align-items: center;
+                                        background: transparent;
+                                        border: 1px solid color(light);
+                                        color: color(dark);
+                                        display: $df;
+                                        font-size: pxtorem(14px);
+                                        font-weight: $bold;
+                                        height: auto;
+                                        justify-content: center;
+                                        line-height: 21px;
+                                        overflow: hidden;
+                                        padding: 3px;
+                                        position: $pr;
+                                        text-align: center;
+                                        width: 40px;
+                                        z-index: 0;
+                                        @include radius(5px);
+                                    }
+
+                                    &.select,
+                                    &.selected {
+                                        a {
+                                            background: color(primary);
+                                            border: 1px solid color(primary);
+                                            color: color(light, light);
+                                        }
+                                    }
+
+                                    .ico {
+                                        background: color(light, light);
+                                        font-size: pxtorem(0);
+                                        height: 11px;
+                                        line-height: 1;
+                                        margin: 0;
+                                        min-height: 11px;
+                                        position: $pa;
+                                        right: -5px;
+                                        top: -5px;
+                                        width: 11px;
+                                        z-index: 1;
+
+                                        &:before {
+                                            left: 0;
+                                            position: $pa;
+                                            top: 0;
+                                            @include set-icon($fa-var-times-circle, 11px, $solid, color(danger));
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.first {
+                                margin-top: 0;
+                                ul {
+                                    li {
+                                        a {
+                                            background: transparent;
+                                            border: 1px solid color(light);
+                                            color: color(light, light);
+                                            display: $db;
+                                            font-size: 0;
+                                            font-weight: $regular;
+                                            height: auto;
+                                            line-height: 1;
+                                            margin-bottom: 0;
+                                            overflow: hidden;
+                                            padding: 0;
+                                            position: $pr;
+                                            text-align: center;
+                                            width: 40px;
+                                            z-index: 0;
+                                            @include radius($rs);
+
+                                            img {
+                                                display: $db;
+                                                height: auto;
+                                                width: 100%;
+                                            }
+                                        }
+
+                                        &.select,
+                                        &.selected {
+                                            a {
+                                                background: transparent;
+                                                border: 1px solid color(primary);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .notifyme {
+                        .notifyLabel {
+                            margin-bottom: 5px;
+
+                            p {
+                                color: color(secondary);
+                                font-size: pxtorem(14px);
+                                font-weight: $bold;
+                                text-transform: uppercase;
+                            }
+
+                            span {
+                                color: color(dark);
+                                font-size: pxtorem(14px);
+                                font-weight: $regular;
+                            }
+                        }
+
+                        label {
+                            display: $dib;
+                            margin-right: 5px;
+                            width: 175px;
+
+                            input {
+                                margin: 0;
+                                width: 100% !important;
+                            }
+                        }
+
+                        .btn {
+                            float: $fn !important;
+                            margin: 0;
+                            text-transform: lowercase;
+                            vertical-align: top;
+                        }
+                    }
+                }
+
+                .info-texts {
+                    align-content: flex-start;
+                    align-items: flex-start;
+                    display: $df;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    padding: 0;
+                    position: $pr;
+                }
+
+                #ajaxDescription,
+                #description {
+                    align-content: flex-start;
+                    align-items: flex-start;
+                    display: $df;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    margin-bottom: 20px;
+                    margin-left: 0;
+                    margin-top: 0;
+                    padding: 0;
+                    width: 48%;
+
+                    .section {
+                        padding: 0 !important;
+                        width: 100%;
+                    }
+
+                    h2 {
+                        font-family: $base;
+                        font-size: pxtorem(26px);
+                        margin-bottom: 20px;
+                        text-align: left;
+                        width: 100%;
+
+                        span {
+                            font-size: pxtorem(26px);
+                        }
+                    }
+
+                    div {
+                        color: color(dark);
+                        font-size: pxtorem(16px);
+                        font-weight: $regular;
+                        line-height: 1.4;
+                        width: 100%;
+                    }
+                }
+
+                #ajaxSpecification {
+                    align-content: flex-start;
+                    align-items: flex-start;
+                    display: $df;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    margin-bottom: 20px;
+                    margin-left: 0;
+                    margin-top: 0;
+                    padding: 0;
+                    width: 48%;
+
+                    .section {
+                        padding: 0 !important;
+                        width: 100%;
+                    }
+
+                    h2 {
+                        font-family: $base;
+                        font-size: pxtorem(26px);
+                        margin-bottom: 20px;
+                        text-align: left;
+                        width: 100%;
+
+                        span {
+                            font-size: pxtorem(26px);
+                        }
+                    }
+
+                    div {
+                        color: color(dark);
+                        font-size: pxtorem(16px);
+                        font-weight: $regular;
+                        line-height: 1.4;
+                        width: 100%;
+                    }
+                }
+
+                #ajaxLongPage {
+                    align-content: flex-start;
+                    align-items: flex-start;
+                    display: $df;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    margin-bottom: 20px;
+                    margin-left: 0;
+                    margin-top: 0;
+                    padding: 0;
+                    width: 100%;
+
+                    .longpage {
+                        border: none;
+                        clear: right;
+                        color: color(dark);
+                        display: $db;
+                        font-size: pxtorem(14px);
+                        font-weight: $regular;
+                        line-height: 1.4;
+                        margin: 0 auto;
+                        max-width: 800px;
+                        padding: 0;
+                        text-align: center;
+                        width: 100%;
+
+                        .description {
+                            color: #000;
+                            display: $db;
+                            font-size: 16px;
+                            font-style: italic;
+                            line-height: 1.4;
+                            margin-bottom: 10px;
+                            padding: 0;
+                        }
+
+                        .title {
+                            color: color(dark);
+                            display: $db;
+                            font-size: pxtorem(14px);
+                            font-style: italic;
+                        }
+                    }
+                }
+
+                #ajaxDescriptionPreview {
+                    display: $dn;
+                    margin: 10px 0;
+                    max-width: 800px;
+
+                    padding: 0;
+                    width: 100%;
+
+                    .description {
+                        border: none;
+                        clear: right;
+                        color: color(dark);
+                        display: $db;
+                        font-size: pxtorem(14px);
+                        font-weight: $regular;
+                        line-height: 1.4;
+                        margin: 0;
+                        padding: 0;
+
+                        strong {
+                            color: color(dark);
+                            font-size: pxtorem(14px);
+                            font-weight: $bold;
+                            text-transform: uppercase;
+                        }
+
+                        a {
+                            color: color(primary);
+                            font-size: pxtorem(14px);
+                            font-weight: $regular;
+                            margin-left: 5px;
+                        }
+                    }
+                }
+
+                #ajaxOpinion,
+                #opinion {
+                    margin: 0 auto;
+                    max-width: 100%;
+
+                    .section h2 {
+                        margin-bottom: 20px;
+                    }
+
+                    .hreview {
+                        border-top: 1px solid color(light);
+                        margin-bottom: 0;
+                        margin-top: 20px;
+                        overflow: visible;
+                        padding-top: 20px;
+
+                        &.first {
+                            border-top: none;
+                            margin-top: 0;
+                            padding-top: 0;
+                        }
+
+                        .header {
+                            align-content: flex-start;
+                            align-items: flex-start;
+                            display: $df;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            margin-bottom: 5px;
+
+                            .name {
+                                color: color(dark);
+                                font-family: $base;
+                                font-size: pxtorem(14px);
+                                font-weight: $bold;
+                                line-height: 1.4;
+                                margin-top: 10px;
+                                padding: 0;
+                                text-transform: uppercase;
+                            }
+
+                            .date {
+                                color: color(dark);
+                                font-size: pxtorem(14px);
+                                font-weight: $bold;
+                            }
+                        }
+
+                        .body {
+                            align-content: flex-start;
+                            align-items: flex-start;
+                            display: $df;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            width: 100%;
+
+                            p {
+                                color: color(dark);
+                                font-size: pxtorem(14px);
+                                font-weight: $regular;
+                                margin: 0;
+                            }
+
+                            .rating {
+                                margin: 10px 0 0;
+                            }
+                        }
+                    }
+                }
+
+                .social {
+                    align-content: center;
+                    align-items: center;
+                    clear: left;
+                    display: $df;
+                    flex-direction: row;
+                    justify-content: center;
+                    margin: 0;
+                    overflow: hidden;
+                    padding: 20px 0 20px 0;
+                    position: $pr;
+                    width: 100%;
+
+                    &:before {
+                        color: color(dark);
+                        content: 'Compartilhe:';
+                        font-size: pxtorem(14px);
+                        font-weight: $regular;
+                        margin-right: 10px;
+                        text-transform: none;
+                    }
+
+                    .media {
+                        align-content: center;
+                        align-items: center;
+                        background: color(primary);
+                        border-radius: $rf;
+                        display: $df;
+                        float: $fn;
+                        height: 42px;
+                        justify-content: center;
+                        margin: 0 10px;
+                        padding: 0;
+                        position: $pr;
+                        text-align: center;
+                        width: 42px;
+
+                        div,
+                        iframe,
+                        a {
+                            display: $db;
+                            height: 25px !important;
+                            opacity: 0.01;
+                            overflow: hidden;
+                            width: 25px !important;
+                        }
+
+                        &:before {
+                            color: color(light, light);
+                            content: $fa-var-facebook-f;
+                            font-family: $brands;
+                            font-size: pxtorem(22px);
+                            font-weight: $solid;
+                            left: 0;
+                            position: $pa;
+                            right: 0;
+                        }
+
+                        &#Social_pnlFbButton {
+                            &:before {
+                                content: $fa-var-facebook-f;
+                            }
+                        }
+
+                        &#Social_pnlInstagram {
+                            &:before {
+                                content: $fa-var-instagram;
+                            }
+                        }
+
+                        &#Social_pnlTwitterButton {
+                            &:before {
+                                content: $fa-var-twitter;
+                            }
+                        }
+                        &#Social_pnlGooglePlusButton {
+                            &:before {
+                                content: $fa-var-google-plus;
+                            }
+                        }
+
+                        &#Social_pnlTumblrButton {
+                            &:before {
+                                content: $fa-var-tumblr;
+                            }
+                        }
+
+                        &#Social_pnlPinterestButton {
+                            &:before {
+                                content: $fa-var-pinterest;
+                            }
+                        }
+
+                        &#Social_pnlYoutube {
+                            &:before {
+                                content: $fa-var-youtube;
+                            }
+                        }
+
+                        &.invite {
+                            display: $dn;
+                        }
+
+                        @include hover {
+                            background: color(secondary);
+                        }
+                    }
+                }
+
+                .instagram-slider {
+                    display: $dn;
+                }
+            }
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+        #main {
+            .container {
+                .section {
+                    &.combo {
+                        padding: 0 !important;
+                    }
+
+                    &.promo {
+                        padding: 0 !important;
+                    }
+                }
+
+                #info-product {
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    margin-top: 20px;
+                    width: 100%;
+
+                    .info-left {
+                        margin-bottom: 10px;
+                        margin-right: 0;
+                        max-width: 100%;
+                        order: 0;
+                        padding-top: 0;
+                        text-align: center;
+                        width: 100%;
+                    }
+
+                    .info-center {
+                        margin-bottom: 20px;
+                        order: 0;
+                        padding: 0;
+                        width: 100%;
+
+                        .infos {
+                            margin-bottom: 0;
+                            order: 2;
+                        }
+
+                        .images {
+                            margin: 0;
+                            order: 1;
+                            position: $pr;
+                        }
+                    }
+
+                    .info-right {
+                        max-width: 100%;
+                        order: 0;
+                        padding-top: 0;
+                        width: 100%;
+                    }
+
+                    .infos {
+                        align-content: center;
+                        align-items: center;
+                        padding: 0;
+                        width: 100%;
+                    }
+
+                    #ajaxDescription,
+                    #description {
+                        h2 {
+                            margin: 0 0 10px !important;
+                            text-align: center;
+
+                            span {
+                                &:before {
+                                    font-size: pxtorem(14px);
+                                }
+                            }
+                        }
+
+                        div {
+                            font-size: pxtorem(12px);
+                        }
+                    }
+
+                    .name {
+                        color: color(dark);
+                        display: $db;
+                        font-size: pxtorem(20px);
+                        font-weight: $regular;
+                        height: auto;
+                        line-height: 1.4;
+                        margin: 0 0 10px;
+                        order: 1;
+
+                        padding: 0;
+                        text-align: center;
+                        text-transform: capitalize;
+                    }
+
+                    .fab-cod {
+                        order: 1;
+                    }
+
+                    .stamp {
+                        justify-content: center;
+                        order: 3;
+                        position: $pr;
+                        width: 100%;
+                    }
+
+                    #ajaxReviewAggregate {
+                        order: 4;
+                    }
+
+                    .wishlist {
+                        order: 5;
+                    }
+
+                    .selo-desconto {
+                        right: 0;
+                        top: 0;
+                    }
+
+                    #infoPrices {
+                        text-align: center;
+                        width: 100%;
+                        @include flexbox(flex, column, nowrap, flex-start, flex-start, flex-start);
+                    }
+
+                    .offers {
+                        background-color: transparent;
+                        display: $db;
+                        height: auto;
+                        margin-bottom: 5px;
+                        overflow: visible;
+                        padding: 0;
+                        width: 100%;
+
+                        .price-from,
+                        #spanPrecoDe {
+                            font-size: pxtorem(14px);
+
+                            em {
+                                font-size: pxtorem(14px);
+                            }
+                        }
+
+                        .price-to,
+                        #spanPrecoPor {
+                            justify-content: center;
+                            span {
+                                font-size: pxtorem(12px);
+                            }
+
+                            em {
+                                font-size: pxtorem(12px);
+                            }
+
+                            strong {
+                                font-size: pxtorem(20px);
+                            }
+                        }
+                    }
+
+                    .desconto-avista {
+                        justify-content: center;
+
+                        .value {
+                            font-size: pxtorem(12px);
+                        }
+
+                        .value-sight {
+                            font-size: pxtorem(12px);
+                        }
+
+                        .value-percentage {
+                            font-size: pxtorem(12px);
+                        }
+                    }
+
+                    .parcel {
+                        justify-content: center;
+                        span {
+                            font-size: pxtorem(12px);
+                        }
+
+                        b {
+                            font-size: pxtorem(12px);
+                        }
+
+                        strong {
+                            font-size: pxtorem(12px);
+                        }
+                    }
+
+                    .save {
+                        justify-content: center;
+
+                        em {
+                            font-size: pxtorem(12px);
+                        }
+
+                        strong {
+                            font-size: pxtorem(12px);
+                        }
+                    }
+
+                    .actions {
+                        align-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 100%;
+                    }
+
+                    .delivery {
+                        justify-content: center;
+                        margin-top: 10px;
+                        width: 100%;
+                    }
+
+                    .txtQuantity {
+                        margin: 0 0 25px 0;
+                        text-align: center;
+
+                        .lbl-quantity {
+                            font-size: pxtorem(22px);
+                            margin: 0;
+                        }
+
+                        .qtdBtns {
+                            right: 15px;
+
+                            &.down {
+                                bottom: 5px;
+                            }
+
+                            &.up {
+                                top: 40px;
+                            }
+                        }
+                    }
+
+                    #ProductBuy {
+                        .buy {
+                            display: $db !important;
+                            margin: 0 auto;
+                            width: 250px;
+
+                            span {
+                                font-size: pxtorem(16px);
+                            }
+                        }
+
+                        .notifyme {
+                            display: $dib;
+                            margin: 0;
+                            padding: 0;
+                            text-align: center;
+                            width: 100%;
+
+                            > span {
+                                display: $db;
+                                margin: 0 0 10px;
+                                text-align: center;
+                            }
+
+                            label {
+                                width: 150px;
+                                input {
+                                    width: 100% !important;
+                                }
+                            }
+                        }
+                    }
+
+                    .tools {
+                        align-content: center;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0;
+
+                        li {
+                            margin: 0 15px;
+                        }
+                    }
+
+                    .skus-product {
+                        margin-bottom: 25px;
+                        text-align: center;
+
+                        .field {
+                            &:before {
+                                max-width: 100%;
+                                top: 14px;
+                            }
+
+                            label {
+                                padding: 0 5px;
+                            }
+                        }
+
+                        ul {
+                            text-align: center;
+                        }
+                    }
+                }
+
+                #ajaxLongPage {
+                    .longpage {
+                        .description {
+                            font-size: 14px;
+                        }
+
+                        .sommelier {
+                            font-size: 14px;
+                        }
+
+                        .title {
+                            font-size: 10px !important;
+                            margin: 0 !important;
+                        }
+                    }
+                }
+
+                #ajaxOpinion,
+                #opinion {
+                    display: $dn;
+                }
+
+                .responsive-abas-description {
+                    display: $db;
+                }
+
+                .instagram-slider {
+                    display: $dn;
+                }
+
+                #ajaxDescription {
+                    display: $dn;
+                }
+
+                #ajaxSpecification {
+                    display: $dn;
+                }
+            }
+        }
+    }
+}

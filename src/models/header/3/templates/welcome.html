@@ -1,0 +1,36 @@
+@model WelcomeBaseModel
+
+
+@if(Model.HasNameCookie) {
+    <div class="user-login">
+        <i class="far fa-user icon onlyMobile"></i> 
+        <a class="icon-drop link" href="@UrlSecure("/minhaconta.aspx")"><span>Olá, <b>@Model.UserName.Split(' ')[0]</b>!</span>
+        </a>
+        <a class="logout onlyMobile" href="javascript:ExcluiCookieLogin();" title="Sair" rel="nofollow">Sair</a>
+    </div>
+
+    <ul class="help iconav-user-sub dropdown left">
+        <li class="myacc">
+            <a id="hypMinhaConta" href="@UrlSecure("/minhaconta.aspx")">
+                Minha Conta
+            </a>
+        </li>
+
+        <li class="wishlist">
+            <a id="hypWishList" href="@UrlSecure("/meuspedidos/index.aspx")">
+                Meus Pedidos
+            </a>
+        </li>
+
+        <li class="exit onlyDesktop">
+            <a class="logout" href="javascript:ExcluiCookieLogin();" title="Sair" rel="nofollow">Sair</a>
+        </li>
+    </ul>
+} else {
+    <div class="user-login">
+        <i class="far fa-user icon onlyMobile"></i> 
+        <a class="link" href="@UrlSecure("/login.aspx")">
+            Entre | Cadastre-se
+        </a>
+    </div>
+}

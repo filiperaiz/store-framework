@@ -1,0 +1,30 @@
+@model BreadcrumbModel
+<!--  -->
+@{var countItem = 1;}
+
+<div id="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+	<ul>
+		<li><p>Você está em:</p></li>
+		@foreach (var item in Model.Items) { if (item.ItemHeight == 0 && (item.Type == BreadcrumbModel.Types.Category || item.Type == BreadcrumbModel.Types.Manufacturer)) {
+		<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+			@if(!string.IsNullOrEmpty(item.Url)) {
+			<a class="item link" href="@item.Url" itemprop="item">@item.Title</a>
+			} else {
+			<span class="item" itemprop="item">@item.Title</span>
+			}
+			<meta itemprop="position" content="@countItem" />
+		</li>
+		} else {
+		<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+			@if(!string.IsNullOrEmpty(item.Url)) {
+			<a class="item link" href="@item.Url" itemprop="item">@item.Title</a>
+			} else { if (item.Type == BreadcrumbModel.Types.Search) {
+			<span class="item" itemprop="item">@item.Title</span>
+			} else {
+			<span class="item" itemprop="name">@item.Title</span>
+			} }
+			<meta itemprop="position" content="@countItem" />
+		</li>
+		} countItem++; }
+	</ul>
+</div>

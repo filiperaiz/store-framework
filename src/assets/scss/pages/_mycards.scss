@@ -1,0 +1,165 @@
+body.mycards {
+    @include global {
+        .content {
+            .new-card {
+                .add-new-card,
+                .card-brands li #imgDiners {
+                    display: $dn;
+                }
+            }
+
+            .mycards-txt {
+                color: color(dark);
+                font-size: pxtorem(14px);
+                line-height: 1.4;
+                padding: 20px 0;
+                text-align: center;
+            }
+
+            .accordion-cards .valid-card,
+            .accordion-cards .nm-card,
+            .form-mycards .txt-formmycards,
+            .mycards-txt {
+                color: color(dark);
+                font-size: pxtorem(14px);
+                font-weight: $regular;
+            }
+
+            .form-new-card {
+                @include flexbox(flex, row, wrap, center, center, center);
+                background: #f8f8f8;
+                margin: 0 auto;
+                padding: 30px 0;
+            }
+            .form-mycards {
+                background: #f8f8f8;
+                .field {
+                    span {
+                        display: $db;
+                        width: 100%;
+                    }
+                    input {
+                        width: 100% !important;
+                    }
+
+                    select {
+                        width: 100px !important;
+                    }
+
+                    .ipt-mycards {
+                        background: color(light, light);
+                        border-color: #ccc !important;
+                        @include radius(0 !important);
+                    }
+                }
+            }
+
+            .mycards-list {
+                h2 {
+                    color: color(dark);
+                    font-size: pxtorem(18px);
+                    font-weight: $regular;
+                    text-transform: none;
+                }
+                .accordion-cards {
+                    @include radius(0);
+                    .valid-card,
+                    .nm-card {
+                        box-sizing: border-box;
+                        padding: 9px;
+                        width: 100%;
+                    }
+                    .accordion-header {
+                        @include flexbox(flex, row, nowrap, flex-start, center, stretch);
+                        background: none;
+                        position: relative;
+                        .brand-img {
+                            height: 100%;
+                            width: auto;
+                        }
+                        &:before {
+                            content: '';
+                        }
+                        &:after {
+                            content: '';
+                            @include set-icon($fa-var-angle-down, pxtorem(20px), $solid, color(primary));
+                            @include transition;
+                        }
+                    }
+                    &.active {
+                        .accordion-header {
+                            &:before {
+                                content: '';
+                            }
+                            &::after {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+                .accordion-content {
+                    p {
+                        font-size: pxtorem(14px);
+                    }
+                    .remove-btn {
+                        color: #c1272d;
+                        font-size: pxtorem(14px);
+                    }
+                }
+            }
+        }
+    }
+
+    @include desktop {
+        .content {
+            margin: 0 auto;
+            max-width: $screen-1260;
+            width: 100%;
+            .mycards-title {
+                margin-top: 15px;
+            }
+            .mycards-list {
+                margin-bottom: 80px;
+                padding: 0;
+                width: 60%;
+            }
+            .new-card {
+                box-sizing: border-box;
+                width: 100%;
+            }
+            .form-new-card {
+                display: inherit;
+                width: 40%;
+            }
+            .form-mycards .field {
+                float: none;
+            }
+            .form-mycards .txt-formmycards {
+                margin: 0;
+                padding: 15px 0;
+                text-align: left;
+                width: 160px;
+            }
+            .card-brands {
+                display: $dif;
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    }
+
+    @include mobile {
+        .content {
+            margin: 0 auto;
+            width: 96%;
+            .card-brands {
+                margin-bottom: 20px;
+            }
+            .accordion-cards {
+                .nm-card {
+                    width: 28%;
+                }
+            }
+        }
+    }
+}

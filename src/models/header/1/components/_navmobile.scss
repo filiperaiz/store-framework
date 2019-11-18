@@ -1,0 +1,296 @@
+body {
+    .wrap-nav-mobile {
+        background: transparent;
+        border: none;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1) !important;
+        // display: $db;
+        height: 100%;
+        left: -100%;
+        // min-height: 300px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding: 55px 0 0 0 !important;
+        position: $pf;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: 9998;
+        @include transition(all, 0.3s, linear);
+
+        &.active {
+            left: 0;
+        }
+
+        .user-login {
+            align-content: center;
+            align-items: center;
+            background-color: color(primary);
+            box-shadow: inset 0px -1px 0px color(light);
+            display: $df;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            height: auto;
+            justify-content: flex-start;
+            padding: 10px;
+
+            span {
+                color: color(light, light);
+                font-size: pxtorem(14px);
+            }
+
+            .icon {
+                display: $df;
+                &:before {
+                    color: color(light, light);
+                    content: $fa-var-user;
+                    font-family: $icons;
+                    font-size: pxtorem(14px);
+                    font-weight: $solid;
+                    margin-right: 10px;
+                }
+            }
+
+            .link {
+                color: color(light, light);
+                font-size: pxtorem(14px);
+            }
+
+            .logout {
+                border-left: 1px solid color(light, light);
+                color: #fff;
+                display: $db;
+                float: $fr;
+                font-size: pxtorem(14px);
+                padding-left: 10px;
+                position: $pa;
+                right: 10px;
+            }
+        }
+
+        #nav {
+            align-content: flex-start;
+            align-items: flex-start;
+            background: color(light, light);
+            display: $df;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            padding: 0;
+
+            li {
+                background: color(primary);
+                border: none;
+                box-shadow: inset 0px -1px 0px color(light);
+                display: $db;
+                position: $pr;
+                text-align: left;
+                width: 100%;
+
+                a {
+                    color: color(light, light);
+                    display: $db;
+                    font-size: pxtorem(14px);
+                    font-weight: $bold;
+                    height: auto;
+                    line-height: 1.6;
+                    margin-right: 0;
+                    padding: 15px 10px;
+                    text-transform: uppercase;
+                    width: 100%;
+
+                    &.sub-parent {
+                        color: color(light, light);
+                        display: $db;
+                        float: $fr;
+                        font-style: normal;
+                        height: auto;
+                        line-height: 1.6;
+                        margin: 0;
+                        padding: 15px 0;
+                        position: $pa;
+                        right: 0;
+                        text-align: center;
+                        top: 0;
+                        width: 50px;
+                        z-index: 999;
+
+                        &:before {
+                            @include set-icon($fa-var-angle-down, pxtorem(14px), $solid, color(light, light));
+                        }
+
+                        &.active {
+                            &:before {
+                                @include set-icon($fa-var-angle-up, pxtorem(14px), $solid, color(light, light));
+                            }
+                        }
+                    }
+                }
+
+                .sub-nav {
+                    background-color: color(light, light);
+                    bottom: 0;
+                    display: $dn;
+                    width: 100% !important;
+                    z-index: 9999;
+
+                    &.active {
+                        display: $db;
+                    }
+
+                    .container {
+                        padding: 0 !important;
+                    }
+
+                    ul {
+                        padding: 10px 0 !important;
+
+                        li {
+                            background: color(light, light);
+                            border: $dn;
+                            box-shadow: none;
+                            display: $db;
+                            position: $pu;
+
+                            a {
+                                color: color(dark);
+                                display: $dib;
+                                font-size: pxtorem(14px);
+                                font-weight: $regular;
+                                height: auto;
+                                margin-right: 0;
+                                padding: 5px 10px;
+                                text-transform: lowercase;
+                                width: 100%;
+
+                                &:before {
+                                    display: $dn;
+                                    float: $fr;
+                                    @include set-icon($fa-var-angle-right, pxtorem(14px), $solid, color(primary));
+                                }
+                            }
+                        }
+                    }
+
+                    .collum {
+                        border: none;
+                        ul {
+                            padding: 0 15px;
+                        }
+                    }
+
+                    .imagem {
+                        display: $dn;
+                    }
+                }
+
+                @include hover {
+                    background-color: color(primary);
+                    color: color(light, light);
+
+                    a {
+                        color: color(light, light);
+
+                        &.hover {
+                            box-shadow: inset 0px -1px 0px color(light);
+                            color: color(light, light);
+                        }
+
+                        @include hover {
+                            color: color(secondary);
+                        }
+                    }
+                }
+            }
+        }
+
+        .help {
+            align-content: flex-start;
+            align-items: flex-start;
+            background: color(primary);
+            display: $df;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            margin-bottom: 0;
+            opacity: 1;
+            padding: 0;
+            position: $pr;
+            text-align: left;
+
+            li {
+                background: color(primary);
+                border: none;
+                display: $db;
+                position: $pr;
+                width: 100%;
+
+                a {
+                    color: color(light, light);
+                    display: $db;
+                    font-size: pxtorem(14px);
+                    font-weight: $regular;
+                    height: auto;
+                    margin-right: 0;
+                    padding: 10px;
+                    text-transform: capitalize;
+
+                    strong {
+                        font-weight: $regular;
+                    }
+                }
+
+                &:nth-child(3),
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(6),
+                &:nth-child(7),
+                &:nth-child(8),
+                &:nth-child(9),
+                &:nth-child(10),
+                &:nth-child(11),
+                &:nth-child(12) {
+                    display: $dn;
+                }
+            }
+        }
+    }
+
+    .hide-menu {
+        align-items: center;
+
+        background: color(primary);
+        cursor: pointer;
+        display: $df;
+        font-size: 0;
+        height: 55px;
+        justify-content: center;
+        left: 0;
+        line-height: 35px;
+        position: $pa;
+        text-align: center;
+        text-indent: 0;
+        top: 0;
+        width: 50px;
+        z-index: 1;
+        @include transition;
+
+        &:before {
+            background-color: transparent;
+            color: color(light, light);
+            content: $fa-var-bars;
+            font-family: $icons;
+            font-size: pxtorem(20px);
+            font-weight: $solid;
+            padding: 0;
+            @include radius($rn);
+        }
+    }
+
+    .navmask {
+        background: rgba(0, 0, 0, 0.7);
+        height: 100%;
+        position: $pf;
+        width: 100%;
+        z-index: 9997;
+    }
+}

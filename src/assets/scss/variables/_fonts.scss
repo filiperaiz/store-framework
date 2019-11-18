@@ -1,0 +1,19 @@
+// -------------------------------------
+// Imports and Fontfaces
+// -------------------------------------
+@import '../icons/fontawesome';
+@import '../icons/rkicons';
+
+$base: $config-font-base;
+$title: $config-font-title;
+
+$rkicons: 'rkicons' !important;
+$icons: 'Font Awesome 5 Pro' !important;
+$duotone: 'Font Awesome 5 Duotone' !important;
+$brands: 'Font Awesome 5 Brands' !important;
+
+$thin: 100 !default;
+$light: 300 !default;
+$regular: 400 !default;
+$bold: 700 !default;
+$solid: 900 !default;

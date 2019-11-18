@@ -1,0 +1,266 @@
+body.lookDetalhe,
+body.product {
+    #main {
+        .container {
+            #info-product {
+                @include global {
+                    .images {
+                        align-content: flex-start;
+                        align-items: flex-start;
+                        display: $df;
+                        flex-direction: row;
+                        float: $fn;
+                        justify-content: flex-start;
+                        margin: 0;
+                        position: $pr;
+                        width: 100%;
+                    }
+
+                    .zoom {
+                        background: rgba(255, 255, 255, 0.8) !important;
+                        border-radius: 5px;
+                        display: $dn !important;
+                        height: auto;
+                        left: 100px;
+                        line-height: 1.4;
+                        padding: 5px;
+                        position: $pa;
+                        top: 0;
+                        width: auto;
+                        z-index: 9995;
+
+                        &:before {
+                            left: 8px;
+                            position: $pa;
+                            top: 8px;
+                            @include set-icon($fa-var-search-plus, pxtorem(20px), $solid, color(dark));
+                        }
+
+                        .mouseover {
+                            background: transparent;
+                            color: color(dark);
+                            display: $dn;
+                            float: $fn;
+                            margin-left: 0;
+                            padding-left: 0;
+                        }
+
+                        .click {
+                            color: color(dark);
+                            display: $db;
+                            float: $fn;
+                            font-size: pxtorem(0px);
+                            margin-right: 0;
+                            padding: 5px 5px 5px 30px;
+
+                            &:before {
+                                color: color(primary);
+                                content: '[+]';
+                                font-size: pxtorem(12px);
+                                font-weight: $bold;
+                                margin-right: 5px;
+                                vertical-align: middle;
+                            }
+
+                            &:after {
+                                color: color(dark);
+                                content: 'Ampliar';
+                                font-size: pxtorem(12px);
+                                font-weight: $bold;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+
+                    .photo {
+                        border: none !important;
+                        height: auto;
+                        margin: 0;
+                        order: 1;
+                        width: 100%;
+
+                        a {
+                            display: $db !important;
+                            margin: 0 auto !important;
+                            width: auto !important;
+
+                            .main {
+                                border-radius: $rs;
+                                display: $db;
+                                margin: 0;
+                                width: 100% !important;
+                            }
+                        }
+
+                        .MagicZoomBigImageCont {
+                            border: none;
+                            border-radius: $rs;
+                            background-color: color(light);
+                            box-shadow: 0px 0px 5px 2px color(primary);
+                            margin-top: 20px;
+
+                            .MagicZoomHeader {
+                                display: $dn;
+                            }
+                        }
+
+                        iframe {
+                            border-radius: 5px;
+                            display: $db;
+                            height: 500px;
+                            margin: 0;
+                            padding: 0;
+                            width: 100%;
+                        }
+                    }
+
+                    .block-thumbs {
+                        align-content: flex-start;
+                        align-items: flex-start;
+                        display: $df;
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                        justify-content: flex-start;
+                        margin: 0 10px 0 0;
+                        padding: 1px;
+                    }
+
+                    .thumbs {
+                        align-content: flex-start;
+                        align-items: flex-start;
+                        display: $df;
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                        float: $fn;
+                        height: auto;
+                        justify-content: flex-start;
+                        margin: 0 0 10px 0;
+                        order: 0;
+                        overflow: visible;
+                        padding: 0;
+                        width: 100px;
+
+                        li {
+                            border: none;
+                            box-shadow: 0px 0px 1px 1px color(light);
+                            display: $db;
+                            float: $fn;
+                            height: 100px;
+                            margin-left: 0;
+                            margin-top: 10px;
+                            overflow: hidden;
+                            width: 100px;
+                            @include radius($rs);
+                            @include transition();
+
+                            &:first-child {
+                                margin-top: 0;
+                            }
+
+                            a {
+                                display: $db;
+                                height: 100%;
+                                padding: 0;
+                                width: 100%;
+
+                                img {
+                                    display: $db;
+                                    height: 100%;
+                                    width: 100%;
+                                }
+                            }
+
+                            @include hover {
+                                box-shadow: 0px 0px 1px 1px color(primary);
+                            }
+                        }
+                    }
+
+                    #ajaxVideoDetail,
+                    #videoDetalhe {
+                        align-content: flex-start;
+                        align-items: flex-start;
+                        display: $df;
+                        display: $db !important;
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                        float: $fn;
+                        height: 100px;
+                        justify-content: flex-start;
+                        margin: 0;
+                        order: 0;
+                        overflow: visible;
+                        padding: 1px;
+                        width: 100px;
+
+                        #videoDetalhe {
+                            border: none;
+                            box-shadow: 0px 0px 1px 1px color(light);
+                            display: $db;
+                            float: $fn;
+                            height: 100%;
+                            margin-bottom: 0;
+                            margin-left: 0;
+                            overflow: hidden;
+                            width: 100%;
+                            @include radius($rs);
+
+                            a {
+                                align-content: center;
+                                align-items: center;
+                                display: $df;
+                                height: 100%;
+                                justify-content: center;
+                                padding: 0;
+                                width: 100%;
+
+                                &:before {
+                                    color: color(primary);
+                                    content: $fa-var-youtube;
+                                    font-family: $brands;
+                                    font-size: pxtorem(40px);
+                                    font-weight: $solid;
+                                    line-height: 1.2;
+                                    margin: 0;
+                                    width: auto;
+                                }
+
+                                img {
+                                    display: $dn;
+                                    height: 100%;
+                                    width: 100%;
+                                }
+                            }
+
+                            @include hover {
+                                box-shadow: 0px 0px 1px 1px color(primary);
+                            }
+                        }
+                    }
+                }
+
+                @include desktop {
+                }
+
+                @include mobile {
+                    .zoom {
+                        display: $dn;
+                    }
+
+                    .photo {
+                        display: $dn;
+                    }
+
+                    .thumbs {
+                        display: $dn;
+                    }
+
+                    #ajaxVideoDetail,
+                    #videoDetalhe {
+                        display: $dn !important;
+                    }
+                }
+            }
+        }
+    }
+}

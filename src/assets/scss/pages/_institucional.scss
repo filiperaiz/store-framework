@@ -1,0 +1,123 @@
+body.institucional {
+    @include global {
+        #main {
+            .nav {
+                margin: 40px 0;
+
+                > ul {
+                    padding-right: 20px;
+                    @include flexbox(flex, row, wrap, flex-start, flex-start, center);
+
+                    li {
+                        background-color: transparent;
+                        border: none !important;
+                        float: $fn;
+                        margin: 0;
+                        padding: 0;
+                        width: calc(100% / 4);
+
+                        div {
+                            padding: 0;
+                        }
+
+                        h2 {
+                            border: none;
+                            color: color(primary);
+                            font-size: pxtorem(18px);
+                            font-weight: $bold;
+                            margin-bottom: 15px;
+                            padding: 0;
+                        }
+
+                        ul {
+                            li {
+                                color: color(primary);
+                                display: $db;
+                                font-size: pxtorem(14px);
+                                font-weight: $regular;
+                                line-height: 1.4;
+                                margin-bottom: 10px;
+                                width: 100%;
+
+                                a {
+                                    color: color(primary);
+                                    display: $db;
+                                    font-size: pxtorem(14px);
+                                    line-height: 1.4;
+                                    padding: 0;
+
+                                    &:before {
+                                        display: $dn;
+                                    }
+
+                                    &:hover,
+                                    &:focus,
+                                    &:active {
+                                        color: color(primary, dark);
+                                        text-decoration: underline;
+                                    }
+                                }
+                                span {
+                                    color: color(dark);
+                                    display: $db;
+                                    font-size: pxtorem(14px);
+                                    line-height: 1.4;
+                                    margin-top: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+        #main {
+            .nav {
+                margin: 0;
+                padding: 10px;
+
+                > ul {
+                    padding-right: 0;
+
+                    > li {
+                        margin: 0 0 30px;
+                        width: 100%;
+
+                        h2 {
+                            margin-bottom: 5px;
+                        }
+
+                        ul {
+                            padding: 0;
+                        }
+                    }
+                }
+
+                .block {
+                    .title {
+                        border: none;
+                    }
+                    ul {
+                        padding: 0;
+
+                        > li {
+                            margin: 0 0 10px;
+                            width: 100%;
+
+                            a {
+                                &:before {
+                                    display: $dn;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

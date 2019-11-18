@@ -1,0 +1,130 @@
+$icon-arrow: "data:image/svg+xml;utf8,<svg fill='black' height='30' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>";
+
+$icon-caret: "data:image/svg+xml;utf8,<svg fill='black' height='15' viewBox='0 0 24 24' width='35' xmlns='http://www.w3.org/2000/svg'><path d='M16.003 18.626l7.081-7.081L25 13.46l-8.997 8.998-9.003-9 1.917-1.916z'/> fill='none'/></svg>";
+
+$icon-arrow-ie: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+';
+
+$icon-caret-ie: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTYuMDAzIDE4LjYyNmw3LjA4MS03LjA4MUwyNSAxMy40NmwtOC45OTcgOC45OTgtOS4wMDMtOSAxLjkxNy0xLjkxNnoiLz48L3N2Zz4=';
+
+body {
+	@include global {
+		input[type='password'],
+		input[type='text'],
+		input[type='tel'],
+		input[type='url'],
+		input[type='email'],
+		textarea {
+			background-color: color(light, light) !important;
+			border: 1px solid color(light) !important;
+			box-shadow: 0 0 0 transparent !important;
+			box-sizing: border-box;
+			color: color(dark);
+			float: $fn;
+			font-size: pxtorem(14px);
+			min-height: 42px;
+			min-width: 42px;
+			outline: 0;
+			padding: 10px !important;
+			@include transition();
+			@include radius($rs);
+
+			&.error {
+				border: 1px solid color(danger) !important;
+			}
+
+			@include hover {
+				background-color: color(light, light);
+			}
+
+			&::-ms-clear {
+				display: $dn;
+			}
+		}
+
+		textarea {
+			height: inherit;
+		}
+
+		select {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			-o-appearance: none;
+			background-color: color(light, light) !important;
+			background-image: url($icon-arrow-ie) !important;
+			background-position-x: right !important;
+			background-position-y: 18px !important;
+			background-repeat: no-repeat !important;
+			background-size: 45px !important;
+			border: 1px solid color(light) !important;
+
+			box-shadow: none !important;
+			color: color(dark) !important;
+			float: $fn !important;
+			font-size: pxtorem(14px);
+			margin: 0 !important;
+			min-height: 42px;
+			min-width: 42px;
+			outline: 0;
+			padding: 10px 30px 10px 10px !important;
+			@include radius($rs);
+		}
+
+		select::-ms-expand {
+			display: $dn;
+		}
+
+		input[type='checkbox'],
+		input[type='radio'] {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			background-color: color(light, light) !important;
+			border: none !important;
+			box-shadow: 0 0 0 transparent;
+			height: 17px !important;
+			margin: 0 5px 0 0 !important;
+			outline: none;
+			padding: 0px;
+			width: 17px !important;
+
+			&:before {
+				display: $db;
+			}
+			&:checked {
+				&:before {
+					display: $db;
+				}
+			}
+		}
+
+		input[type='checkbox'] {
+			@include radius($rs);
+			&:before {
+				@include set-icon($fa-var-square, pxtorem(16px), $regular, color(dark) !important);
+			}
+			&:checked {
+				&:before {
+					@include set-icon($fa-var-check-square, pxtorem(16px), $regular, color(dark) !important);
+				}
+			}
+		}
+
+		input[type='radio'] {
+			@include radius($rf);
+			&:before {
+				@include set-icon($fa-var-circle, pxtorem(16px), $regular, color(dark) !important);
+			}
+			&:checked {
+				&:before {
+					@include set-icon($fa-var-check-circle, pxtorem(16px), $regular, color(dark) !important);
+				}
+			}
+		}
+	}
+
+	@include desktop {
+	}
+
+	@include mobile {
+	}
+}

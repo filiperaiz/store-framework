@@ -1,0 +1,52 @@
+@model BannerAreaModel
+<!--  -->
+@if (Model.Positions.Count > 0)
+{
+    <div class="banners @Model.CssClass">
+        @if (!string.IsNullOrWhiteSpace(Model.Title))
+        {
+            <h2>
+                <span class="ico">@Model.Title</span>
+			</h2>
+        }
+        <ul>
+            @foreach (var position in Model.Positions)
+            {
+
+                <li class="item-banner posicao@(position.Number) @(position.HasBannerWithMouseOver ? "mouseover" : "")">
+
+                    @foreach (var banner in position.Banners)
+                    {
+                        if (banner.IsFlash)
+                        {
+                            <a href="javascript:;" onclick="ContabilizarClickBanner('@banner.Id')" width="@banner.Width" height="@banner.Height">
+                                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"
+                                        width='@banner.Width' height='@banner.Height'>
+                                    <param name="allowScriptAccess" value="always" />
+                                    <param name="movie" value='@banner.SourceUrl' />
+                                    <param name="quality" value="high" />
+                                    <param name="wmode" value="transparent" />
+                                    <embed src='@banner.SourceUrl' quality="high" width="@banner.Width" height="@banner.Height" align="middle" allowscriptaccess="sameDomain" wmode="transparent" type="application/x-shockwave-flash"></embed>
+                                </object>
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="@string.Format("{0}", banner.NavigationUrl)" class="@(banner.MouseOver ? "mouseover" : "no-over")" @Raw(string.IsNullOrWhiteSpace(banner.NavigationUrl) ? "style=\"cursor:default;\"" : "onmousedown=\"mouseDown(event, '" + banner.Id + "');\"")>
+                                @if (Model.IsMobile)
+                                {
+                                    <span url="@banner.SourceUrl" width="@banner.Width" height="@banner.Height"></span>
+                                }
+                                else
+                                {
+                                    <img src="@banner.SourceUrl" alt="@(string.IsNullOrWhiteSpace(banner.Alt) ? "Banner" : banner.Alt)" width="@banner.Width" height="@banner.Height" />
+                                }
+                            </a>
+                        }
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+}
+

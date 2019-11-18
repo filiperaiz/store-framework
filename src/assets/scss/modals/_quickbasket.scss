@@ -1,0 +1,168 @@
+body {
+	@include desktop {
+		#fancybox-wrap {
+			&.fancybox-quickbasket {
+				height: 260px !important;
+				max-width: $screen-container;
+				min-height: 260px;
+			}
+		}
+	}
+
+	&.quickBasquet {
+		@include global {
+			.item {
+				border-right: 1px solid color(light);
+				display: $dib;
+				float: $fn;
+				margin: 0;
+				padding: 0;
+				width: 60%;
+
+				.title {
+					background: transparent;
+					border: none;
+					color: color(primary);
+					float: $fn;
+					font-size: pxtorem(25px);
+					font-weight: $regular;
+					line-height: 1;
+					margin: 0 0 20px;
+					padding: 0;
+					text-align: left;
+					text-shadow: none;
+					text-transform: capitalize;
+					width: 100%;
+
+					span {
+						color: color(primary);
+						display: $dib;
+						font-size: pxtorem(25px);
+						font-weight: $bold;
+						margin: 0;
+						padding: 0;
+						text-shadow: none;
+						text-transform: capitalize;
+					}
+
+					&:before {
+						margin-right: 10px;
+						@include set-icon($fa-var-check, pxtorem(25px), $solid, color(primary) !important);
+					}
+				}
+
+				.img {
+					display: $dib;
+					float: $fn;
+					vertical-align: top;
+					width: 100px;
+
+					img {
+						display: $db;
+						width: 100%;
+					}
+				}
+
+				ul {
+					display: $dib;
+					float: $fn;
+					max-width: 610px;
+					vertical-align: top;
+					width: 100%;
+
+					li {
+						color: color(dark);
+						font-size: pxtorem(14px);
+						font-weight: $regular;
+						line-height: 1.2;
+						margin-bottom: 5px;
+						padding: 0;
+					}
+					.name {
+						strong {
+							color: color(primary);
+							font-size: pxtorem(15px);
+							font-weight: $bold;
+							line-height: 1.4;
+						}
+					}
+
+					.price {
+						span {
+							color: color(dark);
+							font-size: pxtorem(15px);
+							font-weight: $bold;
+						}
+					}
+				}
+			}
+
+			.resumo {
+				display: $dib;
+				float: $fn;
+				margin: 0;
+				padding: 0 0 0 10px;
+				vertical-align: top;
+				width: 39%;
+
+				.title {
+					span {
+						border-bottom: 1px solid color(dark);
+						color: color(dark);
+						font-size: pxtorem(18px);
+						font-weight: $bold;
+						margin-bottom: 20px;
+						padding: 10px 0;
+
+						span {
+							border: none;
+							color: color(primary);
+							font-size: pxtorem(18px);
+						}
+					}
+				}
+
+				.subtotal {
+					strong {
+						font-size: pxtorem(18px);
+					}
+				}
+			}
+
+			.who-bought {
+				display: $dn;
+			}
+		}
+
+		@include desktop {
+		}
+
+		@include mobile {
+			.item {
+				border-bottom: 1px solid color(light);
+				border-right: 0;
+				padding-bottom: 15px;
+				width: 100%;
+
+				.title {
+					font-size: pxtorem(15px);
+					padding-right: 30px;
+
+					span {
+						font-size: pxtorem(15px);
+					}
+
+					&:before {
+						@include set-icon($fa-var-check, pxtorem(20px), $solid, color(primary) !important);
+					}
+				}
+			}
+
+			.resumo {
+				margin-top: 15px;
+				padding: 0;
+				width: 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,99 @@
+body.sitemap {
+	@include global {
+		#main_content {
+			.col {
+				margin: 20px 0;
+				strong {
+					border-bottom: 1px solid color(primary);
+					color: color(primary);
+					font-size: pxtorem(18px);
+					font-weight: $bold;
+					margin-bottom: 10px;
+					padding: 0 0 10px;
+					text-transform: uppercase;
+				}
+
+				> ul {
+					@include flexbox(flex, row, wrap, flex-start, flex-start, center);
+
+					li {
+						border: none !important;
+						float: $fn;
+						margin: 0;
+						padding: 0;
+						width: calc(100% / 4);
+
+						h2 {
+							border: none;
+							margin-bottom: 15px;
+							.title {
+								color: color(primary);
+								font-size: pxtorem(16px) !important;
+								letter-spacing: 0;
+								line-height: 1.2;
+
+								&:before {
+									display: $dn;
+								}
+
+								@include hover {
+									color: color(secondary);
+								}
+							}
+						}
+
+						ul {
+							padding-right: 20px;
+
+							li {
+								display: $db;
+								width: 100%;
+							}
+						}
+
+						a {
+							display: $db;
+							font-size: pxtorem(14px);
+							padding: 5px 0;
+
+							&:before {
+								display: $dn;
+							}
+
+							@include hover {
+								color: color(secondary);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include desktop {
+	}
+
+	@include mobile {
+		#main_content {
+			.col {
+				> ul {
+					padding: 0;
+					@include flexbox(flex, column, wrap, flex-start, flex-start, center);
+
+					> li {
+						margin-bottom: 15px;
+						width: 100%;
+
+						h2 {
+							margin-bottom: 0;
+						}
+
+						ul {
+							padding-right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,207 @@
+body {
+    @include global {
+        .autocomplete-mais-buscadas {
+            border: none;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+            display: $dn;
+            font-size: 12px;
+            left: 0 !important;
+            overflow: visible !important;
+            padding: 0;
+            position: $pa !important;
+            top: 41px !important;
+            width: 100%;
+
+            .title-maisbuscadas {
+                background-color: color(primary);
+                color: color(light, light);
+                font-size: pxtorem(12px);
+                font-weight: $bold;
+                padding: 10px;
+                text-transform: uppercase;
+            }
+
+            ul {
+                background-color: color(light, light);
+                margin: 0;
+                padding: 0;
+
+                li {
+                    border-bottom: 1px solid color(light);
+
+                    &:last-child {
+                        border: none;
+                    }
+                }
+            }
+
+            .item-maisbuscados {
+                align-content: center;
+                align-items: center;
+                background-color: color(light, light);
+                display: $df;
+                justify-content: flex-start;
+                padding: 5px 10px;
+
+                @include hover {
+                    background-color: color(light);
+                }
+
+                .count {
+                    background-color: color(primary);
+                    border-radius: $rs;
+                    color: color(light, light);
+                    display: $db;
+                    float: $fn;
+                    font-size: pxtorem(12px);
+                    font-weight: $bold;
+                    height: auto;
+                    line-height: 1.4;
+                    margin-right: 10px;
+                    min-width: 25px;
+                    padding: 5px;
+                    text-align: center;
+                    width: auto;
+                }
+
+                .text-searched {
+                    color: color(dark);
+                    font-size: pxtorem(14px);
+                    font-weight: $bold;
+                    line-height: 1.4;
+                    padding: 0;
+                    text-transform: capitalize;
+                }
+            }
+        }
+
+        .panel-multicomplete-results {
+            border: none;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+            display: $dn;
+            font-size: 12px;
+            left: 0 !important;
+            overflow: visible !important;
+            padding: 0;
+            position: $pa !important;
+            top: 41px !important;
+            width: 100%;
+
+            .results {
+                background-color: color(light, light);
+                margin: 0;
+                padding: 0;
+
+                .group {
+                    display: $db !important;
+                    padding-bottom: 0;
+                    .group-title {
+                        background-color: color(primary);
+                        color: color(light, light);
+                        font-size: pxtorem(12px);
+                        font-weight: $bold;
+                        padding: 10px;
+                        text-transform: uppercase;
+                    }
+
+                    .group-items {
+                        .result {
+                            border-bottom: 1px solid color(light);
+
+                            &:last-child {
+                                border: none;
+                            }
+
+                            .meta {
+                                align-content: center;
+                                align-items: center;
+                                display: $df;
+                                justify-content: flex-start;
+
+                                .fa-search {
+                                    font-size: pxtorem(18px);
+                                    margin-right: 10px;
+                                }
+
+                                > span {
+                                    display: $db;
+                                    font-size: pxtorem(14px);
+                                    font-weight: $bold;
+                                    text-transform: uppercase;
+
+                                    .highlight {
+                                        color: color(primary);
+                                        display: $dib;
+                                    }
+                                }
+                            }
+
+                            .autocomplete-product {
+                                align-content: center;
+                                align-items: center;
+                                background-color: color(light, light);
+                                display: $df;
+                                justify-content: flex-start;
+                                padding: 10px;
+
+                                @include hover {
+                                    background-color: color(light);
+                                }
+
+                                span {
+                                    color: color(dark);
+                                    font-size: pxtorem(14px);
+                                    font-weight: $bold;
+                                    line-height: 1.4;
+                                    padding: 0;
+                                    text-transform: capitalize;
+                                    width: 100%;
+
+                                    &.autocomplete-image {
+                                        float: $dn;
+                                        width: 100px;
+                                    }
+
+                                    &.autocomplete-details {
+                                        align-content: center;
+                                        align-items: center;
+                                        display: $df;
+                                        flex-direction: column;
+                                        flex-wrap: wrap;
+                                        float: $fn;
+                                        justify-content: flex-start;
+                                        width: 100%;
+
+                                        .autocomplete-price {
+                                            color: color(primary);
+                                            text-align: left;
+                                        }
+                                    }
+
+                                    .highlight {
+                                        color: color(light);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .panel-no-results {
+                background-color: color(light, light);
+                color: color(dark);
+                font-size: pxtorem(12px);
+                font-weight: $bold;
+                padding: 10px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+    }
+}

@@ -1,0 +1,158 @@
+body {
+    @include global {
+        #main .container {
+            .section h2,
+            #divHistoricoNavegacao .title {
+                border: none;
+                color: color(primary);
+                font-family: $title;
+                font-size: pxtorem($config-title-desktop);
+                font-weight: $regular;
+                letter-spacing: 0;
+                line-height: 1.2;
+                margin: 0 0 50px;
+                padding: 0;
+                position: $pr;
+                text-align: center;
+                text-shadow: none;
+                text-transform: none !important;
+                width: 100%;
+
+                &:before {
+                    background-color: color(light);
+                    content: '';
+                    display: $db;
+                    height: 1px;
+                    position: $pa;
+                    top: 53%;
+                    width: 100%;
+                    z-index: 0;
+                }
+
+                span {
+                    background-color: color(light, light);
+                    color: color(primary);
+                    display: $di;
+                    font-family: inherit;
+                    padding: 0 10px;
+                    position: $pr;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .wrapper h1:not(.name) {
+            border: none;
+            color: color(primary) !important;
+            font-family: $title;
+            font-size: pxtorem($config-title-desktop) !important;
+            font-weight: $bold !important;
+            letter-spacing: 0 !important;
+            line-height: 1 !important;
+            margin: 40px 0 !important;
+            padding: 0 !important;
+            text-align: center !important;
+            text-shadow: none !important;
+            text-transform: none !important;
+            width: 100%;
+
+            span {
+                color: color(primary);
+                font-family: inherit;
+            }
+        }
+
+        h1:not(.name) {
+            border-bottom: 1px solid color(dark);
+            color: color(primary);
+            font-family: $title;
+            font-size: pxtorem(18px);
+            font-weight: $bold;
+            margin-bottom: 20px !important;
+            margin-top: 0 !important;
+            padding: 0 50px 10px 0 !important;
+            text-align: left;
+        }
+
+        .cadaster {
+            .title {
+                border: none;
+                color: color(dark);
+                font-family: $title;
+                font-size: pxtorem($config-title-desktop);
+                font-weight: $bold;
+                letter-spacing: 0;
+                line-height: 1;
+                margin: 0 0 40px;
+                padding: 0;
+                text-align: center;
+                text-shadow: none;
+                text-transform: none !important;
+            }
+        }
+
+        #main .b-specialstore > .title .ico,
+        &.op-checkout .opc .checkout-title,
+        &.op-confirmation #pnlOPCheckout .confirmacao-pedido .confirm-title {
+            border: none;
+            color: color(primary);
+            font-size: pxtorem($config-title-desktop);
+            font-weight: $bold;
+            letter-spacing: 0;
+            line-height: 1;
+            margin: 0 0 40px;
+            padding: 0;
+            text-align: center;
+            text-shadow: none;
+            text-transform: none !important;
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+        #main .container {
+            .section h2,
+            #divHistoricoNavegacao .title {
+                font-size: pxtorem($config-title-mobile) !important;
+                margin: 0 0 15px 0 !important;
+                padding: 0 !important;
+
+                span {
+                    font-size: pxtorem($config-title-mobile);
+                }
+            }
+        }
+
+        .custom-title {
+            .headtitle {
+                font-size: pxtorem($config-title-mobile);
+            }
+
+            .subtitle {
+                font-size: pxtorem(12px);
+            }
+
+            .flag {
+                font-size: pxtorem(12px);
+            }
+        }
+
+        .wrapper h1:not(.name) {
+            font-size: pxtorem($config-title-mobile) !important;
+            margin: 0 0 15px 0 !important;
+            padding: 0 !important;
+
+            span {
+                font-size: pxtorem($config-title-mobile);
+            }
+        }
+
+        #main .b-specialstore > .title .ico,
+        &.op-checkout .opc .checkout-title,
+        &.op-confirmation #pnlOPCheckout .confirmacao-pedido .confirm-title {
+            font-size: pxtorem($config-title-mobile) !important;
+        }
+    }
+}

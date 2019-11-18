@@ -1,0 +1,16 @@
+@model ProductDetailModel
+<!--  -->
+@if (!Model.Product.IsCatalogProduct
+    && !Model.Product.IsGiftVoucher
+    && !Model.Product.IsVirtualProduct
+    && !(Model.ProductService.ProductServiceEnabled && Model.ProductService.HasObligatoryProductService))
+{
+    <div id="BlocoEntrega" class="delivery">
+        <a id="hypShippingSimulation" 
+            class="iframe"
+            rel="nofollow"
+            href="@Url(string.Format("~/consultarPrazoEntrega.aspx?pc={0}&sk={1}", Model.Product.Id, Model.Product.SingleSkuCode))">
+            Calcule sua entrega
+        </a>
+    </div>
+}

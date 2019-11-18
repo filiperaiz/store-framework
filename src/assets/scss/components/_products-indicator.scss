@@ -1,0 +1,125 @@
+body.lookDetalhe,
+body.product:not(.quickview) {
+	#main {
+		.container {
+			@include global {
+				.product-indication-group {
+					display: $db;
+					margin: 0 0 10px;
+
+					text-align: left;
+					width: 100%;
+
+					.product-indication {
+						background: color(light);
+						display: $df;
+						margin: 0 0 10px 0;
+						max-width: 500px;
+						padding: 10px;
+						width: 100%;
+						@include radius($rs);
+
+						.product-indication-title {
+							color: color(primary);
+							display: $db;
+							font-size: pxtorem(14px);
+							font-weight: $bold;
+							margin-bottom: 10px;
+							text-transform: inherit;
+						}
+
+						.product-indication-item {
+							margin-bottom: 0;
+							margin-right: 20px;
+							width: 100%;
+						}
+
+						.product-indication-quantity {
+							width: 200px;
+
+							label {
+								font-size: 0;
+
+								&:before {
+									color: color(primary);
+									content: 'Quantidade sugerida:';
+									font-size: pxtorem(14px);
+								}
+							}
+						}
+
+						.product-indication-select {
+							width: 100%;
+						}
+
+						.ipt-product-quantity {
+							text-align: center;
+							width: 42px;
+						}
+					}
+				}
+			}
+
+			@include desktop {
+			}
+
+			@include mobile {
+				.product-indication-group {
+					display: $db;
+					margin: 0 0 10px;
+
+					text-align: left;
+					width: 100%;
+
+					.product-indication {
+						background: color(light);
+						display: $df;
+						margin: 0 0 10px 0;
+						max-width: 500px;
+						padding: 10px;
+						width: 100%;
+						@include radius($rs);
+
+						.product-indication-title {
+							color: color(primary);
+							display: $db;
+							font-size: pxtorem(14px);
+							font-weight: $bold;
+							margin-bottom: 10px;
+							text-transform: inherit;
+						}
+
+						.product-indication-item {
+							margin-bottom: 0;
+							margin-right: 20px;
+							width: 100%;
+						}
+
+						.product-indication-quantity {
+							width: 200px;
+
+							label {
+								font-size: 0;
+
+								&:before {
+									color: color(primary);
+									content: 'Quantidade sugerida:';
+									font-size: pxtorem(14px);
+								}
+							}
+						}
+
+						.product-indication-select {
+							width: 100%;
+						}
+
+						.ipt-product-quantity {
+							text-align: center;
+							width: 42px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

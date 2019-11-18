@@ -1,0 +1,137 @@
+@model HeadBaseModel
+
+<div id="basket_pop_container" ng-controller="SummaryBasket" class="basket_pop_container ng-cloak" ng-cloak="">
+    <div id="basket" ng-if="data.Items.length > 0" ng-class="data.loading == true ? 'loading' : ''">        
+        <div class="list-itens">
+            <div class="prod" ng-repeat="item in data.Items">
+                <div class="photo" ng-if="item.ImageURL">
+                    <img ng-src="{{item.ImageURL}}" src="" alt="{{item.Name}}" />
+                </div>
+
+                <div class="info-details">
+                    <a class="delete" ng-click="DeleteItemSummaryBasket(item.Code,item.InternalCode,item.LookCode,item.BasketCode)"></a>
+                    <div class="descr">
+                        <p class="name">
+                            {{item.Name}}
+                        </p>
+                        <p class="cod">
+                            <span>Cod:</span>
+                            {{item.InternalCode}}
+                        </p>
+                    </div>
+
+                    <div class="_skus">
+                        <p class="msg" ng-bind-html="item.MessageItem">
+                            {{item.MessageItem}}
+                        </p>
+                        <p class="quantity">
+                            <span>Quantidade:</span>
+                            {{item.Quantity}}
+                        </p>
+                        <div class="total">
+                            <strong>{{LabelTotal}}</strong>
+                            {{item.Total}}
+                        </div>
+                        <div class="promo-discount" ng-repeat="x in item.Discount">
+                            <p>
+                                <strong>Desconto:</strong>
+                                {{x.Discount}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="!data.IsBasket && data.ShowDeliveryOptionsRadios" class="change-delivery-summary"> 
+            <div class="group-change-delivery">
+                <input type="radio" ng-value="1" ng-change="ChangeDeliveryOption()" ng-model="data.DeliveryType" id="rdoHomeDeliverySummary" class="rad-sum-change"> 
+                <label for="rdoHomeDeliverySummary" class="lbl-sum-change">Receba em casa</label>
+            </div>
+            <div class="group-change-delivery">
+                <input type="radio" ng-value="2" ng-change="ChangeDeliveryOption()" ng-model="data.DeliveryType" id="rdoStoreDeliverySummary" class="rad-sum-change">
+                <label for="rdoStoreDeliverySummary" class="lbl-sum-change">{{ data.StoreDeliveryServiceName }}</label>
+            </div>
+        </div>
+
+        <div class="pop-wrap-group zip_code_container" ng-if="!data.IsBasket && data.ShowDeliveryOptions && data.DeliveryType == 1">
+            <div class="group-pop-basket">
+                <label class="lbl-pop-basket lbl-zip-code" for="popBasketZipCode">Digite o CEP</label>
+                <input type="text" id="popBasketZipCode" class="control-pop-basket" ng-model="data.ZipCode" ng-mask="cep" />
+                <input type="button" class="btn pop-basket-btns" ng-click="UpdateZipCode()" ng-value="data.HasZipCode ? 'Alterar' : 'Calcular'">
+            </div>
+
+            <p class="home-delivery-obs obs-msg-delivery-type" ng-if="data.HomeDeliveryMessage !== ''">{{ data.HomeDeliveryMessage }}</p>
+
+            <div class="pop-service-result drop-mode" ng-if="data.Services.length > 0 && data.Display == 1">
+                @* dropdown *@
+                <select class="pop-service-dropdown" ng-options="s.Code as (s.Name + ' - ' + s.Value + ' - ' + s.DeliveryTimeLabel) for s in data.Services"
+                        ng-model="data.SelectedService"
+                        ng-change="UpdateService()"></select>
+            </div>
+
+            <div class="pop-service-result" ng-if="data.Services.length > 0 && data.Display == 2">
+                @* radio button *@
+                <h3 class="pop-service-title">
+                    Selecione o serviço:
+                </h3>
+                <div class="pop-service-item" ng-repeat="service in data.Services">
+                    <label>
+                        <input type="radio" ng-model="data.SelectedService" ng-value="service.Code" ng-change="UpdateService()"> {{service.Name}}
+                    </label>
+                    <ul class="service-value">
+                        <li>Frete: {{service.Value}}</li>
+                        <li>Prazo: {{service.DeliveryTimeLabel}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="pop-wrap-group sum-store-select" ng-if="!data.IsBasket && data.ShowDeliveryOptions && data.DeliveryType == 2">
+            <select class="sum-store-select-uf" ng-options="s.Value as s.Text for s in data.States" ng-model="data.SelectedState" ng-if="data.States.length > 1" ng-change="ChangeState()">
+            </select>
+            <select class="sum-store-select-city" ng-options="s.Value as s.Text for s in data.Stores" ng-model="data.SelectedStore" ng-if="data.Stores.length > 0" ng-change="ChangeStore()">
+            </select>
+            <p class="store-select-obs obs-msg-delivery-type" ng-if="data.StoreDeliveryMessage !== ''">{{ data.StoreDeliveryMessage }}</p>
+            <span class="sum-store-select-address" ng-if="data.StoreSelectedAddress !== ''">{{ data.StoreSelectedAddress }}</span>
+        </div>
+        
+        <div class="pop-wrap-group coupon_container" ng-if="data.ShowCoupon">
+            <span class="group-pop-basket">
+                <label for="popCouponCode" class="lbl-pop-basket lbl-coupon-code">Cupom Promocional</label>
+                <input id="popCouponCode" class="control-pop-basket" type="text" ng-model="data.Coupon" ng-readonly="data.HasCoupon" maxlength="37" />
+                <input type="button" class="btn pop-basket-btns" ng-click="UpdateCoupon()" ng-if="!data.HasCoupon" value="Aplicar">
+                <input type="button" class="btn pop-basket-btns pop-remove-btn" ng-click="DeleteCoupon()" ng-if="data.HasCoupon" value="Cancelar">
+            </span>
+            <label class="pop-coupon-msg {{data.CouponClass}}">{{data.CouponLabel}}</label>
+        </div>
+
+        <div class="sum_container">
+            <p class="qtde_prod">
+                {{data.QuantityBasket}}
+            </p>
+            <p class="subtotal">
+                <strong>Total:</strong>
+                {{data.TotalBasket}}
+            </p>
+        </div>
+
+        <div class="btn_checkout" id="btn_checkout">
+            <a class="btn" href="@ViewBag.CheckoutUrl">Finalizar compra</a>
+        </div>
+    </div>
+
+    <div id="emptyBasket" ng-if="data == null">
+        <div class="prod">
+            <p>Seu carrinho de compras está vazio.</p>
+        </div>        
+        <div class="btn_checkout">
+            <a class="btn" href="@Url("~/index.aspx")" title="Comprar produtos">
+                Comprar produtos
+            </a>
+        </div>
+    </div>
+    <div class="border_bottom"></div>    
+</div>
+
+

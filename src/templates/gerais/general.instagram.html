@@ -1,0 +1,26 @@
+@model InstagramModel
+<!--  -->
+@if (Model.ShowCaseEnable){
+<div class="section instagram-slider" ng-controller="instagramShowCaseCtrl" ng-cloak ng-init="init(1, 20,0)">
+    <div ng-if="!load && showCase.Itens.length > 0">
+        <h2>
+            <span ng-bind-html="showCase.Title"></span>
+        </h2>
+
+        <ul class="list-instagram-photos">
+            <li ng-repeat="image in showCase.Itens" class="slide">
+                <a ng-href="{{ image.LinkImage }}" ng-if="image.LinkImage" target="_blank">
+                    <img class="lazyImg lazyOwl" data-src="{{ image.UrlImage }}" error-image repeat-end="ApplyFancyBox()" alt="" />
+                </a>
+                <a ng-href="{{ image.UrlImage }}" ng-if="!image.LinkImage" class="fancy">
+                    <img class="lazyImg lazyOwl" data-src="{{ image.UrlImage }}" error-image repeat-end="ApplyFancyBox()" alt="" />
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div ng-if="busy || load" class="load-instagram-rodape">
+        <span class="load-insta"></span>
+    </div>
+</div>
+}

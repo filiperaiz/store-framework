@@ -1,0 +1,127 @@
+body.account.internal {
+    @include global {
+        #main {
+            .box {
+                background-color: transparent;
+                border: none;
+                height: 100%;
+                margin: 50px auto;
+                padding: 0;
+                width: 100%;
+                .nav {
+                    @include flexbox(flex, row, wrap, space-between, stretch, flex-start);
+                    li {
+                        border: 1px solid color(light);
+                        margin: 0 0 15px;
+                        overflow: hidden;
+                        width: calc(100% / 3 - 10px);
+                        @include radius($rs);
+                        @include transition();
+
+                        a {
+                            background-color: color(primary);
+                            color: color(light, light);
+                            display: $db;
+                            font-size: pxtorem(15px);
+                            font-weight: $bold;
+                            padding: 10px;
+                            @include transition();
+
+                            &:before {
+                                color: color(light, light);
+                                content: $fa-var-plus;
+                                font-family: $icons;
+                                font-size: pxtorem(18px);
+                                font-weight: $solid;
+                                margin-right: 10px;
+                            }
+
+                            &[href*='meucadastro']:before {
+                                content: $fa-var-address-card;
+                            }
+
+                            &[href*='senhaalteracao'],
+                            &#changePasswordLink {
+                                &::before {
+                                    content: $fa-var-user-shield;
+                                }
+                            }
+
+                            &[href*='enderecos']:before {
+                                content: $fa-var-map-marker;
+                            }
+
+                            &[href*='meuspedidos']:before {
+                                content: $fa-var-shopping-cart;
+                            }
+
+                            &[href*='contacorrente']:before {
+                                content: $fa-var-credit-card;
+                            }
+
+                            &[href*='meuscartoes']:before {
+                                content: $fa-var-credit-card;
+                            }
+
+                            &[href*='lista']:before {
+                                content: $fa-var-heart;
+                            }
+
+                            &[href*='exchange']:before {
+                                content: $fa-var-exchange-alt;
+                            }
+
+                            &[href*='recurrency']:before {
+                                content: $fa-var-list;
+                            }
+
+                            &[href*='assinaturas']:before {
+                                content: $fa-var-pencil-alt;
+                            }
+                        }
+
+                        span {
+                            color: color(dark);
+                            display: $db;
+                            font-size: pxtorem(14px);
+                            padding: 10px;
+
+                            text-align: left;
+                        }
+
+                        &:hover {
+                            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1) !important;
+
+                            a {
+                                background-color: color(dark);
+                                color: color(light, light);
+
+                                &:before {
+                                    color: color(light, light);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+        #main {
+            .box {
+                margin: 30px auto;
+                .nav {
+                    display: $db;
+                    li {
+                        padding: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,403 @@
+@include global {
+	#header {
+		#divSummaryBasket {
+			// display: $db !important;
+			text-align: left;
+
+			@include global {
+				.basket_pop_container {
+					background-color: color(light, light);
+					cursor: default;
+					overflow: auto;
+					padding: 0;
+					position: $pr;
+
+					.list-itens {
+						max-height: 400px;
+						overflow-x: hidden;
+						overflow-y: auto;
+					}
+
+					.change-delivery-summary {
+						align-content: center;
+						align-items: center;
+						border-top: 1px solid color(light);
+						display: $df;
+						justify-content: flex-start;
+						margin-bottom: 15px;
+						padding: 15px 0 0 0;
+
+						.group-change-delivery {
+							align-content: center;
+							align-items: center;
+							display: $df;
+
+							&:first-child {
+								margin-right: 15px;
+							}
+						}
+					}
+
+					.pop-wrap-group {
+						align-content: center;
+						align-items: center;
+						border: none;
+						display: $df;
+						flex-direction: column;
+						flex-wrap: wrap;
+						justify-content: flex-start;
+						margin-bottom: 15px;
+						padding: 10px;
+
+						.group-pop-basket {
+							align-content: center;
+							align-items: center;
+							display: $df;
+							flex-direction: row;
+							flex-wrap: wrap;
+							width: 100%;
+
+							.lbl-pop-basket {
+								color: color(dark);
+								font-size: pxtorem(12px);
+								margin-bottom: 5px;
+								width: 100%;
+							}
+
+							.control-pop-basket {
+								width: 220px;
+							}
+
+							.btn {
+								min-width: 100px;
+								width: auto;
+							}
+						}
+
+						.sum-store-select-city {
+							width: 100%;
+						}
+
+						.pop-service-result {
+							align-content: center;
+							align-items: center;
+							display: $df;
+							flex-direction: row;
+							flex-wrap: wrap;
+							justify-content: flex-start;
+							padding: 15px 0 0 0;
+							width: 100%;
+
+							.pop-service-title {
+								color: color(dark);
+								font-size: pxtorem(12px);
+								margin-bottom: 5px;
+								width: 100%;
+							}
+
+							.pop-service-item {
+								padding: 0;
+
+								.service-value {
+									padding-left: 25px;
+									padding-top: 10px;
+
+									li {
+										margin-bottom: 5px;
+
+										&:last-child {
+											margin-bottom: 0;
+										}
+									}
+								}
+							}
+						}
+
+						.pop-coupon-msg {
+							font-family: $title;
+							font-size: pxtorem(14px);
+							font-weight: $bold;
+							height: auto !important;
+							line-height: 30px;
+							margin: 10px 0 0;
+							min-height: 32px;
+							padding: 0 !important;
+							text-align: center;
+							text-transform: capitalize;
+							width: 150px;
+							@include radius($rs);
+
+							&:after {
+								content: $fa-var-check;
+								float: $fn;
+								font-family: $icons;
+								font-size: pxtorem(15px);
+								font-weight: $solid;
+								margin-left: 10px;
+							}
+
+							&.coupon-ok {
+								background-color: transparent;
+								color: color(success);
+
+								&:after {
+									content: $fa-var-check;
+								}
+							}
+
+							&.coupon-off {
+								background-color: transparent;
+								color: color(danger);
+
+								&:after {
+									content: $fa-var-times;
+								}
+							}
+						}
+					}
+
+					.prod {
+						border-bottom: 1px solid color(light);
+						padding: 10px;
+						@include flexbox(flex, row, nowrap, flex-start, flex-start, flex-start);
+
+						&:last-child {
+							border: none;
+						}
+
+						.photo {
+							border: none !important;
+							float: $fn;
+							margin-bottom: 0;
+							margin-right: 10px;
+							overflow: hidden;
+							width: 72px;
+							@include radius($rn);
+
+							img {
+								display: $db;
+								width: 100%;
+							}
+						}
+
+						.info-details {
+							float: $fn;
+							position: $pr;
+							width: 245px;
+
+							.delete {
+								color: color(danger);
+								cursor: pointer;
+								font-family: $title;
+								font-size: pxtorem(14px);
+								font-weight: $bold;
+								height: auto;
+								position: $pa;
+								right: 0;
+								top: 0;
+								width: auto;
+								z-index: 1;
+
+								&:after {
+									color: color(danger) !important;
+									content: $fa-var-times;
+									float: $fn;
+									font-family: $icons;
+									font-size: pxtorem(16px);
+									font-weight: $solid;
+								}
+							}
+
+							.descr {
+								display: $db;
+								float: $fn;
+								margin: 0px 0px 10px 0px;
+								position: $pr;
+								width: 100%;
+
+								.name {
+									color: color(dark);
+									font-size: pxtorem(16px);
+									font-weight: $bold;
+									line-height: 1.4;
+									margin-bottom: 10px;
+									padding: 0;
+								}
+
+								.cod {
+									color: color(dark);
+									font-size: pxtorem(14px);
+									font-weight: $regular;
+
+									span {
+										color: color(dark);
+										display: $dib;
+										font-weight: $regular;
+										margin-right: 0;
+										padding: 0;
+										vertical-align: top;
+									}
+								}
+							}
+
+							._skus {
+								align-content: center;
+								align-items: center;
+								clear: both;
+								display: $df;
+								flex-direction: row;
+								flex-wrap: wrap;
+								float: $fn;
+								justify-content: center;
+								margin: 0px;
+								position: $pr;
+								width: 100%;
+
+								.msg {
+									color: color(dark);
+									display: $db;
+									font-size: pxtorem(14px);
+									font-weight: $regular;
+									line-height: 1.4;
+									margin-bottom: 10px;
+									padding: 0;
+									text-transform: capitalize;
+									width: 100%;
+								}
+
+								.quantity {
+									color: color(dark);
+									display: $db;
+									font-size: pxtorem(14px);
+									font-weight: $regular;
+									line-height: 1.4;
+									margin-bottom: 0;
+									padding: 0;
+									width: 50%;
+
+									span {
+										color: color(dark);
+										display: $dib;
+										font-weight: $regular;
+										margin-right: 0;
+										overflow: visible;
+										padding: 0;
+										text-transform: capitalize;
+									}
+								}
+
+								.total {
+									color: color(secondary);
+									display: $db;
+									font-size: pxtorem(14px);
+									font-weight: $bold;
+									position: $pr;
+									text-align: right;
+									width: 50%;
+
+									strong {
+										color: color(dark);
+										display: $dn;
+									}
+								}
+							}
+						}
+					}
+
+					.sum_container {
+						align-content: center;
+						align-items: center;
+						background: color(light);
+						clear: both;
+						display: $df;
+						flex-direction: row;
+						flex-wrap: wrap;
+						float: $fn;
+						height: auto;
+						justify-content: space-between;
+						margin: 0;
+						overflow: hidden;
+						padding: 20px 10px 10px 10px;
+
+						.qtde_prod {
+							color: color(dark);
+							display: $db;
+							float: $fn;
+							font-size: pxtorem(14px);
+							font-weight: $bold;
+							line-height: 1;
+							margin: 0;
+							text-align: left;
+							text-transform: lowercase;
+							width: auto;
+						}
+
+						.subtotal {
+							color: color(secondary);
+							display: $db;
+							float: $fn;
+							font-size: pxtorem(16px);
+							font-weight: $bold;
+							line-height: 1;
+							margin: 0;
+							text-align: right;
+							width: auto;
+							strong {
+								color: color(primary);
+								text-transform: capitalize;
+							}
+						}
+					}
+
+					.btn_checkout {
+						background: color(light);
+						display: $db;
+						margin: 0;
+						padding: 10px;
+						width: 100%;
+
+						.btn {
+							background: color(primary) !important;
+							border: none;
+							color: color(light, light) !important;
+							font-family: $base;
+							font-size: pxtorem(14px) !important;
+							justify-content: center;
+							margin: 0 auto;
+							text-indent: 0;
+							width: 100%;
+
+							@include hover {
+								background-color: color(primary, dark) !important;
+								color: color(light, light) !important;
+							}
+
+							&:before {
+								display: $dn;
+							}
+						}
+					}
+
+					#emptyBasket {
+						.prod {
+							display: $db;
+							margin-bottom: 0;
+							text-align: center;
+							p {
+								color: color(dark);
+								font-size: pxtorem(16px);
+								text-align: center;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include desktop {
+}
+
+@include mobile {
+}

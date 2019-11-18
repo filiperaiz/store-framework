@@ -1,0 +1,15 @@
+body.indicate-friend {
+	@include global {
+		.actions {
+			#send {
+				width: 190px;
+			}
+		}
+	}
+
+	@include desktop {
+	}
+
+	@include mobile {
+	}
+}

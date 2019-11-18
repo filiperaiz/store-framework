@@ -1,0 +1,176 @@
+body.comparepage {
+	@include global {
+		#main {
+			.compare {
+				th {
+					background-color: color(light, light);
+					padding: 0 10px;
+
+					&:first-child {
+						display: $dn;
+					}
+				}
+
+				td {
+					background-color: color(light, light);
+					background-image: none;
+					border: none;
+					padding: 5px;
+
+					&:first-child {
+						display: $dn;
+					}
+				}
+			}
+
+			.hproduct:not(#info-product) {
+				background-color: transparent;
+				border: none;
+				display: $db;
+				margin: 0;
+				overflow: hidden;
+				padding: 0;
+				position: $pr;
+				width: 100%;
+
+				.figure {
+					display: $db;
+					height: auto !important;
+					margin: 0 auto 10px;
+					max-width: 200px;
+
+					a,
+					.url {
+						display: $db;
+						height: auto;
+						margin: 0 auto;
+						overflow: hidden;
+						padding-bottom: 0;
+						width: 100%;
+
+						.photo {
+							border: none !important;
+							height: auto !important;
+							margin: 0 auto;
+							max-height: 296px;
+							width: 100% !important;
+						}
+					}
+				}
+
+				.details {
+					background: transparent;
+					padding: 0;
+					width: auto;
+
+					.name {
+						color: color(dark);
+						display: $db;
+						font-size: pxtorem(14px);
+						font-weight: $bold;
+						line-height: 1.4;
+						margin-bottom: 5px;
+						padding: 0;
+						text-transform: capitalize;
+					}
+
+					.offers {
+						margin-bottom: 5px;
+						padding: 0;
+
+						#spanPreco {
+							display: $db;
+							margin: 0 0 5px;
+							padding: 0;
+							text-decoration: line-through;
+
+							em {
+								color: color(primary);
+								display: $dib;
+								font-size: pxtorem(15px);
+								font-style: normal;
+								margin-right: 5px;
+								text-decoration: line-through;
+							}
+
+							span,
+							del {
+								color: color(primary);
+								font-size: pxtorem(15px);
+								font-weight: $regular;
+							}
+						}
+
+						#spanPrecoPor {
+							display: $db;
+							margin: 0 0 10px;
+							padding: 0;
+
+							em {
+								color: color(primary);
+								display: $dib;
+								font-size: pxtorem(20px);
+								font-style: normal;
+								font-weight: $bold;
+							}
+
+							strong {
+								color: color(primary);
+								font-size: pxtorem(25px);
+								font-weight: $bold;
+								margin-left: 5px;
+							}
+						}
+
+						#spanPrecoAVista {
+							color: color(primary);
+							font-size: pxtorem(14px);
+							font-style: normal;
+							font-weight: $regular;
+							line-height: 1.2;
+							margin-bottom: 5px;
+							padding: 0;
+							text-decoration: none;
+
+							strong {
+								color: color(secondary);
+								display: $dib;
+								font-size: pxtorem(14px);
+								font-style: normal;
+								font-weight: $regular;
+							}
+						}
+					}
+
+					.parcel {
+						margin-bottom: 5px;
+						padding: 0;
+						text-decoration: none;
+
+						span,
+						b {
+							color: color(primary);
+							display: $dib;
+							font-size: pxtorem(14px);
+							font-weight: $regular;
+						}
+
+						strong {
+							color: color(secondary);
+							display: $dib;
+							font-size: pxtorem(14px);
+							font-weight: $regular;
+							margin-right: 1px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include desktop {
+	}
+
+	@include mobile {
+	}
+}

@@ -1,0 +1,59 @@
+html {
+    font: 400 100%/1.7 $base;
+    height: 100% !important;
+}
+
+body {
+    background: color(light, light) !important;
+    color: color(dark);
+    font-size: pxtorem(14px);
+    margin: 0;
+    padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+label,
+div,
+b,
+i,
+strong,
+ul,
+li,
+input,
+textarea,
+select,
+td,
+th {
+    font-family: $base;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box !important;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+.fa,
+.far,
+.fas {
+    font-family: $icons;
+}
+
+.noscroll {
+    overflow: hidden;
+    position: $pf;
+}

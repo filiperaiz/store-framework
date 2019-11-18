@@ -1,0 +1,13 @@
+@model ProductDetailModel
+<!--  -->
+@if (Model.WishList.Enabled) { var jsFunction = ""; if (Model.WishList.WeddingListEnabled || (Model.WishList.OfflineWishListEnabled && !ViewBag.IsUserLoggedIn)) { jsFunction = "ExibeBlocoLista"; }
+else if (Model.AlternateViews.ShowLens) { jsFunction = "AdicionarListaDesejoLente"; } else { jsFunction = "AdicionarListaDesejo"; } var text = ""; if (Model.WishList.WeddingListEnabled) { text =
+"Adicionar a uma lista"; } else { text = "Adicionar a lista de desejos"; }
+
+<div class="wishlist add">
+	<a id="lnkWishList" href="javascript:;" onclick="javascript:@(jsFunction)();return false;" rel="nofollow">
+		@text
+	</a>
+	<div id="list-container" class="list-container box"></div>
+</div>
+}

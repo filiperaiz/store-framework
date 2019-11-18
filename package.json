@@ -1,0 +1,42 @@
+{
+    "name": "GenStore-Framework",
+    "description": "Framework para desenvolvimento de novas lojas",
+    "version": "1.0.0",
+    "author": "Filipe Raiz",
+    "license": "gengomm",
+    "repository": {
+        "type": "git",
+        "url": "https://gitlab.com/rakutenbrasil/implantacao/store-custom-gulp"
+    },
+    "scripts": {
+        "deploy": "gulp",
+        "dev-w": "gulp dev -w",
+        "dev-d": "gulp dev -d",
+        "homolog-w": "gulp homolog -w",
+        "homolog-d": "gulp homolog -d"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.4.4",
+        "@babel/preset-env": "^7.4.4",
+        "babel-loader": "^8.0.5",
+        "del": "^4.1.1",
+        "glob": "^7.1.4",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^6.1.0",
+        "gulp-babel": "^8.0.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-cssnano": "^2.1.3",
+        "gulp-eslint": "^5.0.0",
+        "gulp-iconfont": "^10.0.3",
+        "gulp-iconfont-css": "^3.0.0",
+        "gulp-postcss": "^8.0.0",
+        "gulp-rename": "^1.4.0",
+        "gulp-sass": "^4.0.2",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-util": "^3.0.8",
+        "vinyl-ftp": "^0.6.1",
+        "webpack": "^4.31.0",
+        "webpack-stream": "^5.2.1",
+        "xmlhttprequest": "^1.8.0"
+    }
+}

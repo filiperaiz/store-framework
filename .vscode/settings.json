@@ -1,0 +1,70 @@
+{
+    // Editor
+    "editor.fontSize": 14,
+    "editor.lineHeight": 24,
+    "editor.renderWhitespace": "none",
+    "editor.renderLineHighlight": "gutter",
+    "editor.fontLigatures": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false,
+    "explorer.confirmDelete": false,
+    "editor.wordWrapColumn": 250,
+    "editor.wordWrap": "bounded",
+    "editor.rulers": [
+        250
+    ],
+
+    "files.autoSave": "onWindowChange",
+
+    "window.zoomLevel": -1,
+
+    "files.associations": {
+        "*.html": "html",
+        "*.cshtml": "html",
+        "*.aspnetcorerazor": "html"
+    },
+
+    "explorer.confirmDragAndDrop": false,
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "postcssSorting.config": {
+        "properties-order": "alphabetical",
+        "emptyLineBefore": true,
+        "clean-empty-lines": true
+    },
+    "macros": {
+        "onSaveFormat": ["postcssSorting.execute", "editor.action.formatDocument", "workbench.action.files.save"]
+    },
+
+    "emmet.includeLanguages": {
+        "aspnetcorerazor": "html",
+        "razor": "html",
+        "javascript": "javascriptreact"
+    },
+
+    "emmet.triggerExpansionOnTab": true,
+
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "javascript.updateImportsOnFileMove.enabled": "always",
+
+    "cSpell.language": "en,pt-BR",
+    "cSpell.userWords": ["Rakuten", "basketpage", "bgcolor", "comparepage", "endregion", "flexbox", "headerbuy", "loginpage", "meuspedidos", "navlist", "pxtorem", "quickview"],
+
+    "diffEditor.ignoreTrimWhitespace": true
+}

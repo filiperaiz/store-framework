@@ -1,0 +1,286 @@
+body.search-pedidos {
+    @include global {
+        #main {
+            #panCentro {
+                text-align: center;
+
+                > p {
+                    font-size: pxtorem(16px);
+                    line-height: 1.4;
+                    margin-bottom: 15px;
+                    padding: 0;
+                }
+
+                .request {
+                    align-content: flex-start;
+                    align-items: flex-start;
+                    display: $df;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+
+                    .box {
+                        border: none;
+                        float: $fn;
+                        padding: 15px !important;
+                        text-align: center;
+                        width: 50%;
+                    }
+
+                    .title {
+                        color: color(dark);
+                        font-size: pxtorem(14px);
+                        font-weight: $bold;
+                        line-height: 1.4;
+                    }
+
+                    .number {
+                        color: color(dark);
+                        font-size: pxtorem(25px);
+
+                        strong {
+                            color: color(dark);
+                            font-size: pxtorem(25px);
+                        }
+                    }
+
+                    span {
+                        color: color(dark);
+                        font-size: pxtorem(14px);
+                        font-weight: $regular;
+                        line-height: 1.4;
+
+                        strong {
+                            color: color(danger);
+                        }
+                    }
+
+                    .description {
+                        color: color(primary);
+                        display: $db;
+                        font-size: pxtorem(14px);
+                        font-weight: $bold;
+                        margin: 10px 0;
+                        text-decoration: underline !important;
+                    }
+
+                    .warning {
+                        color: color(danger);
+                        margin-top: 10px;
+                    }
+
+                    .actions {
+                        margin-top: 20px;
+                        text-align: center;
+                    }
+                }
+
+                fieldset {
+                    padding: 0;
+                }
+
+                .field {
+                    float: $fn;
+                    height: auto;
+                    margin: 0 0 20px;
+                    overflow: visible;
+                    padding: 0;
+                    position: $pr;
+                    text-align: left;
+
+                    label {
+                        align-content: center;
+                        align-items: center;
+                        display: $df;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        margin: 0;
+                        padding: 0;
+
+                        input[type='radio'] {
+                            margin-top: 0px;
+                            padding: 0;
+                        }
+                        span {
+                            display: $db;
+                            float: $fn;
+                            font-size: pxtorem(16px);
+                            line-height: 1.4;
+                            margin: 0px;
+                        }
+                    }
+
+                    input {
+                        display: $dib;
+                        float: $fn;
+                        left: auto !important;
+                        margin: 10px 0 0;
+                        position: $pr;
+                        top: auto !important;
+                        vertical-align: middle;
+                        width: auto;
+                    }
+
+                    &.search-date {
+                        margin-bottom: 30px;
+                        width: auto;
+
+                        .date {
+                            align-content: center;
+                            align-items: center;
+                            display: $df;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            float: $fn;
+                            justify-content: flex-start;
+                            margin: 10px 0 0;
+
+                            input {
+                                display: $dib;
+                                float: $fn;
+                                margin: 0;
+                                width: 75px;
+                            }
+
+                            span {
+                                float: $fn;
+                                line-height: 40px;
+                                margin: 0 5px;
+                            }
+                        }
+                    }
+                }
+
+                th {
+                    span {
+                        color: color(dark);
+                        font-size: pxtorem(14px);
+                        font-weight: $regular;
+                        line-height: 1.4;
+                    }
+                }
+
+                td {
+                    color: color(dark);
+                    font-size: pxtorem(14px);
+                    font-weight: $regular;
+                    line-height: 1.4;
+
+                    a {
+                        color: color(primary);
+                        font-size: pxtorem(14px);
+                        font-weight: $bold;
+                        text-decoration: underline !important;
+                    }
+                }
+            }
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+        #main {
+            #panCentro {
+                .request {
+                    flex-direction: column;
+
+                    .box {
+                        width: 100%;
+                    }
+                }
+
+                .box {
+                    padding: 0;
+                }
+
+                .date {
+                    text-align: center;
+
+                    input {
+                        width: 25% !important;
+                    }
+                }
+
+                td {
+                    &:before {
+                        color: color(dark);
+                        font-size: pxtorem(14px);
+                        font-weight: $bold;
+                    }
+                }
+            }
+
+            #btnPesquisar {
+                @include radius(0);
+            }
+        }
+    }
+}
+
+body.simple {
+    .request {
+        align-content: center;
+        align-items: center;
+        display: $df;
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+        overflow: visible;
+
+        .box {
+            background: color(light, light);
+            border: none;
+            float: none;
+            padding: 0 !important;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            height: auto;
+
+            span {
+                color: color(dark);
+                font-size: pxtorem(14px);
+                line-height: 1.4;
+
+                &.number {
+                    color: color(primary);
+                    font-size: pxtorem(25px);
+                    margin: 0;
+                }
+            }
+        }
+
+        .description {
+            background: color(primary) !important;
+            border: none;
+            border-radius: $rs;
+            color: color(light, light) !important;
+            display: $df;
+            font-family: $base;
+            font-size: pxtorem(14px) !important;
+            justify-content: center;
+            line-height: 1.4;
+            margin: 20px auto 10px;
+            max-width: 300px;
+            padding: 10px 15px;
+            text-decoration: none;
+            text-indent: 0;
+            width: 100%;
+
+            @include hover {
+                background-color: color(primary, dark) !important;
+                color: color(light, light) !important;
+            }
+
+            &:before {
+                display: $dn;
+            }
+        }
+    }
+}

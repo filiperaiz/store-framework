@@ -1,0 +1,676 @@
+body.lookDetalhe,
+body.product:not(.quickview) {
+	#main {
+		.container {
+			@include global {
+				.aside {
+					border: none;
+					display: $db;
+					float: $fn;
+					margin: 0 0 0 0;
+					position: $pr;
+					width: 100%;
+
+					.buy {
+						display: $dn !important;
+					}
+
+					.pieces {
+						background: transparent;
+						height: 100%;
+						margin-bottom: 0;
+						overflow: visible;
+
+						.pieces-header {
+							align-content: center;
+							align-items: center;
+							background-color: color(dark);
+							display: $df;
+							flex-direction: row;
+							justify-content: space-between;
+							margin-bottom: 10px;
+							padding: 5px 10px;
+						}
+
+						.title {
+							background: transparent;
+							color: color(light, light);
+							font-size: pxtorem(0px);
+							font-weight: $solid;
+							line-height: 1;
+							margin: 0;
+							padding: 0;
+							text-align: center;
+							text-transform: uppercase;
+
+							&:before {
+								content: 'Produtos do kit';
+								font-size: pxtorem(14px);
+								font-weight: $solid;
+							}
+						}
+
+						ul {
+							border-bottom: 1px solid color(light);
+							display: $df;
+							flex-direction: row;
+							flex-wrap: wrap;
+							justify-content: flex-start;
+							margin: 0 0 20px;
+							padding: 0 0 10px;
+
+							li {
+								background-color: transparent;
+								background-image: none;
+								border: none;
+								margin: 0 0 25px;
+								padding: 0;
+								width: 48%;
+								@include flexbox(flex, row, nowrap, flex-start, flex-start, flex-start);
+
+								&:nth-child(odd) {
+									margin-right: 15px;
+								}
+
+								.figure {
+									display: $dib;
+									float: $fn;
+									margin-right: 10px;
+									text-align: center;
+									width: 80px;
+
+									.url {
+										display: $db;
+										height: auto;
+										margin: 0 auto;
+										margin-bottom: 10px;
+										overflow: hidden;
+										padding-bottom: 0;
+										@include radius($rn);
+
+										img {
+											display: $db;
+											height: 100%;
+											width: 100%;
+										}
+									}
+
+									input {
+										margin: 0;
+									}
+								}
+
+								.info {
+									width: 100%;
+
+									.name {
+										background-color: transparent;
+										margin-bottom: 10px;
+										padding: 0;
+
+										label {
+											display: $db;
+											input {
+												float: $fl;
+												margin-right: 5px;
+												position: $pr;
+												vertical-align: top;
+											}
+
+											span {
+												color: color(dark);
+												display: $dib;
+												float: $fn;
+												font-size: pxtorem(16px);
+												font-weight: $bold;
+												padding: 0;
+												width: auto;
+											}
+										}
+									}
+
+									.field {
+										display: $df;
+										flex-direction: column;
+										margin: 0 0 20px;
+										padding: 0;
+
+										.title {
+											font-size: pxtorem(12px);
+											font-weight: $bold;
+											margin-bottom: 5px;
+											position: $pr;
+											text-align: left;
+
+											&:before {
+												background-color: color(dark);
+												content: '';
+												display: $db;
+												height: 1px;
+												position: $pa;
+												top: 53%;
+												width: 100%;
+												z-index: 0;
+											}
+
+											span {
+												background-color: color(light, light);
+												color: color(dark);
+												display: $di;
+												font-family: inherit;
+												padding-right: 10px;
+												position: $pr;
+
+												text-transform: lowercase;
+											}
+										}
+
+										input {
+											text-align: center;
+											width: 60px;
+										}
+
+										select {
+											width: 100%;
+										}
+									}
+
+									.skus-cores {
+										align-content: center;
+										align-items: center;
+										border: none;
+										display: $df;
+										flex-direction: row;
+										justify-content: flex-start;
+										margin: 0;
+										overflow: visible;
+										padding: 0 1px;
+										width: 100%;
+
+										li {
+											align-content: center;
+											align-items: center;
+											border: 1px solid color(light) !important;
+											display: $df;
+											height: 42px;
+											justify-content: center;
+											margin: 0 5px 5px 0 !important;
+											overflow: hidden;
+											width: 42px;
+											@include radius($rf);
+
+											&.selected {
+												border: 1px solid color(secondary) !important;
+												box-shadow: 0px 0px 2px 1px color(secondary);
+											}
+
+											a {
+												border: none;
+												display: $df;
+												height: 100%;
+												width: 100%;
+											}
+
+											img {
+												border: none;
+												display: $df;
+												height: 100%;
+												width: 100%;
+											}
+										}
+
+										.owl-item {
+											margin: 1px 2px;
+										}
+									}
+
+									.details {
+										margin: 0;
+										padding: 0;
+
+										.offers {
+											align-content: center;
+											align-items: center;
+											display: $df;
+											flex-direction: row;
+											flex-wrap: wrap;
+											justify-content: flex-start;
+											margin-bottom: 0px;
+											order: 3;
+											padding: 0;
+											width: 100%;
+
+											.price-from {
+												display: $db;
+												margin: 0 5px 0 0;
+												padding: 0;
+												text-decoration: line-through;
+												width: auto;
+
+												em {
+													color: color(primary);
+													display: $dn;
+													font-size: pxtorem(14px);
+													font-style: normal;
+													margin-right: 5px;
+													text-decoration: line-through;
+												}
+
+												span,
+												del {
+													color: color(primary);
+													font-size: pxtorem(14px);
+													font-weight: $regular;
+												}
+											}
+
+											.price-to {
+												display: $db;
+												margin: 0;
+												padding: 0;
+												width: auto;
+
+												em {
+													color: color(primary);
+													display: $dn;
+													font-size: pxtorem(14px);
+													font-style: normal;
+													font-weight: $bold;
+												}
+
+												span {
+													display: $dn !important;
+												}
+
+												strong,
+												span {
+													color: color(secondary);
+													font-size: pxtorem(20px);
+													font-weight: $bold;
+													margin-left: 0;
+												}
+											}
+
+											.converted-price {
+												display: $dn;
+											}
+										}
+
+										.percent-a-vista {
+											color: color(primary);
+											display: $db;
+											font-size: pxtorem(14px);
+											font-style: normal;
+											font-weight: $regular;
+											line-height: 1.2;
+											margin-bottom: 0;
+											order: 3;
+											padding: 0;
+											text-decoration: none;
+											width: 100%;
+
+											span {
+												color: color(primary);
+												margin: 0;
+											}
+											.value-sight,
+											.value-percentage {
+												color: color(primary);
+												display: $dib;
+												font-size: pxtorem(14px);
+												font-style: normal;
+												font-weight: $bold;
+												margin-right: 0px;
+											}
+										}
+
+										.parcel {
+											margin-bottom: 5px;
+											order: 3;
+											padding: 0;
+											text-decoration: none;
+											width: 100%;
+
+											span,
+											b {
+												color: color(primary);
+												display: $dib;
+												font-size: pxtorem(15px);
+												font-weight: $regular;
+											}
+
+											strong {
+												color: color(secondary);
+												display: $dib;
+												font-size: pxtorem(15px);
+												font-weight: $regular;
+												margin-right: 5px;
+												span {
+													color: color(secondary);
+												}
+											}
+										}
+
+										.notifyme {
+											max-width: 100%;
+											padding: 0;
+											.notifyLabel {
+												margin-bottom: 5px;
+												text-align: left;
+											}
+										}
+
+										.message,
+										.sucess2 {
+											margin: 10px 0 0;
+										}
+
+										.unavailable {
+                                            color: color(danger);
+											font-size: pxtorem(14px);
+											height: auto;
+											margin: 0;
+											width: 100%;
+										}
+									}
+								}
+							}
+						}
+
+						.select-look {
+							background: transparent !important;
+							color: color(light, light) !important;
+							display: $db !important;
+							font-size: pxtorem(14px);
+							margin: 0;
+							min-height: 1px;
+							padding: 0 !important;
+							text-decoration: underline !important;
+							text-transform: none !important;
+							width: auto;
+
+							@include hover {
+								color: color(secondary) !important;
+							}
+						}
+
+						.pieces-actions {
+							align-content: center;
+							align-items: center;
+							display: $df;
+							flex-direction: row;
+							flex-wrap: wrap;
+							justify-content: flex-start;
+							padding: 0;
+
+							.buy {
+								background: color(primary) !important;
+								border: none;
+								color: color(light, light) !important;
+								display: $db !important;
+								font-family: $base;
+								font-size: pxtorem(18px);
+								margin: 0;
+								padding: 12px 15px !important;
+								text-transform: lowercase;
+								width: 50%;
+
+								&:before {
+									display: $dn;
+									margin-right: 10px;
+									@include set-icon($fa-var-shopping-cart, pxtorem(14px), $solid, color(light, light));
+								}
+
+								@include hover {
+									background: color(dark) !important;
+								}
+							}
+
+							.delivery {
+								align-items: center;
+								background: transparent !important;
+								border: none;
+								display: $df;
+								justify-content: center;
+								margin: 0 0 0 15px;
+								min-height: 1px;
+								padding: 12px 15px !important;
+								text-decoration: none;
+								width: auto;
+
+								a {
+									align-items: center;
+									color: color(primary) !important;
+									cursor: pointer;
+									display: $df;
+									font-family: $base;
+									font-size: pxtorem(16px);
+									font-weight: $bold;
+									text-decoration: none;
+									width: 100%;
+
+									span {
+										text-decoration: underline;
+									}
+
+									@include hover {
+										color: color(secondary) !important;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			@include desktop {
+			}
+
+			@include mobile {
+				.aside {
+					background-color: color(light, light);
+
+					padding: 20px 0 0;
+
+					.buy {
+						display: $dn !important;
+					}
+
+					.pieces {
+						background: transparent;
+						height: 100%;
+						margin-bottom: 0;
+						overflow: visible;
+
+						.pieces-header {
+							flex-direction: column;
+						}
+
+						ul {
+							li {
+								width: 100%;
+								@include flexbox(flex, row, nowrap, flex-start, flex-start, flex-start);
+
+								&:nth-child(odd) {
+									margin-right: 0;
+								}
+
+								.figure {
+									float: $fn;
+								}
+
+								.info {
+									width: 100%;
+
+									.name {
+										text-align: left;
+									}
+
+									.field {
+										display: $df;
+										flex-direction: column;
+										margin: 0 0 20px;
+										padding: 0;
+
+										.title {
+											font-size: pxtorem(12px);
+											font-weight: $bold;
+											margin-bottom: 5px;
+											position: $pr;
+											text-align: left;
+
+											&:before {
+												background-color: color(dark);
+												content: '';
+												display: $db;
+												height: 1px;
+												position: $pa;
+												top: 53%;
+												width: 100%;
+												z-index: 0;
+											}
+
+											span {
+												background-color: color(light, light);
+												color: color(dark);
+												display: $di;
+												font-family: inherit;
+												padding-right: 10px;
+												position: $pr;
+
+												text-transform: lowercase;
+											}
+										}
+
+										input {
+											text-align: center;
+											width: 60px;
+										}
+
+										select {
+											width: 100%;
+										}
+									}
+
+									.skus-cores {
+										align-content: center;
+										align-items: center;
+										border: none;
+										display: $df;
+										flex-direction: row;
+										justify-content: flex-start;
+										margin: 0;
+										overflow: visible;
+										padding: 0 1px;
+										width: 100%;
+
+										li {
+											align-content: center;
+											align-items: center;
+											border: 1px solid color(light) !important;
+											display: $df;
+											height: 42px;
+											justify-content: center;
+											margin: 0 5px 5px 0 !important;
+											overflow: hidden;
+											width: 42px;
+											@include radius($rf);
+
+											&.selected {
+												border: 1px solid color(secondary) !important;
+												box-shadow: 0px 0px 2px 1px color(secondary);
+											}
+
+											a {
+												border: none;
+												display: $df;
+												height: 100%;
+												width: 100%;
+											}
+
+											img {
+												border: none;
+												display: $df;
+												height: 100%;
+												width: 100%;
+											}
+										}
+									}
+
+									.details {
+										margin: 0;
+										padding: 0;
+
+										.percent-a-vista {
+											align-content: flex-start;
+											align-items: flex-start;
+											text-align: left;
+										}
+
+										.notifyme {
+											.notifyLabel {
+												margin-bottom: 5px;
+
+												p {
+													color: color(secondary);
+													font-size: pxtorem(14px);
+													font-weight: $bold;
+													text-transform: uppercase;
+												}
+
+												span {
+													color: color(dark);
+													font-size: pxtorem(14px);
+													font-weight: $regular;
+												}
+											}
+
+											label {
+												display: $dib;
+												width: 140px;
+
+												input {
+													width: 100% !important;
+												}
+											}
+
+											.btn {
+												margin: 0;
+												text-transform: lowercase;
+											}
+										}
+
+										.unavailable {
+											font-size: pxtorem(14px);
+											height: auto;
+											margin: 0;
+											width: 100%;
+										}
+									}
+								}
+							}
+						}
+
+						.pieces-actions {
+							align-content: center;
+							align-items: center;
+							display: $df;
+							flex-direction: column;
+							flex-wrap: wrap;
+							justify-content: flex-start;
+							padding: 0;
+
+							.buy {
+								width: 100%;
+							}
+
+							.delivery {
+								margin: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

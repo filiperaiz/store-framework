@@ -1,0 +1,91 @@
+body.lookDetalhe,
+body.product:not(.quickview) {
+    #main {
+        .container {
+            @include global {
+                .tabs-block {
+                    border: 1px solid color(light);
+                    border-radius: $rs;
+                    display: $db;
+                    margin: 0 auto;
+                    max-width: 100%;
+                    overflow: hidden;
+                    padding: 0;
+                    width: 100%;
+
+                    .tab-link {
+                        align-content: center;
+                        align-items: center;
+                        border-bottom: 1px solid color(light);
+                        display: $df;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        justify-content: space-around;
+                        padding: 0;
+                        width: 100%;
+
+                        h2 {
+                            background: color(light);
+                            border: none;
+                            color: color(dark);
+                            cursor: pointer;
+                            display: $db;
+                            font-weight: $bold;
+                            margin: 0;
+                            padding: 20px;
+                            text-align: center;
+                            text-transform: uppercase;
+                            width: 100%;
+                            @include transition();
+                            span {
+                                color: color(dark);
+                                font-size: pxtorem(20px);
+                                margin: 0;
+                                padding: 0;
+                            }
+
+                            &.active {
+                                background: color(primary);
+                                span {
+                                    color: color(light, light);
+                                }
+                            }
+
+                            @include hover {
+                                background: color(primary, dark);
+                                span {
+                                    color: color(light, light);
+                                }
+                            }
+                        }
+                    }
+
+                    .tab-content {
+                        display: $db;
+                        padding: 20px;
+                        text-align: center;
+                        width: 100%;
+
+                        .section {
+                            color: color(dark);
+                            display: $dn;
+                            font-size: pxtorem(16px);
+                            line-height: 1.4;
+                            padding: 0 !important;
+
+                            &.active {
+                                display: $db;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include desktop {
+            }
+
+            @include mobile {
+            }
+        }
+    }
+}

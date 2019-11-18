@@ -1,0 +1,91 @@
+#main {
+    .container {
+        @include global {
+            .block-instagram {
+                background-color: color(light);
+                padding: 25px 0 !important;
+                .section {
+                    padding: 0 !important;
+
+                    h2 {
+                        color: color(primary);
+
+                        &:before {
+                            background-color: color(dark);
+                            content: '';
+                        }
+
+                        span {
+                            background-color: color(light);
+                            color: color(primary);
+
+                            &:before {
+                                color: color(primary);
+                                display: $dib;
+                                margin-right: 10px;
+                                vertical-align: top;
+                                @include social-icon($fa-var-instagram, pxtorem(25px));
+                            }
+                        }
+                    }
+                }
+
+                .list-instagram-photos {
+                    align-content: center;
+                    align-items: stretch;
+                    display: $df;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    font-size: 0;
+                    justify-content: center;
+                    list-style: none;
+                    margin: 0 auto;
+                    max-width: 100%;
+                    padding: 0;
+                    position: $pr;
+                    text-align: center;
+                    width: 100%;
+
+                    li {
+                        margin: 0;
+                        padding: 4px;
+                        width: 20%;
+                    }
+
+                    .owl-item {
+                        li {
+                            width: 100%;
+                        }
+                    }
+
+                    a {
+                        cursor: pointer !important;
+                        display: $db;
+                        height: 100%;
+                        padding: 2px;
+                        width: 100%;
+
+                        @include hover {
+                            box-shadow: 0px 0px 1px 1px color(primary);
+                            opacity: 0.7;
+                        }
+                    }
+
+                    img {
+                        border: none;
+                        display: $db;
+                        height: 100%;
+                        max-width: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        @include desktop {
+        }
+
+        @include mobile {
+        }
+    }
+}

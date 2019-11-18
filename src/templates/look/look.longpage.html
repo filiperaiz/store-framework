@@ -1,0 +1,14 @@
+@model LookDetailModel
+
+<div id="ajaxLongPage">
+	@if (Model.LongPage.Enabled){
+	<div id="pnlLongPage" class="section about longpage">
+		<h2>
+			<span>LongPage</span>
+		</h2>
+		<div id="longpageContent">
+			@Raw(Model.LongPage.Content)
+		</div>
+	</div>
+	}
+</div>

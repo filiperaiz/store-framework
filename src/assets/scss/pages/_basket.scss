@@ -1,0 +1,1441 @@
+﻿body.basketpage {
+	@include global {
+		#main {
+			#banner_promocoes_atingir_pnlBannerPromocoesAtingir {
+				margin: 10px auto;
+
+				br {
+					display: $dn;
+				}
+
+				.orbit-wrapper,
+				.orbit,
+				.promo {
+					align-items: center;
+					background-color: color(primary);
+					background-image: none;
+					display: flex !important;
+					justify-content: center;
+					margin: 0 auto;
+					padding: 0;
+					text-align: center;
+					width: 100% !important;
+                }
+                
+                .orbit-bullets{
+                    display: $df;
+                    position: $pr;
+
+                     li {
+                        align-content: center;
+                        align-items: center;
+                        background-color: color(light, light);
+                        background-image: none;
+                        border-radius: $rf;
+                        color: color(dark);
+                        cursor: pointer;
+                        display: $df;
+                        float: none;
+                        font-size: pxtorem(12px);
+                        font-weight: bold;
+                        height: 22px;
+                        justify-content: center;
+                        line-height: 1.2;
+                        margin: 0 5px;
+                        overflow: hidden;
+                        text-align: center;
+                        width: 22px;
+
+                        &.active {
+                            color: color(primary);
+                            font-size: pxtorem(12px);
+                            height: 22px;
+                            line-height: 1.2;
+                            margin-top: 0;
+                            width: 22px;
+                        }
+                    }
+                }
+
+				span {
+					font-size: pxtorem(14px);
+					font-weight: $regular;
+					line-height: 1.2;
+					padding: 0;
+					text-transform: uppercase;
+				}
+			}
+
+			.b-top {
+				display: $df;
+				float: $fn;
+				margin: 0 auto;
+				max-width: 100%;
+				padding: 0;
+				width: 100%;
+
+				ul {
+					li {
+						margin-bottom: 0;
+						a {
+							img {
+								display: $db;
+								height: auto;
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+
+			#buy-to-list {
+				display: $dn;
+			}
+
+			.buttons-basket {
+				height: auto;
+				margin-bottom: 20px;
+				margin-top: 20px;
+				overflow: visible;
+				width: 100%;
+				@include flexbox(flex, row, wrap, space-between, center, center);
+
+				&.buttons-basket-top {
+					display: $dn;
+				}
+
+				li {
+					display: $dib;
+					float: $fn;
+					width: auto;
+				}
+
+				.btn {
+					width: 250px;
+				}
+
+				.buy-more {
+					background-color: transparent !important;
+					border: 2px solid transparent !important;
+					color: color(primary);
+					font-size: 0 !important;
+
+					&:before {
+						color: color(dark);
+						content: 'continuar comprando';
+						font-size: pxtorem(14px);
+						font-weight: $bold;
+						text-decoration: underline;
+						text-transform: uppercase;
+					}
+
+					@include hover {
+						background-color: transparent !important;
+						border-color: transparent !important;
+						color: color(primary) !important;
+
+						&:before {
+							color: color(primary);
+						}
+					}
+				}
+
+				.continue {
+					background-color: color(primary) !important;
+					color: color(light, light) !important;
+					font-family: $base;
+					font-size: 0 !important;
+
+					@include hover {
+						background-color: color(primary, dark) !important;
+						color: color(light, light) !important;
+					}
+
+					&:before {
+						color: color(light, light);
+						content: 'finalizar compra';
+						font-size: pxtorem(14px);
+						font-weight: $bold;
+						text-transform: uppercase;
+					}
+				}
+			}
+
+			.basket {
+				padding-top: 10px;
+				table {
+					position: $pr;
+					thead {
+						tr {
+							border-bottom: 1px solid color(light);
+							th {
+								background-color: color(light);
+								font-size: 0 !important;
+								line-height: 1;
+								padding: 15px 10px;
+								text-align: left;
+
+								span {
+									display: $dn;
+								}
+
+								&:before {
+									color: color(dark);
+									content: '';
+									font-size: pxtorem(12px);
+									font-weight: $bold;
+									text-align: left;
+									text-transform: uppercase;
+								}
+
+								&:nth-child(1) {
+									text-align: left;
+									width: 150px;
+
+									&:before {
+										content: 'produto';
+									}
+								}
+
+								&:nth-child(2) {
+									text-align: left;
+									width: auto;
+
+									&:before {
+										content: 'descrição';
+									}
+								}
+
+								&:nth-child(3) {
+									text-align: center;
+									width: 175px;
+
+									&:before {
+										content: 'qtde.';
+									}
+								}
+
+								&:nth-child(4) {
+									text-align: center;
+									width: 175px;
+									&:before {
+										content: 'presente?';
+									}
+								}
+
+								&:nth-child(5) {
+									text-align: center;
+									width: 175px;
+									&:before {
+										content: 'excluir';
+									}
+								}
+
+								&:nth-child(6) {
+									text-align: left;
+									width: 140px;
+									&:before {
+										content: 'valor unitário';
+									}
+								}
+
+								&:nth-child(7) {
+									text-align: left;
+									width: 140px;
+									&:before {
+										content: 'subtotal';
+									}
+								}
+							}
+						}
+					}
+
+					tbody {
+						tr {
+							background-color: color(light, light);
+							border-bottom: 1px solid color(light);
+							td {
+								background-color: color(light, light);
+								border: none;
+								font-size: pxtorem(14px);
+								padding: 10px;
+								text-align: center;
+								vertical-align: middle;
+
+								&:last-child {
+									border-left: 1px solid transparent;
+								}
+							}
+
+							&:last-child {
+								border: none;
+							}
+
+							&.brinde {
+								.quantity {
+									div {
+										display: $dn !important;
+										visibility: hidden;
+									}
+								}
+
+								.delete {
+									font-size: pxtorem(0px);
+									text-indent: -9999px;
+									.ico {
+										display: $dn;
+									}
+								}
+							}
+						}
+					}
+
+					tfoot {
+						background-color: color(light, light);
+						border-top: 1px solid color(light);
+						tr {
+							background-color: color(light, light);
+							border-bottom: 1px solid color(light);
+							border-top: 1px solid color(light);
+							td {
+								background-color: color(light, light);
+								border: none;
+								border-right: 1px solid transparent;
+								font-size: pxtorem(14px);
+								padding: 10px;
+								text-align: left;
+								vertical-align: middle;
+							}
+						}
+					}
+				}
+
+				.product {
+					vertical-align: middle;
+					width: auto;
+					.figure .url {
+						display: $db;
+
+						img {
+							display: $db;
+							margin: 0;
+							width: 100px;
+						}
+					}
+				}
+
+				.description {
+					text-align: left;
+					vertical-align: middle;
+					.details {
+						.name {
+							color: color(dark);
+							font-size: pxtorem(15px);
+							font-weight: $bold;
+							line-height: 1.4;
+							margin-bottom: 10px;
+						}
+
+						span {
+							color: color(dark);
+							display: $db;
+							float: $fn;
+							font-size: pxtorem(14px);
+							font-weight: $regular;
+							margin-bottom: 5px;
+							margin-right: 0;
+							margin-top: 0;
+
+							.label,
+							.value {
+								display: $dib;
+								margin: 0;
+							}
+						}
+					}
+
+					.stamp {
+						display: $db;
+						text-align: left;
+					}
+				}
+
+				.quantity {
+					div {
+						border: 1px solid color(light, light);
+						font-size: pxtorem(14px);
+						height: 100%;
+						margin: 0 auto;
+						overflow: visible;
+						position: $pr;
+						width: 100%;
+						width: 65px;
+						@include radius($rs);
+					}
+
+					a {
+						background: transparent;
+						border: none !important;
+						color: color(primary);
+						display: $dib;
+						float: $fn;
+						font-size: 0;
+						height: 20px;
+						line-height: 25px;
+						margin: 0 !important;
+						padding: 0;
+						position: $pa;
+						right: 0;
+						text-indent: 0;
+						vertical-align: middle;
+						width: 20px;
+
+						@include hover {
+							background-color: transparent;
+							color: color(primary, dark);
+
+							&:before {
+								color: color(primary, dark);
+							}
+						}
+
+						&.minus {
+							top: 15px;
+							&:before {
+								@include set-icon($fa-var-caret-down, pxtorem(18px), $solid, color(primary));
+							}
+						}
+
+						&.plus {
+							top: 0;
+							&:before {
+								@include set-icon($fa-var-caret-up, pxtorem(18px), $solid, color(primary));
+							}
+						}
+					}
+
+					input {
+						color: color(primary);
+						display: $dib;
+						float: $fn;
+						font-size: pxtorem(15px) !important;
+						padding-left: 15px !important;
+						padding-right: 5px !important;
+						text-align: left !important;
+						vertical-align: middle;
+						width: 65px;
+					}
+				}
+
+				.gift {
+					div {
+						background: none;
+						height: auto;
+						margin: 0 auto;
+						text-align: center;
+						width: auto;
+
+						&:after {
+							color: color(dark);
+							content: 'Sim';
+							font-size: pxtorem(12px);
+							font-weight: $bold;
+							text-align: left;
+							text-transform: uppercase;
+						}
+
+						input {
+							margin: 0 !important;
+							// width: 15px !important;
+						}
+					}
+				}
+
+				.delete {
+					.ico {
+						background: transparent;
+						display: $db;
+						font-size: 0;
+						height: 22px;
+						line-height: 1;
+						margin: 0 auto;
+						overflow: visible;
+						text-indent: 0;
+						width: 22px;
+
+						&:after {
+							float: $fn;
+							@include set-icon($fa-var-times, pxtorem(20px), $solid, color(dark));
+						}
+					}
+				}
+
+				.unit-value {
+                    font-weight: $bold;
+                    text-align: left;
+					.regular {
+						color: color(dark);
+						font-size: pxtorem(12px);
+						font-weight: $regular;
+						margin-bottom: 0;
+						text-align: left;
+						text-decoration: line-through;
+					}
+
+					.price {
+						color: color(dark);
+						font-size: pxtorem(15px);
+						font-weight: $bold;
+						margin: 10px auto;
+						text-align: left;
+					}
+
+					.percent-a-vista {
+						color: color(dark);
+						font-size: pxtorem(12px);
+						font-style: normal;
+						font-weight: $regular;
+						line-height: 1.4;
+						margin: 0;
+						padding: 0;
+						text-align: left;
+						text-decoration: none;
+
+						.value-sight,
+						.value-percentage {
+							color: color(secondary);
+							display: $dib;
+							font-size: pxtorem(12px);
+							font-style: normal;
+							font-weight: $regular;
+							margin-right: 5px;
+						}
+					}
+				}
+
+				.subtotal {
+                    font-weight: $bold;
+                    text-align: left;
+					.regular {
+						color: color(dark);
+						font-size: pxtorem(12px);
+						font-weight: $regular;
+						margin-bottom: 0;
+						text-align: left;
+						text-decoration: line-through;
+					}
+
+					.price {
+						color: color(dark);
+						font-size: pxtorem(15px);
+						font-weight: $bold;
+						margin: 10px auto;
+						text-align: left;
+					}
+
+					.percent-a-vista {
+						color: color(dark);
+						font-size: pxtorem(12px);
+						font-style: normal;
+						font-weight: $regular;
+						line-height: 1.4;
+						margin: 0;
+						padding: 0;
+						text-align: left;
+						text-decoration: none;
+
+						.value-sight,
+						.value-percentage {
+							color: color(secondary);
+							display: $dib;
+							font-size: pxtorem(12px);
+							font-style: normal;
+							font-weight: $regular;
+							margin-right: 5px;
+						}
+					}
+				}
+
+				.info {
+					background-color: color(light);
+
+					td {
+						background-color: transparent;
+					}
+
+					#tdSubtotal {
+						font-size: 0 !important;
+						padding-right: 25px;
+						text-align: right;
+
+						&:before {
+							color: color(dark);
+							content: 'subtotal';
+							font-size: pxtorem(12px);
+							font-weight: $bold;
+							text-align: left;
+							text-transform: capitalize;
+						}
+					}
+
+					#tdTotal {
+						font-size: 0 !important;
+						padding-right: 25px;
+						text-align: right;
+
+						&:before {
+							color: color(light, light);
+							content: 'total:';
+							font-size: pxtorem(16px);
+							font-weight: $bold;
+							text-align: left;
+							text-transform: capitalize;
+						}
+					}
+
+					&#trDeliveryTime {
+						background-color: color(light, light);
+						#tdDeliveryTime {
+							font-size: 0 !important;
+							padding-right: 25px;
+							text-align: right;
+
+							&:before {
+								color: color(dark);
+								content: 'prazo de entrega';
+								font-size: pxtorem(12px);
+								font-weight: $bold;
+								text-align: left;
+								text-transform: capitalize;
+							}
+						}
+					}
+
+					&#trGift {
+						background-color: color(light, light);
+
+						#tdGift {
+							font-size: 0 !important;
+							padding-right: 25px;
+							text-align: right;
+
+							&:before {
+								color: color(dark);
+								content: 'presente';
+								font-size: pxtorem(12px);
+								font-weight: $bold;
+								text-align: left;
+								text-transform: capitalize;
+							}
+						}
+					}
+
+					.subtotal {
+						color: color(dark);
+						font-size: pxtorem(16px);
+						font-weight: $bold;
+						text-align: left;
+					}
+
+					&.total {
+						td {
+							background-color: color(primary);
+							padding: 20px 10px;
+						}
+
+						.title,
+						.value {
+							color: color(light, light);
+							font-size: pxtorem(16px);
+							font-weight: $bold;
+							text-align: left;
+							text-transform: capitalize;
+
+							span {
+								display: $dn;
+							}
+						}
+					}
+				}
+
+				.delivery {
+					position: $pr;
+
+					#tdZipCode {
+						position: $pr;
+
+						&:before {
+							color: color(primary);
+							content: 'Calcule seu frete';
+							display: $dn;
+							font-size: pxtorem(14px);
+							font-weight: $bold;
+							position: $pa;
+							text-transform: uppercase;
+							top: 20px;
+						}
+
+						.form {
+							display: $dib;
+							float: $fn;
+							margin: 0;
+							max-width: 300px;
+							padding: 0;
+							width: 100%;
+
+							label {
+								display: $dib;
+								float: $fn !important;
+								margin-right: 0;
+								vertical-align: middle;
+								width: 50%;
+							}
+
+							.cep {
+								text-align: left;
+								width: 100%;
+							}
+
+							.calculate {
+								background-color: color(primary) !important;
+								border: none !important;
+								border-bottom-left-radius: 0 !important;
+								border-top-left-radius: 0 !important;
+								color: color(light, light);
+								float: $fn !important;
+								font-size: pxtorem(14px) !important;
+								font-weight: $regular !important;
+								line-height: 31px !important;
+								margin: 0 0 0 -10px !important;
+								padding: 5px 10px !important;
+								text-indent: 0;
+
+								@include hover {
+									background-color: color(primary, dark) !important;
+									color: color(light, light) !important;
+								}
+
+								&:after {
+									background: color(secondary);
+									display: $dn;
+									padding: 5px 7px;
+									@include set-icon($fa-var-arrow-right, pxtorem(20px), $solid, color(light, light));
+									@include radius($rf);
+								}
+							}
+						}
+					}
+
+					#pnlDeliveryOptions {
+						display: $dib;
+					}
+					.options-tit {
+						color: color(dark);
+						display: $db;
+						float: $fn;
+						font-size: pxtorem(12px);
+						font-weight: $bold;
+						text-align: left;
+						text-transform: uppercase;
+					}
+
+					.options {
+						clear: left;
+						display: $db;
+						float: $fn;
+						width: auto;
+
+						dt {
+							color: color(dark);
+							display: $dib;
+							float: $fn;
+							font-size: pxtorem(12px);
+							font-weight: $bold;
+							text-align: left;
+							text-transform: uppercase;
+						}
+
+						dd {
+							background: #fff;
+							float: $fn;
+							margin: 0 15px 15px 0;
+							padding: 0;
+
+							label {
+								display: $dib;
+								float: $fn;
+							}
+
+							input {
+								display: $dib;
+								float: $fn;
+							}
+						}
+					}
+
+					.delivery-method {
+						display: $db;
+						float: $fn;
+						margin: 0;
+						width: auto;
+
+						.home-delivery-obs {
+							padding: 0;
+						}
+					}
+
+					.title {
+						color: color(primary);
+						font-size: 0 !important;
+						font-weight: $bold;
+						margin-top: 0;
+						position: $pa;
+						right: 25px;
+						text-align: right;
+						text-transform: uppercase;
+						top: 25px;
+
+						&:before {
+							color: color(dark);
+							content: 'frete';
+							font-size: pxtorem(12px);
+							font-weight: $bold;
+							text-align: left;
+							text-transform: capitalize;
+						}
+					}
+
+					.subtotal {
+						color: color(dark);
+						font-size: pxtorem(15px);
+						font-weight: $bold;
+						padding-top: 25px;
+						text-align: left;
+                        vertical-align: top;
+                        
+                        .shipping-not-calculated {
+							color: transparent;
+						}
+					}
+
+					#tdServices {
+						.options {
+							display: $db;
+							float: $fn;
+
+							dt {
+								display: $db;
+								font-size: 0 !important;
+								margin-bottom: 15px;
+								width: 100%;
+
+								&:before {
+									color: color(dark);
+									content: 'selecione um serviço';
+									font-size: pxtorem(12px);
+									font-weight: $bold;
+									text-transform: uppercase;
+								}
+							}
+
+							dd {
+								display: $dib;
+								float: $fn;
+								margin: 0 30px 0 0;
+
+								.service-basket {
+									display: $db;
+									margin-bottom: 5px;
+
+									input {
+										display: $dib;
+										float: $fn;
+										margin-left: 0;
+										margin-right: 10px;
+										vertical-align: middle;
+									}
+
+									label {
+										color: color(dark);
+										display: $dib;
+										float: $fn;
+										font-size: pxtorem(12px);
+										font-weight: $bold;
+										vertical-align: middle;
+									}
+								}
+
+								.service-value {
+									display: $db;
+									margin-left: 24px;
+									margin-top: 0;
+
+									li {
+										color: color(dark);
+										font-size: pxtorem(12px);
+										font-weight: $bold;
+										margin-bottom: 5px;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.coupon {
+					td {
+						.form {
+							display: $dib;
+							float: $fn;
+							margin: 0;
+							// max-width: 600px;
+							padding: 0;
+							width: 100%;
+
+							label {
+								display: $dib;
+								float: $fn !important;
+								margin-right: 0;
+								max-width: 600px;
+								width: 100%;
+							}
+
+							span {
+								color: color(dark);
+								display: $dib;
+								float: $fn;
+								font-size: pxtorem(12px);
+								font-weight: $bold;
+								line-height: 1.6;
+								margin: 0;
+								margin-right: 10px;
+								text-align: left;
+								text-indent: 0;
+								vertical-align: middle;
+								width: 240px;
+							}
+
+							input {
+								display: $dib;
+								float: $fn;
+								max-width: 340px;
+								text-align: left;
+								vertical-align: middle;
+								width: 100%;
+							}
+
+							.btn {
+								background-color: color(dark) !important;
+								display: $dib;
+								float: $fn !important;
+								margin: 0;
+								text-indent: 0;
+							}
+						}
+					}
+
+					#tdCoupon {
+						.form {
+							label {
+								span {
+									font-size: 0 !important;
+
+									&:before {
+										color: color(dark);
+										content: 'Insira seu cupom promocional';
+										font-size: pxtorem(12px);
+										font-weight: $bold;
+										text-transform: uppercase;
+									}
+								}
+							}
+
+							.btn {
+								background-color: color(primary) !important;
+								border: none !important;
+								border-bottom-left-radius: 0 !important;
+								border-top-left-radius: 0 !important;
+								color: color(light, light);
+								float: $fn !important;
+								font-size: pxtorem(0) !important;
+								font-weight: $regular !important;
+								line-height: 1 !important;
+								margin: 0 0 0 -15px !important;
+								padding: 5px 10px !important;
+								text-indent: 0;
+
+								@include hover {
+									background-color: color(primary, dark) !important;
+									color: color(light, light) !important;
+								}
+
+								&:before {
+									color: color(light, light);
+									content: 'OK';
+									font-size: pxtorem(14px);
+									font-weight: $regular;
+									line-height: 30px;
+								}
+
+								&:after {
+									background: color(secondary);
+									display: $dn;
+									padding: 5px 7px;
+									@include set-icon($fa-var-arrow-right, pxtorem(20px), $solid, color(light, light));
+									@include radius($rf);
+								}
+							}
+						}
+					}
+
+					.subtotal {
+						border: none;
+						position: $pr;
+						right: 0;
+						width: auto;
+
+						#lblCoupon {
+							font-family: $title;
+							font-size: pxtorem(14px);
+							font-weight: $bold;
+							height: auto !important;
+							line-height: 30px;
+							margin: 10px 0 0;
+							min-height: 32px;
+							padding: 0 !important;
+							text-align: center;
+							text-transform: capitalize;
+							width: 150px;
+							@include radius($rs);
+
+							&:after {
+								content: $fa-var-check;
+								float: $fn;
+								font-family: $icons;
+								font-size: pxtorem(15px);
+								font-weight: $solid;
+								margin-left: 10px;
+							}
+
+							&.coupon-ok {
+								background-color: transparent;
+								color: color(success);
+
+								&:after {
+									content: $fa-var-check;
+								}
+							}
+
+							&.coupon-off {
+								background-color: transparent;
+								color: color(danger);
+
+								&:after {
+									content: $fa-var-times;
+								}
+							}
+						}
+					}
+
+					&#trNoCoupon {
+						.subtotal {
+							display: $dn;
+						}
+					}
+				}
+
+				#tdStamps {
+					display: $dn;
+				}
+			}
+		}
+	}
+
+	@include desktop {
+	}
+
+	@include mobile {
+		#main {
+			#buy-to-list {
+				display: $dn;
+			}
+
+			.basket {
+				padding: 0;
+				table {
+					thead {
+						display: $dn;
+					}
+
+					tbody {
+						tr {
+							td {
+								min-height: 40px;
+                                padding-left: 45%;
+                                text-align: left;
+                                text-align: left;
+                                width: 100%;
+
+								&:before {
+									color: color(dark);
+									content: '';
+									font-size: pxtorem(12px);
+									font-weight: $bold;
+									left: 0;
+									position: $pa;
+									text-align: right;
+									text-transform: uppercase;
+									top: 30%;
+									width: 40%;
+								}
+
+								&:nth-child(1) {
+                                    padding: 0;
+                                    width: 40%;
+
+									&:before {
+										content: 'produto';
+									}
+								}
+
+								&:nth-child(2) {
+                                    padding: 0 0 0 15px;
+                                    width: 60%;
+
+									&:before {
+										content: 'descrição';
+									}
+								}
+
+								&:nth-child(3) {
+									&:before {
+										content: 'qtde.';
+									}
+								}
+
+								&:nth-child(4) {
+									&:before {
+										content: 'presente';
+										top: 10px;
+									}
+								}
+
+								&:nth-child(5) {
+									&:before {
+										content: 'excluir';
+										top: 10px;
+									}
+								}
+
+								&:nth-child(6) {
+									&:before {
+										content: 'valor unitário';
+										top: 13px;
+									}
+								}
+
+								&:nth-child(7) {
+									border: none;
+									padding-bottom: 0;
+
+									&:before {
+										content: 'subtotal';
+
+										top: 13px;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.quantity {
+					div {
+						margin: 0;
+						vertical-align: middle;
+						width: auto;
+
+						span {
+							position: $pr;
+						}
+
+						a {
+							width: 25px;
+							&:after {
+								display: $dn;
+							}
+
+							&.minus {
+								top: 5px;
+							}
+
+							&.plus {
+								top: -10px;
+							}
+						}
+					}
+				}
+
+				.gift {
+					font-size: 0;
+					span {
+						&:after {
+							display: $dn;
+						}
+					}
+
+					div {
+						margin: 0;
+                        text-align: left;
+						vertical-align: middle;
+                        width: auto;
+					}
+
+					input[type='checkbox'] {
+						height: 15px !important;
+						margin: 0 5px 0 0 !important;
+						width: 15px !important;
+					}
+				}
+
+				.delete {
+					font-size: 0;
+					.ico {
+						margin: 0;
+						vertical-align: middle;
+						width: auto;
+					}
+				}
+
+				.unit-value {
+					.regular,
+					.price,
+					.percent-a-vista {
+						display: $db;
+						margin: 0;
+						text-align: left;
+						vertical-align: middle;
+						width: auto;
+					}
+				}
+
+				.subtotal {
+					.regular,
+					.price,
+					.percent-a-vista {
+						display: $db;
+						margin: 0;
+						text-align: left;
+						vertical-align: middle;
+						width: auto;
+					}
+				}
+
+				.info {
+					td {
+						display: $dib;
+						float: $fn;
+						width: 49%;
+					}
+					.title {
+						border: none;
+						color: color(dark);
+						font-size: 0 !important;
+
+						&:before {
+							content: '';
+							display: $db;
+							font-size: pxtorem(14px) !important;
+							left: 0;
+							line-height: 1.4;
+							position: $pr;
+							top: 0;
+							width: auto;
+						}
+
+						&#tdSubtotal {
+							padding-right: 10px;
+							text-align: left;
+
+							&:before {
+								content: 'subtotal';
+								text-align: right;
+							}
+						}
+
+						&#tdDeliveryTime {
+							padding-right: 80px;
+
+							&:before {
+								content: 'prazo de entrega';
+							}
+						}
+
+						&#tdGift {
+							padding-right: 80px;
+
+							&:before {
+								color: color(dark);
+								content: 'presente';
+							}
+						}
+
+						&#tdTotal {
+							padding-right: 10px;
+
+							&:before {
+								color: color(light, light);
+								content: 'total:';
+								text-align: right;
+							}
+						}
+					}
+
+					.subtotal,
+					.value {
+						text-align: left;
+					}
+
+					&.total {
+						background-color: color(primary);
+						border: none !important;
+						td {
+							background-color: color(primary);
+							padding: 20px 10px;
+						}
+
+						.title,
+						.value {
+							border: none;
+							color: color(light, light);
+							font-size: pxtorem(14px);
+
+							span {
+								display: $dn;
+							}
+						}
+					}
+				}
+
+				.delivery {
+					#tdZipCode {
+						&:before {
+							display: $dn;
+							left: 0;
+							position: $pr;
+							text-align: left;
+							top: 0;
+						}
+					}
+
+					.title {
+						bottom: -23px;
+						right: unset;
+						text-align: left;
+						top: auto;
+						z-index: 1;
+
+						&:before {
+							font-size: pxtorem(14px);
+						}
+					}
+
+					.subtotal {
+						display: $db;
+						padding: 0 10px;
+						text-align: right;
+					}
+
+					#tdServices {
+						.options {
+							display: $db;
+							float: $fn;
+
+							dt {
+								margin-bottom: 0;
+							}
+
+							dd {
+								display: $dib;
+								float: $fn;
+								margin: 0 20px 0 0;
+
+								.service-basket {
+									input {
+										display: $dib;
+										float: $fn;
+										margin-right: 10px;
+										vertical-align: middle;
+									}
+								}
+							}
+						}
+
+						.subtotal {
+							display: $dn;
+						}
+					}
+				}
+
+				.coupon {
+					td {
+						.form {
+							text-align: center;
+							label {
+								margin-bottom: 10px;
+								text-align: center;
+								width: 80%;
+							}
+							span {
+								margin-bottom: 10px;
+								margin-right: 0;
+								padding: 0;
+								text-align: center;
+								width: 100%;
+							}
+						}
+					}
+
+					.subtotal {
+						display: $db;
+						position: $pr;
+						right: unset;
+						text-align: center;
+
+						#lblCoupon {
+							display: $dib;
+							margin: 0 auto;
+							width: 200px;
+						}
+					}
+
+					&#trNoCoupon {
+						.subtotal {
+							display: $dn;
+						}
+					}
+				}
+
+				#trStamps {
+					display: $dn;
+				}
+			}
+
+			.buttons-basket {
+				text-align: center;
+				li {
+					width: 100%;
+
+					.continue {
+						&:before {
+							color: color(light, light);
+							font-size: pxtorem(14px);
+							font-weight: $regular;
+							letter-spacing: 0px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

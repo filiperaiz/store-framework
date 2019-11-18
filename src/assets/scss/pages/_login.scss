@@ -1,0 +1,90 @@
+body.loginpage {
+    @include global {
+        &.request {
+            .main-content {
+                margin: 0 0 50px;
+            }
+        }
+
+        #main {
+            .main-content {
+                .login {
+                    background-color: color(light, light);
+                    border: 1px solid color(light);
+                    border-radius: $rs;
+                    height: auto;
+                    margin: 0;
+                    overflow: visible;
+                    @include flexbox(flex, row, nowrap, center, flex-start, flex-start);
+
+                    .box {
+                        height: auto !important;
+
+                        fieldset {
+                            height: auto !important;
+                        }
+
+                        input {
+                            width: 100% !important;
+                        }
+
+                        .btn {
+                            margin-right: 0 !important;
+                            margin-top: 15px !important;
+                        }
+                    }
+
+                    .bt-global-id {
+                        background-repeat: no-repeat;
+                        border-left: 1px solid color(light);
+                        border-top: 1px solid color(light);
+                        border-top-left-radius: $rs;
+                        bottom: 0;
+                        height: 30px;
+                        left: auto;
+                        margin: 0;
+                        padding: 0;
+                        position: $pa;
+                        right: 0;
+                        text-indent: -999999px;
+                        width: 130px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+        #main {
+            .main-content {
+                .login {
+                    overflow: visible;
+                    @include flexbox(flex, column, nowrap, center, center, center);
+
+                    dl {
+                        text-align: center;
+                        dd {
+                            display: $db;
+                            margin: 0 auto;
+                            width: 150px;
+                            a {
+                                text-align: center;
+                                text-transform: none;
+                            }
+                        }
+                    }
+
+                    #ForgotPassword {
+                        text-align: center;
+                        .remember {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

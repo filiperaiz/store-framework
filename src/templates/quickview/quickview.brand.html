@@ -1,0 +1,11 @@
+@model QuickViewDetailModel
+
+<ul class="fab-cod">
+	<li class="item" id="liCodigoInterno">Cód: <span id="productInternalCode" itemprop="mpn" content="@(Model.General.ProductInternalCode)">@Model.General.ProductInternalCode</span></li>
+
+	@if(Model.Brand.ShowBrand){
+	<li class="item" id="ghcliBrand">Fabricante: <a id="branch" title="@Model.Brand.BrandName" href="@Model.Brand.BrandUrl">@Model.Brand.BrandName</a></li>
+	} @if(Model.Drug.Enabled){
+	<li class="item" id="liMsCode">MS: <span>@Model.Drug.MSCode</span></li>
+	}
+</ul>

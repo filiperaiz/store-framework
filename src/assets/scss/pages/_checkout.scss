@@ -1,0 +1,642 @@
+body.op-checkout,
+body.checkout {
+    @include global {
+        .banners-opc {
+            display: $dn;
+        }
+
+        #main {
+            .main-content {
+                margin-bottom: 40px;
+            }
+            .opc {
+                // .checkout-title {
+                //     color: color(primary);
+                //     display: $dib;
+                //     font-size: pxtorem(30px);
+                //     font-weight: $bold;
+                //     line-height: 1;
+                //     margin: 0 0 40px;
+                //     padding: 0;
+                //     text-align: center;
+                //     text-shadow: none;
+                //     text-transform: capitalize;
+                // }
+
+                .opc-content {
+                    background: transparent;
+                    height: auto !important;
+                    margin: 0 auto;
+                    max-width: $screen-container;
+                    width: 100% !important;
+
+                    .cols {
+                        &.user-datas {
+                            .aba-login {
+                                .field-fisica,
+                                .field-juridica {
+                                    align-content: center;
+                                    align-items: center;
+                                    display: $dif;
+                                    flex-direction: row;
+                                }
+                            }
+
+                            .form-group {
+                                .txt-opc {
+                                    border-bottom: 1px solid color(light);
+                                    border-top: 1px solid color(light);
+                                    line-height: 1.4;
+                                    margin-bottom: 15px;
+                                    padding: 10px 0;
+                                    position: $pr;
+                                }
+
+                                .bt-edit {
+                                    top: 25px;
+                                    width: auto !important;
+                                }
+                            }
+
+                            .abas-address .item-aba input:checked + label {
+                                background: #fff;
+                                border-bottom: solid 1px #fff;
+                                border-top: solid 2px color(primary);
+                            }
+
+                            #boxAddress {
+                                .form-opc .form-group {
+                                    padding-left: 10px;
+                                    padding-right: 10px;
+                                    width: 100%;
+
+                                    &.group-full {
+                                        padding: 10px 0;
+                                        width: 100%;
+
+                                        strong {
+                                            margin: 0;
+                                        }
+
+                                        a,
+                                        button {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+
+                            #boxShipping {
+                                .form-opc .form-group {
+                                    padding-left: 10px;
+                                    padding-right: 10px;
+                                    width: 100%;
+                                }
+                            }
+
+                            .group-pass {
+                                label {
+                                    display: $db;
+                                    width: 100%;
+                                }
+
+                                input {
+                                    display: $dib;
+                                    width: 50% !important;
+                                }
+
+                                .bt-view-pass {
+                                    background: transparent;
+                                    display: $dib;
+                                    font-size: 0;
+                                    margin: 0 0 0 10px;
+                                    padding: 0;
+                                    position: $pr;
+                                    text-indent: 0;
+                                    top: 0;
+                                    width: 27px;
+
+                                    &:before {
+                                        color: color(dark);
+                                        content: $fa-var-eye;
+                                        font-family: $icons;
+                                        font-size: pxtorem(18px);
+                                        font-weight: $solid;
+                                    }
+                                }
+                            }
+
+                            .bt-help-login,
+                            .bt-recover-email {
+                                color: color(primary);
+                                font-size: 12px;
+                                font-weight: 400;
+                                position: $pr;
+                                right: 0;
+                                text-align: left;
+                                top: 0;
+                            }
+                        }
+                    }
+
+                    .boxes {
+                        background-color: color(light, light);
+                        border: 1px solid color(light);
+                        margin: 10px 0;
+                        position: $pr;
+                        width: 100%;
+                        @include radius($rs);
+
+                        &.personal-datas {
+                            .form-cadastro {
+                                .date-group {
+                                    input {
+                                        margin-right: 10px;
+                                        text-align: center;
+                                        width: 42px;
+
+                                        &:last-child {
+                                            margin-right: 0;
+                                            width: 50px;
+                                        }
+                                    }
+                                }
+
+                                .phone-group {
+                                    input {
+                                        margin-right: 10px;
+                                        text-align: center;
+                                        width: 42px;
+
+                                        &:last-child {
+                                            margin-right: 0;
+                                            width: 100px;
+                                        }
+                                    }
+                                }
+
+                                .field-news {
+                                    padding: 30px 0px;
+
+                                    .lbl-rad {
+                                        align-content: center;
+                                        align-items: center;
+                                        display: $df;
+                                        justify-content: flex-start;
+                                    }
+
+                                    .form-check-rad {
+                                        left: 0;
+                                        position: relative;
+                                        top: 0;
+                                    }
+
+                                    strong {
+                                        display: $dib;
+                                        margin-left: 10px;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.address-datas {
+                            .phone-group {
+                                input {
+                                    margin-right: 10px;
+                                    text-align: center;
+                                    width: 42px;
+
+                                    &:last-child {
+                                        margin-right: 0;
+                                        width: 100px;
+                                    }
+                                }
+                            }
+
+                            #addressesCheck {
+                                .lbl-rad {
+                                    display: $db;
+
+                                    input {
+                                        display: $dib;
+                                        left: 0;
+                                        position: $pr;
+                                        top: 0;
+                                        vertical-align: middle;
+                                    }
+
+                                    strong {
+                                        display: $dib;
+                                        margin-left: 10px;
+                                        vertical-align: middle;
+                                    }
+
+                                    div {
+                                        display: $db;
+                                        line-height: 1.4;
+                                        margin-top: 10px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .box-title {
+                            background-color: color(light);
+                            border-bottom: 1px solid color(light);
+                            color: color(primary);
+                            font-size: pxtorem(14px);
+                            font-weight: $bold;
+                            line-height: 1.2;
+                            min-height: auto;
+                            padding: 20px 50px 20px 50px;
+                            text-transform: uppercase;
+
+                            &.icon {
+                                &:before {
+                                    align-content: center;
+                                    align-items: center;
+                                    border: none;
+                                    display: $df;
+                                    height: 100%;
+                                    justify-content: center;
+                                    line-height: 1.4;
+                                    padding: 0;
+                                    text-align: center;
+                                    top: 0;
+                                    width: 30px;
+                                    @include set-icon($fa-var-user, pxtorem(18px), $solid, color(primary));
+                                }
+                            }
+                            &.user {
+                                &:before {
+                                    content: $fa-var-user;
+                                }
+                            }
+                            &.address {
+                                &:before {
+                                    content: $fa-var-map-marker-alt;
+                                }
+                            }
+                            &.delivery {
+                                &:before {
+                                    content: $fa-var-truck;
+                                }
+                            }
+                            &.money {
+                                &:before {
+                                    content: $fa-var-dollar-sign;
+                                }
+                            }
+                            &.pencil {
+                                &:before {
+                                    content: $fa-var-file-alt;
+                                }
+                            }
+                        }
+
+                        .login-head {
+                            align-content: center;
+                            align-items: center;
+                            display: $df;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            padding: 10px;
+
+                            a {
+                                color: color(light, light);
+                                font-size: pxtorem(12px) !important;
+                                line-height: 1.6 !important;
+
+                                br {
+                                    display: $dn;
+                                }
+                            }
+                        }
+
+                        &.available {
+                            .box-title {
+                                &:after {
+                                    @include set-icon($fa-var-check, pxtorem(14px), $solid, color(dark));
+                                }
+                            }
+                        }
+
+                        .bt-edit {
+                            background: none;
+                            border: none;
+                            font-size: 0;
+                            height: 24px;
+                            right: 10px;
+                            top: 15px;
+                            width: 24px;
+                            @include radius($rs);
+
+                            &:before {
+                                align-content: center;
+                                align-items: center;
+                                border: none;
+                                display: $df;
+                                height: 100%;
+                                justify-content: center;
+                                line-height: 1.4;
+                                padding: 0;
+                                text-align: center;
+                                top: 0;
+                                width: 30px;
+
+                                @include set-icon($fa-var-edit, pxtorem(18px), $solid, color(primary));
+                            }
+                        }
+
+                        .payment-accordion {
+                            .accordion-item {
+                                .accordion-title {
+                                    &.icon {
+                                        &:before {
+                                            padding: 5px;
+                                            text-align: center;
+                                            top: 7px;
+                                            @include set-icon($fa-var-user, pxtorem(20px), $solid, color(dark));
+                                        }
+                                        &:after {
+                                            line-height: 50px;
+                                            text-align: center;
+                                            @include set-icon($fa-var-chevron-right, pxtorem(20px), $solid, color(dark));
+                                        }
+                                    }
+                                    &.pay-card {
+                                        &:before {
+                                            content: $fa-var-credit-card;
+                                        }
+                                    }
+                                    &.pay-boleto {
+                                        &:before {
+                                            content: $fa-var-barcode;
+                                        }
+                                    }
+                                }
+                                &.active {
+                                    .accordion-title {
+                                        color: color(light);
+                                        &.icon {
+                                            &:before {
+                                                color: color(light);
+                                            }
+                                            &:after {
+                                                @include set-icon($fa-var-chevron-down, pxtorem(20px), $solid, color(dark));
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .card-number {
+                                .img-card-ipt {
+                                    background-position: 94% 10px;
+                                    background-repeat: no-repeat;
+                                    background-size: auto 21px;
+                                }
+                            }
+
+                            .valid-dates {
+                                display: $df;
+                                flex-direction: row;
+                                justify-content: flex-start;
+                                padding: 10px;
+                                width: 100%;
+
+                                select {
+                                    margin-right: 10px !important;
+                                    width: 120px !important;
+                                }
+                            }
+
+                            .security-code {
+                                align-content: center;
+                                align-items: center;
+                                display: $dn;
+                                flex-direction: row;
+                                justify-content: flex-start;
+                                padding: 10px;
+                                width: 100%;
+                                a {
+                                    padding: 0 0 0 10px;
+                                }
+
+                                input {
+                                    text-align: center;
+                                    width: 75px;
+                                }
+                            }
+
+                            .card-item {
+                                &.active {
+                                    .security-code {
+                                        display: $df;
+                                        flex-wrap: wrap;
+                                    }
+                                }
+                            }
+
+                            .card-info {
+                                .card-item {
+                                    .desc-card {
+                                        line-height: 1.4;
+                                    }
+
+                                    .nm-card {
+                                        line-height: 1.4;
+                                    }
+
+                                    .security-code {
+                                        align-content: flex-start;
+                                        align-items: flex-start;
+                                        border-top: 1px solid color(light);
+
+                                        display: $df;
+                                        flex-direction: column;
+                                        justify-content: flex-start;
+                                        margin-top: 10px;
+                                        padding: 10px 0 0 0;
+
+                                        .lbl-form {
+                                            font-size: pxtorem(12px);
+                                            padding-bottom: 5px;
+                                        }
+
+                                        .help-card {
+                                            color: color(primary);
+                                            font-size: pxtorem(12px);
+                                            margin-top: 5px;
+                                            padding: 0;
+                                        }
+                                    }
+
+                                    &.active {
+                                    }
+                                }
+                            }
+                        }
+
+                        .total-price {
+                            span {
+                                color: color(primary);
+                            }
+                        }
+
+                        .send-bt {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .gift {
+                p {
+                    color: color(dark);
+                    font-size: pxtorem(14px);
+                    margin-bottom: 20px;
+                    text-align: center;
+                }
+                .box {
+                    align-content: flex-start;
+                    align-items: flex-start;
+                    display: $df;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    margin-bottom: 10px;
+
+                    .figure {
+                        float: $fn;
+                        width: 100px;
+                    }
+
+                    .details {
+                        float: $fn;
+                        width: 250px;
+
+                        .name,
+                        .name a {
+                            color: color(dark);
+                            display: $db;
+                            font-size: pxtorem(15px);
+                            font-weight: $bold;
+                            margin-bottom: 10px;
+                        }
+
+                        .form {
+                            padding: 0;
+                        }
+
+                        p {
+                            text-align: left;
+
+                            @include mobile {
+                                text-align: center;
+                            }
+                        }
+                    }
+
+                    .message {
+                        background-color: transparent !important;
+                        border: none;
+                        border-radius: 0;
+                        float: $fn;
+                        margin: 0;
+                        padding: 0;
+                        text-align: left;
+                        width: 250px;
+
+                        &:before {
+                            display: $dn;
+                        }
+
+                        textarea {
+                            width: 100%;
+                        }
+
+                        span {
+                            color: color(dark);
+                            float: $fn;
+                            font-size: pxtorem(12px);
+                            height: auto;
+                            line-height: 1.2;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+        #main {
+            .opc {
+                .checkout-title {
+                    color: color(primary);
+                    display: $dib;
+                    font-size: pxtorem(30px);
+                    font-weight: $bold;
+                    line-height: 1;
+                    margin: 0 0 40px;
+                    padding: 0;
+                    text-align: center;
+                    text-shadow: none;
+                    text-transform: capitalize;
+                }
+
+                .opc-content {
+                    background: transparent;
+                    height: auto !important;
+                    margin: 0 auto;
+                    max-width: $screen-container;
+                    width: 100% !important;
+
+                    .cols {
+                        &.user-datas {
+                            .abas-address .item-aba input:checked + label {
+                                background: #fff;
+                                border-bottom: solid 1px #fff;
+                                border-top: solid 2px color(primary);
+                            }
+
+                            #boxLogin,
+                            #boxAddress {
+                                .form-opc .form-group {
+                                    padding-left: 10px;
+                                    padding-right: 10px;
+                                    width: 100%;
+
+                                    &.group-full {
+                                        width: 100%;
+
+                                        a,
+                                        button {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .gift {
+                .box {
+                    align-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                }
+                .actions {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

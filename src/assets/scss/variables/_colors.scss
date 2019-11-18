@@ -1,0 +1,68 @@
+// -------------------------------------
+// Colors Base
+// -------------------------------------
+$c-primary: $config-color-primary;
+$c-secondary: $config-color-secondary;
+
+// -------------------------------------
+// Colors
+// -------------------------------------
+$c-danger: #ef5350 !default;
+$c-info: #42a5f5 !default;
+$c-success: #66bb6a !default;
+$c-warning: #ffee58 !default;
+$c-dark: #212121 !default;
+$c-light: #ebebeb !default;
+
+// -------------------------------------
+// Paleta de cores
+// -------------------------------------
+$colors: (
+    primary: (
+        base: $c-primary,
+        light: lighten($c-primary, 10%),
+        dark: darken($c-primary, 20%)
+    ),
+    secondary: (
+        base: $c-secondary,
+        light: lighten($c-secondary, 10%),
+        dark: darken($c-secondary, 20%)
+    ),
+    danger: (
+        base: $c-danger,
+        light: lighten($c-danger, 10%),
+        dark: darken($c-danger, 10%)
+    ),
+    info: (
+        base: $c-info,
+        light: lighten($c-info, 10%),
+        dark: darken($c-info, 10%)
+    ),
+    success: (
+        base: $c-success,
+        light: lighten($c-success, 10%),
+        dark: darken($c-success, 10%)
+    ),
+    warning: (
+        base: $c-warning,
+        light: lighten($c-warning, 10%),
+        dark: darken($c-warning, 10%)
+    ),
+    dark: (
+        base: $c-dark,
+        light: lighten($c-dark, 10%),
+        dark: darken($c-dark, 10%)
+    ),
+    light: (
+        base: $c-light,
+        light: lighten($c-light, 100%),
+        dark: darken($c-light, 10%)
+    )
+);
+
+// -------------------------------------
+// Map of colors
+// -------------------------------------
+@function color($color, $tone: 'base') {
+    @return map-get(map-get($colors, $color), $tone);
+}

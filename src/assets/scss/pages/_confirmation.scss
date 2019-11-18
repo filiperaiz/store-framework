@@ -1,0 +1,111 @@
+body.op-confirmation {
+	@include global {
+		#pnlOPCheckout {
+			padding: 15px;
+			.opcofirm {
+				margin: 0 auto;
+				max-width: $screen-container;
+				padding: 0;
+				width: 100%;
+			}
+
+			h3 {
+				color: color(dark);
+				font-size: pxtorem(20px);
+				font-weight: $bold;
+				padding-bottom: 30px;
+			}
+
+			p {
+				background: transparent;
+				color: color(dark);
+				font-size: pxtorem(15px);
+				line-height: 1.4;
+				margin-bottom: 15px;
+
+				strong {
+					color: color(dark);
+					font-size: pxtorem(15px);
+					font-weight: $bold;
+				}
+			}
+
+			.confirmacao-pedido {
+				margin-bottom: 40px;
+				padding: 0;
+				text-align: center;
+
+				.confirm-title {
+					&:before {
+						display: $dn;
+					}
+				}
+
+				.num-pedido {
+					color: color(dark);
+					font-size: pxtorem(18px);
+					padding-bottom: 30px;
+
+					strong {
+						color: color(dark);
+						font-size: pxtorem(25px);
+					}
+				}
+
+				&.boleto-type {
+					.print-boleto {
+						background: transparent;
+					}
+				}
+			}
+
+			.summary-confirm {
+				.item-img {
+					display: $dib;
+					float: $fn;
+					margin-right: 10px;
+				}
+				.item-description {
+					display: $dib;
+					float: $fn;
+					font-size: 14px;
+					line-height: 1.4;
+					padding: 0 0 10px;
+					width: 80%;
+				}
+
+				.total-price {
+					color: color(dark);
+					font-size: pxtorem(24px);
+					font-weight: $bold;
+					text-transform: uppercase;
+
+					span,
+					strong {
+						color: color(primary);
+					}
+				}
+
+				.item-price.price {
+					color: color(dark);
+					font-size: pxtorem(12px);
+					font-weight: $bold;
+				}
+
+				.social-network {
+					text-align: center;
+					> span {
+						padding: 5px;
+						vertical-align: top;
+					}
+				}
+			}
+		}
+	}
+
+	@include desktop {
+	}
+
+	@include mobile {
+	}
+}

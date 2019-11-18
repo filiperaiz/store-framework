@@ -1,0 +1,189 @@
+body.catalog,
+body.look {
+    @include global {
+        #main {
+            .container {
+                .chaordic {
+                    display: $dn;
+                }
+
+                .show-four {
+                    padding-top: 0 !important;
+                }
+
+                .aside,
+                .content {
+                    padding-top: 15px;
+                }
+
+                .b-top {
+                    float: $fn;
+                    margin: 0px auto 20px;
+                    max-width: 100%;
+                    padding: 0;
+                    width: 100%;
+
+                    ul {
+                        li {
+                            margin-bottom: 0;
+                            a {
+                                img {
+                                    display: $db;
+                                    height: auto;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .sub-title {
+                    margin: 0 auto;
+                    max-width: 700px;
+                    padding: 20px 10px 40px;
+                    text-align: center;
+                    width: 100%;
+
+                    p {
+                        color: color(primary);
+                        font-size: pxtorem(15px);
+                        line-height: 1.4;
+                    }
+                }
+
+                .b-bottom,
+                .b-bottom-mobile {
+                    background-color: color(light, light);
+                    margin-bottom: 0;
+                    padding: 0;
+
+                    ul {
+                        display: $df;
+                        float: $fn;
+                        justify-content: space-between;
+                        margin: 0 auto;
+                        max-width: 100%;
+                        padding: 0;
+                        width: 100%;
+
+                        li {
+                            float: $fn;
+                            margin: 0;
+                            max-width: 610px;
+                            padding: 0;
+                            width: 100%;
+                        }
+
+                        a {
+                            cursor: pointer !important;
+                            display: $db;
+
+                            @include hover {
+                                opacity: 0.7;
+                            }
+                        }
+
+                        img {
+                            display: $db;
+                            height: auto;
+                            margin: 0 auto;
+                            width: 100%;
+                        }
+
+                        .owl-carousel {
+                            margin-bottom: 0;
+
+                            .owl-item {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+
+                .b-top-mobile {
+                    padding: 10px 0;
+                }
+
+                .history {
+                    padding: 40px 0;
+                }
+
+                .instagram-slider {
+                    display: $dn;
+                }
+
+                .list-products {
+                    li {
+                        width: calc(100% / #{$config-list-products-catalog-desktop});
+                    }
+                }
+
+                .next-page {
+                    display: $df !important;
+                    margin: 0 auto;
+                    max-width: 250px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+        #main {
+            .container {
+                .aside {
+                    display: $dn;
+                }
+
+                .show-four {
+                    padding-top: 10px !important;
+                }
+
+                .aside,
+                .content {
+                    border-top: none;
+                }
+
+                .b-top {
+                    margin-bottom: 20px;
+                }
+
+                .sub-title {
+                    margin: 0 auto;
+                    max-width: 700px;
+                    padding: 20px 10px 40px;
+                    text-align: center;
+                    width: 100%;
+
+                    p {
+                        color: color(primary);
+                        font-size: pxtorem(15px);
+                        line-height: 1.4;
+                    }
+                }
+
+                .b-bottom {
+                    ul {
+                        flex-direction: column;
+                        li {
+                            &.posicao1,
+                            &.posicao2 {
+                                margin: 0 0 10px;
+                                width: 100% !important;
+                            }
+                        }
+                    }
+                }
+
+                .list-products {
+                    li {
+                        width: calc(100% / #{$config-list-products-catalog-mobile});
+                    }
+                }
+            }
+        }
+    }
+}

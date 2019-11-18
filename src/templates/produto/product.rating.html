@@ -1,0 +1,38 @@
+@model ProductDetailModel
+
+<div id="ajaxReviewAggregate">
+    @if (!Model.Comments.TrustVoxEnabled && !Model.Comments.FacebookEnabled && !Model.Comments.ReviewApiEnabled){
+		
+        <div id="reviewaggregate" class="reviewaggregate hreview-aggregate">
+            @if (Model.Comments.Reviews.Count > 0){
+
+                <a id="hplRating" class="anchor-opinion" href="javascript:void(0)">
+			        <span id="lblRating" class="rating" style="width:@(Model.Comments.Score)%;">
+				        @Model.Comments.Score%
+                    </span>
+		        </a>
+
+		        <span class="count">
+                 <a id="hplAmountAssessments" href="@Url(string.Concat("~/avalie.aspx?pc=", Model.General.ProductCode))" class="iframe value">( @Model.Comments.Reviews.Count )</a>
+		        </span>
+
+		        <span class="count">
+                   <a id="hplAmountAssessments" href="@Url(string.Concat("~/avalie.aspx?pc=", Model.General.ProductCode))" class="iframe">Avalie esse produto</a>
+		        </span>
+            } else {
+
+                <a id="hplRating" class="iframe" href="@Url(string.Concat("~/avalie.aspx?pc=", Model.General.ProductCode))">
+			        <span id="lblRating" class="rating" style="width:0%;">0%</span>
+		        </a>
+
+		        <span class="count">
+                    <span class="value">( @Model.Comments.Reviews.Count )</span>
+		        </span>
+		        
+				<span class="count">
+			        <a id="hplAmountAssessments" href="@Url(string.Concat("~/avalie.aspx?pc=", Model.General.ProductCode))" class="iframe">Seja o primeiro a avaliar</a>
+		        </span>
+            }
+        </div>
+    }
+</div>

@@ -1,0 +1,10 @@
+@model HeadBaseModel
+
+<div id="header" class="headerbuy">
+	<div id="logo" itemscope itemtype="http://schema.org/Attorney">
+		<a itemprop="url" href="@Url()" title="@ViewBag.StoreName">
+			<img itemprop="logo" src="/static/locales/custom/img/logo.png" alt="@ViewBag.StoreName" title="@ViewBag.StoreName" />
+		</a>
+	</div>
+	@* POINTS *@ @Include("points", Model.Welcome, ViewBag)
+</div>

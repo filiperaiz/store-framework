@@ -1,0 +1,1153 @@
+﻿#main {
+    .container {
+        @include global {
+            .list-products {
+                display: $df;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                overflow: visible;
+                padding: 15px 0 0 0;
+                width: 100%;
+
+                li {
+                    .name,
+                    .details,
+                    .offers,
+                    .regular,
+                    .parcel,
+                    .share,
+                    .see-more,
+                    .description,
+                    .stamp {
+                        height: auto;
+                        overflow: visible;
+                        padding: 0;
+                    }
+                }
+
+                li {
+                    border: none;
+                    box-shadow: none;
+                    display: $df;
+                    float: $fn;
+                    height: auto;
+                    margin: 0 0 15px;
+                    padding: 0 10px 10px 10px;
+                    position: $pr;
+                    vertical-align: unset;
+                    width: calc(100% / #{$config-list-products-desktop});
+
+                    .figure {
+                        display: $db;
+                        // height: auto !important;
+                        margin-bottom: 10px;
+                        margin-right: 0;
+                        order: 0;
+                        overflow: visible;
+                        padding: 0;
+                        position: $pr;
+                        width: 100%;
+
+                        a,
+                        .url {
+                            display: $db;
+                            height: auto;
+                            margin: 0 auto;
+                            overflow: hidden;
+                            padding: 0;
+                            width: 100%;
+
+                            .photo {
+                                border: none !important;
+                                height: auto !important;
+                                margin: 0 auto;
+                                max-height: 450px;
+                                max-width: 100%;
+                                width: auto !important;
+                            }
+                        }
+                    }
+
+                    .tools {
+                        display: $db;
+                        margin: 0;
+                        order: 0;
+                        overflow: visible;
+                        padding: 10px 0;
+                        position: $pr;
+                        width: 100%;
+                    }
+
+                    .details,
+                    #infoPrices {
+                        align-content: flex-start;
+                        align-items: flex-start;
+                        background: transparent;
+                        display: $df;
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                        justify-content: flex-start;
+                        margin: 0;
+                        max-width: 100%;
+                        order: 0;
+                        padding: 0 10px;
+                        text-align: center;
+                        width: 100%;
+                    }
+
+                    .quick-look-container {
+                        align-content: center;
+                        align-items: center;
+                        background-color: transparent;
+                        bottom: 0 !important;
+                        display: flex !important;
+                        flex-direction: column;
+                        height: auto !important;
+                        justify-content: flex-end;
+                        left: 0 !important;
+                        margin: 0 !important;
+                        opacity: 0 !important;
+                        overflow: visible !important;
+                        padding: 0 !important;
+                        position: $pa !important;
+                        right: 0 !important;
+                        text-align: center !important;
+                        top: auto !important;
+                        visibility: visible !important;
+                        width: 100% !important;
+                        z-index: 1 !important;
+                        @include transition();
+
+                        .bt-quick-look {
+                            align-content: center;
+                            align-items: center;
+                            background-color: color(primary);
+                            border: none;
+                            border: 2px solid color(primary);
+                            border-radius: 0;
+                            border-radius: 4px;
+                            color: #000;
+                            display: $df;
+                            flex-direction: row;
+                            float: $fn;
+                            font-size: 0;
+                            font-weight: 700;
+                            justify-content: center;
+                            line-height: 1.4;
+                            padding: 5px 10px;
+                            text-align: center;
+                            width: 175px;
+
+                            &:before {
+                                background-color: transparent;
+                                color: color(light, light);
+                                content: $fa-var-eye;
+                                font-family: $icons;
+                                font-size: pxtorem(18px);
+                                margin: 0;
+                                @include transition();
+                            }
+
+                            &:after {
+                                color: color(light, light);
+                                content: 'espiar';
+                                font-size: pxtorem(18px);
+                                margin-left: 10px;
+                            }
+
+                            @include hover {
+                                background-color: color(primary, dark);
+                                border: 2px solid color(primary, dark);
+
+                                &:before,
+                                &:after {
+                                    color: color(light, light);
+                                }
+                            }
+                        }
+                    }
+
+                    .skus {
+                        align-content: center;
+                        align-items: center;
+                        display: $df;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+
+                        li {
+                            border: none;
+                            height: auto;
+                            line-height: 1.4;
+                            margin: 0 3px;
+                            max-width: 35px;
+                            overflow: visible;
+                            padding: 0;
+                            width: 100%;
+
+                            a {
+                                border: 1px solid color(light);
+                                border-radius: $rs;
+                                display: $db;
+                                height: auto;
+                                margin: 0;
+                                overflow: hidden;
+                                padding: 0;
+                                width: 100%;
+
+                                img {
+                                    display: $db;
+                                    height: auto;
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        &.owl-carousel {
+                            margin: 0 auto;
+                            max-width: 220px;
+                            padding: 0;
+                            width: 80%;
+
+                            .owl-wrapper-outer {
+                                padding: 0;
+                            }
+
+                            .owl-wrapper {
+                                align-items: center;
+                                display: $df !important;
+                                flex-direction: row;
+                                flex-wrap: nowrap;
+                            }
+
+                            .owl-item {
+                                li {
+                                    justify-content: center;
+                                    margin: 0 auto;
+                                }
+                            }
+
+                            .owl-controls {
+                                margin: 0;
+                                padding: 0;
+                                position: $pa;
+                                width: 100%;
+
+                                .owl-buttons {
+                                    left: 0;
+                                    margin: 0;
+
+                                    .owl-prev,
+                                    .owl-next {
+                                        background: transparent;
+                                        height: auto;
+                                        position: $pr;
+                                        text-indent: 0;
+                                        width: auto;
+
+                                        &:before {
+                                            color: color(primary);
+                                            content: '';
+                                            font-family: $icons;
+                                            font-size: pxtorem(30px);
+                                            font-weight: $solid;
+                                            text-align: center;
+                                        }
+
+                                        @include hover {
+                                            background-color: transparent !important;
+                                            &:before {
+                                                color: color(secondary);
+                                            }
+                                        }
+                                    }
+
+                                    .owl-prev {
+                                        left: -15px;
+                                        text-align: center;
+                                        &:before {
+                                            content: $fa-var-angle-left;
+                                        }
+                                    }
+                                    .owl-next {
+                                        left: auto;
+                                        right: -15px;
+                                        text-align: center;
+                                        &:before {
+                                            content: $fa-var-angle-right;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .link,
+                    .url {
+                        order: 2;
+                        padding: 0 0 5px;
+                        width: 100%;
+                    }
+
+                    .name {
+                        color: color(dark);
+                        display: $db;
+                        font-size: pxtorem(20px);
+                        font-weight: $regular;
+                        height: auto;
+                        line-height: 1.4;
+                        margin-bottom: 10px;
+                        padding: 0;
+                        text-transform: capitalize;
+                        width: 100%;
+                    }
+
+                    .offers {
+                        align-content: center;
+                        align-items: center;
+                        background-color: transparent;
+                        display: $df;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        margin-bottom: 5px;
+                        padding: 0;
+                        width: 100%;
+
+                        .price-from,
+                        #spanPrecoDe,
+                        .regular {
+                            background-color: transparent;
+                            display: $db;
+                            line-height: 1.4;
+                            margin: 0;
+                            padding: 0;
+                            text-decoration: line-through;
+
+                            em {
+                                color: color(secondary);
+                                display: $dn;
+                                font-size: pxtorem(14px);
+                                font-style: normal;
+                                margin-right: 5px;
+                                text-decoration: line-through;
+                            }
+
+                            span {
+                                color: color(secondary);
+                                font-size: pxtorem(14px);
+                                font-weight: $regular;
+                                text-decoration: line-through;
+                            }
+
+                            del {
+                                color: color(secondary);
+                                font-size: pxtorem(14px);
+                                font-weight: $regular;
+                                margin-right: 5px;
+                                text-decoration: line-through;
+                            }
+
+                            &.price-final {
+                                display: $dn;
+                            }
+                        }
+
+                        .price-to,
+                        #spanPrecoPor,
+                        .price.sale,
+                        .price-since {
+                            align-content: center;
+                            align-items: center;
+                            background-color: transparent;
+                            display: $df;
+                            flex-direction: column;
+                            flex-wrap: wrap;
+                            font-size: pxtorem(0);
+
+                            height: auto !important;
+                            justify-content: center;
+                            line-height: 1.4;
+
+                            margin-bottom: 0px;
+                            padding: 0;
+                            text-decoration: none;
+
+                            span {
+                                color: color(dark);
+                                display: $dn !important;
+                                font-size: pxtorem(0);
+                                font-style: normal;
+                                font-weight: $regular;
+                                line-height: 1.4;
+                                margin: 0 3px;
+                                text-decoration: line-through;
+                            }
+
+                            em {
+                                color: color(dark);
+                                display: $dn;
+                                font-size: pxtorem(12px);
+                                font-style: normal;
+                                font-weight: $regular;
+                                line-height: 1.4;
+                                margin: 0 3px;
+                            }
+
+                            strong,
+                            strong > span {
+                                color: color(primary);
+                                display: $db !important;
+                                font-size: pxtorem(20px);
+                                font-style: normal;
+                                font-weight: $bold;
+                                line-height: 1.4;
+                                margin: 0 3px;
+                                text-decoration: none;
+                            }
+
+                            &.product-priceper {
+                                .value-sight {
+                                    color: color(dark);
+                                    display: $db !important;
+                                    font-size: pxtorem(18px);
+                                    font-style: normal;
+                                    font-weight: $bold;
+                                    line-height: 1.4;
+                                    margin: 0 3px;
+                                }
+                            }
+                        }
+
+                        .percent-a-vista {
+                            align-content: center;
+                            align-items: center;
+                            background-color: transparent;
+                            display: $df;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+
+                            height: auto !important;
+                            justify-content: center;
+                            line-height: 1.4;
+
+                            margin: 0;
+                            padding: 0;
+                            text-decoration: none;
+                            width: 100%;
+
+                            .value {
+                                color: color(dark);
+                                display: $dn;
+                                font-size: pxtorem(14px);
+                                font-style: normal;
+                                font-weight: $bold;
+                                line-height: 1.4;
+                                margin: 0 3px;
+                                text-decoration: line-through;
+                            }
+
+                            .value-sight {
+                                color: color(dark);
+                                display: $db;
+                                font-size: pxtorem(14px);
+                                font-style: normal;
+                                font-weight: $bold;
+                                line-height: 1.4;
+                                margin: 0 3px;
+                            }
+
+                            .value-percentage {
+                                color: color(dark);
+                                display: $db;
+                                font-size: pxtorem(14px);
+                                font-style: normal;
+                                font-weight: $bold;
+                                line-height: 1.4;
+                                margin: 0 3px;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+
+                    .parcel {
+                        align-content: center;
+                        align-items: center;
+                        background-color: transparent;
+                        display: $df;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+
+                        height: auto;
+                        justify-content: center;
+
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+
+                        span {
+                            color: color(dark);
+                            display: $dib;
+                            font-size: pxtorem(14px);
+                            font-style: normal;
+                            font-weight: $regular;
+                            line-height: 1.4;
+                            margin: 0 1px;
+                            text-decoration: none;
+                        }
+
+                        b {
+                            color: color(dark);
+                            display: $dib;
+                            font-size: pxtorem(14px);
+                            font-style: normal;
+                            font-weight: $regular;
+                            line-height: 1.4;
+                            margin: 0 1px;
+                        }
+
+                        strong,
+                        strong > span {
+                            color: color(dark);
+                            display: $dib;
+                            font-size: pxtorem(14px);
+                            font-style: normal;
+                            font-weight: $bold;
+                            line-height: 1.4;
+                            margin: 0 1px;
+                        }
+                    }
+
+                    .description {
+                        color: color(dark);
+                        display: $dn;
+                        font-size: pxtorem(14px);
+
+                        span {
+                            color: color(primary);
+                            font-size: pxtorem(14px);
+                            text-decoration: none;
+                            text-transform: capitalize;
+                        }
+                    }
+
+                    .stamp {
+                        align-content: center;
+                        align-items: center;
+                        display: $df;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        order: 1;
+                        padding: 5px;
+                        width: 100%;
+
+                        a {
+                            display: $db;
+                            float: $fn;
+                            margin: 2px;
+                            max-width: 130px;
+                            padding: 0;
+
+                            img {
+                                display: $db;
+                                width: 100%;
+                            }
+
+                            &:nth-child(4),
+                            &:nth-child(5) {
+                                display: $dn;
+                            }
+                        }
+                    }
+
+                    .reviewaggregate {
+                        align-content: center;
+                        align-items: center;
+                        display: $df;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        order: 3;
+                        padding: 0 0 5px;
+                        width: 100%;
+
+                        #hypRating {
+                            margin: 0;
+                        }
+
+                        .count {
+                            display: $dn;
+                        }
+                    }
+
+                    .txtQuantity {
+                        display: $dn;
+                    }
+
+                    .compare {
+                        display: $dn;
+                        margin: 10px 0;
+                        order: 4;
+                        padding: 0;
+
+                        label {
+                            float: $fn;
+                            margin: 0;
+
+                            input {
+                                float: $fn;
+                                margin-right: 5px;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+
+                    .see-more {
+                        display: $dn;
+                    }
+
+                    .buy {
+                        background-color: color(primary) !important;
+                        display: $df !important;
+                        font-size: pxtorem(0px);
+                        height: 100%;
+                        justify-content: center;
+                        margin: 10px auto;
+                        opacity: 0;
+                        order: 4;
+                        padding: 5px 20px;
+                        text-transform: lowercase !important;
+                        width: 100%;
+
+                        @include hover {
+                            background-color: color(primary, dark) !important;
+                        }
+
+                        &:before {
+                            align-self: center;
+                            color: color(light, light);
+                            content: $fa-var-shopping-cart;
+                            display: $dn;
+                            font-family: $icons;
+                            font-size: pxtorem(25px);
+                            margin-right: 15px;
+                        }
+
+                        &:after {
+                            align-self: center;
+                            color: color(light, light);
+                            content: 'Comprar';
+                            font-size: pxtorem(18px);
+                        }
+                    }
+
+                    .selo-desconto {
+                        align-items: center;
+                        background-color: color(secondary);
+                        color: color(light, light);
+                        display: $df;
+                        flex-direction: column;
+                        font-size: pxtorem(18px);
+                        font-weight: $bold;
+                        height: 60px;
+                        justify-content: center;
+                        line-height: 1;
+                        padding: 0;
+                        position: $pa;
+                        right: 5px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        top: 5px;
+                        width: 60px;
+                        z-index: 99;
+                        @include radius($rf);
+                    }
+
+                    .unavailable {
+                        background: transparent;
+                        color: color(danger);
+                        font-size: pxtorem(15px);
+                        font-weight: $bold;
+                        // height: auto !important;
+                        margin-bottom: 0;
+                        padding: 0;
+                        text-transform: capitalize;
+                    }
+
+                    .skus-product {
+                        margin: 0;
+                        position: $pr;
+                        width: 100%;
+
+                        .field {
+                            height: auto;
+                            margin-bottom: 15px;
+                            overflow: visible;
+                            text-align: center !important;
+                        }
+
+                        label {
+                            color: color(dark);
+                            display: $db;
+                            font-size: pxtorem(14px);
+                            font-weight: $bold;
+                            margin-bottom: 10px !important;
+                        }
+
+                        select {
+                            width: 120px;
+                        }
+                    }
+
+                    .availability {
+                        color: color(dark);
+                        font-size: pxtorem(14px);
+                        font-weight: $bold;
+                        margin: 0 auto 15px;
+                        text-align: center;
+                        text-transform: capitalize;
+                    }
+                }
+
+                .hproduct:not(#info-product) {
+                    box-shadow: 0px 0px 1px 1px transparent;
+                    cursor: pointer;
+                    display: $df;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    height: 100%;
+                    margin: 0 auto;
+                    overflow: visible;
+                    padding: 0;
+                    position: $pr;
+                    width: 100%;
+                    @include transition();
+                    @include radius($rs);
+
+                    @include hover {
+                        box-shadow: 0px 0px 1px 1px color(light);
+
+                        .quick-look-container {
+                            opacity: 1 !important;
+                        }
+
+                        .figure img {
+                            opacity: 0.6 !important;
+                        }
+
+                        .btn {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                &.owl-carousel {
+                    .owl-item {
+                        padding: 0;
+                        > li {
+                            margin: 0;
+                            width: 100%;
+                        }
+                    }
+                }
+
+                &.show-one {
+                    justify-content: flex-start;
+                    margin-bottom: 40px;
+
+                    li {
+                        background: transparent;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        height: auto;
+                        margin-bottom: 10px;
+                        overflow: visible;
+                        padding: 0 5px;
+                        width: 100% !important;
+                    }
+
+                    .hproduct:not(#info-product) {
+                        align-content: center;
+                        align-items: center;
+                        // box-shadow: 0px 0px 1px 1px color(danger);
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        justify-content: flex-start;
+                        padding: 10px;
+                    }
+
+                    .figure {
+                        flex-grow: 0;
+                        float: $fn;
+                        height: auto !important;
+                        margin: 0 10px 0 0;
+                        max-width: 260px;
+                        min-height: auto !important;
+                        order: 0;
+                    }
+
+                    .quick-look-container {
+                        top: 20% !important;
+                        transform: translate(0, -50%);
+                    }
+
+                    .tools {
+                        flex-grow: 1;
+                        order: 3;
+                        width: auto;
+                    }
+
+                    .details,
+                    #infoPrices {
+                        flex-grow: 2;
+                        order: 0;
+                        position: relative;
+                        text-align: left;
+                    }
+
+                    .stamp,
+                    .offers,
+                    .parcel,
+                    .reviewaggregate {
+                        align-content: center;
+                        align-items: center;
+                        height: auto !important;
+                        justify-content: flex-start;
+                    }
+
+                    .buy {
+                        bottom: 0;
+                        height: 42px !important;
+                        opacity: 1;
+                        position: absolute;
+                        right: 10px;
+                        top: 50%;
+                        transform: translate(0, -50%);
+                        width: 250px;
+                    }
+                }
+
+                &.triple,
+                &.double {
+                    display: $df;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    margin-bottom: 40px;
+
+                    li {
+                        background: transparent;
+                        height: auto;
+                        max-width: 320px;
+                        overflow: visible;
+                        padding: 0 40px;
+                        width: 100%;
+
+                        &:before {
+                            color: color(primary);
+                            content: $fa-var-plus;
+                            font-family: $icons;
+                            font-size: pxtorem(25px);
+                            font-style: normal;
+                            font-weight: $solid;
+                            left: -10px;
+                            margin: 0 !important;
+                            position: $pa;
+                            top: 50%;
+                        }
+
+                        .link,
+                        .url {
+                            order: 0;
+                        }
+
+                        .skus-product {
+                            order: 0;
+                        }
+
+                        &:first-child {
+                            &:before {
+                                display: $dn;
+                            }
+                        }
+
+                        &.result {
+                            align-content: center;
+                            align-items: center;
+                            justify-content: center;
+
+                            &:before {
+                                content: $fa-var-equals;
+                            }
+
+                            .details {
+                                background: transparent;
+                                display: $db;
+                                padding: 0;
+
+                                .offers {
+                                    justify-content: center;
+                                }
+
+                                .parcel {
+                                    justify-content: center;
+                                }
+
+                                .buy {
+                                    background: color(primary) !important;
+                                    border: none;
+                                    border-radius: 5px !important;
+                                    color: color(light, light) !important;
+                                    font-family: $base;
+                                    margin-top: 15px;
+                                    opacity: 1;
+                                    padding: 5px 15px !important;
+                                    width: 100%;
+
+                                    &:after {
+                                        color: color(light, light) !important;
+                                        content: 'adicionar ao carrinho';
+                                        font-size: pxtorem(14px);
+                                        font-weight: 400 !important;
+                                    }
+
+                                    @include hover {
+                                        background: color(primary, light) !important;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.open-combo {
+                            display: $dn;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include desktop {
+        }
+
+        @include mobile {
+            .list-products {
+                padding: 2px 0 0 0;
+
+                li {
+                    padding: 5px;
+                    width: calc(100% / #{$config-list-products-mobile});
+
+                    .figure {
+                        padding: 0;
+
+                        a,
+                        .url {
+                            .photo {
+                                border: none !important;
+                                height: auto !important;
+                                margin: 0 auto;
+                                max-height: 296px;
+                                width: 100% !important;
+                            }
+                        }
+                    }
+
+                    .tools {
+                        display: $db;
+
+                        .skus {
+                            &.owl-carousel {
+                                max-width: 110px;
+                                overflow: visible;
+                                .owl-controls {
+                                    .owl-buttons {
+                                        .owl-next,
+                                        .owl-prev {
+                                            &:before {
+                                                font-size: pxtorem(25px);
+                                            }
+                                        }
+
+                                        .owl-prev {
+                                            left: -15px;
+                                        }
+                                        .owl-next {
+                                            right: -15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .details {
+                        background: transparent;
+                        display: $df;
+                        padding: 0;
+                    }
+
+                    #infoPrices {
+                        background: transparent;
+                        display: $df;
+                        padding: 0;
+                    }
+
+                    .quick-look-container {
+                        display: $dn !important;
+                    }
+
+                    .name {
+                        font-size: pxtorem(15px);
+                    }
+
+                    .offers {
+                        .price-from,
+                        #spanPrecoDe {
+                            em {
+                                font-size: pxtorem(12px);
+                            }
+
+                            span {
+                                font-size: pxtorem(12px);
+                            }
+
+                            del {
+                                font-size: pxtorem(12px);
+                            }
+                        }
+
+                        .price-to,
+                        #spanPrecoPor {
+                            span {
+                                font-size: pxtorem(12px);
+                            }
+
+                            em {
+                                font-size: pxtorem(12px);
+                            }
+
+                            strong {
+                                font-size: pxtorem(18px);
+                            }
+                        }
+
+                        .percent-a-vista {
+                            .value {
+                                font-size: pxtorem(12px);
+                            }
+
+                            .value-sight {
+                                font-size: pxtorem(12px);
+                            }
+
+                            .value-percentage {
+                                font-size: pxtorem(12px);
+                            }
+                        }
+                    }
+
+                    .parcel {
+                        span {
+                            font-size: pxtorem(12px);
+                        }
+
+                        b {
+                            font-size: pxtorem(12px);
+                        }
+
+                        strong {
+                            font-size: pxtorem(12px);
+                        }
+                    }
+
+                    .description {
+                        font-size: pxtorem(14px);
+
+                        span {
+                            font-size: pxtorem(14px);
+                        }
+                    }
+
+                    .unavailable {
+                        font-size: pxtorem(12px);
+                    }
+
+                    .buy {
+                        display: $dn !important;
+                    }
+                }
+
+                &.show-one {
+                    .hproduct:not(#info-product) {
+                        padding: 10px 0px;
+                    }
+                }
+
+                &.triple,
+                &.double {
+                    border: none;
+                    display: $df;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    margin-bottom: 40px;
+                    padding: 0;
+
+                    li {
+                        flex: unset;
+                        padding: 0 20px;
+                        width: 50%;
+
+                        &:nth-child(even) {
+                            padding-right: 0;
+                        }
+
+                        &:nth-child(odd) {
+                            padding-left: 0;
+                        }
+
+                        &:before {
+                            left: -10px;
+                        }
+
+                        &.result {
+                            margin-bottom: 0;
+                            margin-top: 30px;
+                            padding: 0;
+                            width: 100%;
+
+                            &:before {
+                                left: 0;
+                                right: 0;
+                                text-align: center;
+                                top: -60px;
+                            }
+
+                            .details {
+                                background: transparent;
+                                display: $db;
+                                padding: 0;
+
+                                .buy {
+                                    display: $db !important;
+                                    margin: 10px auto;
+                                    padding: 5px 15px !important;
+                                    width: 200px;
+
+                                    &:after {
+                                        font-size: pxtorem(15px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

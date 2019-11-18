@@ -1,0 +1,681 @@
+body {
+    @include global {
+        .bottom #footer {
+            background: color(light, light);
+            border: none;
+            margin-top: 0;
+            padding: 0;
+
+            .container {
+                margin: 0px auto;
+                max-width: 100% !important;
+                padding: 0 !important;
+                width: 100% !important;
+                @include flexbox(flex, row, wrap, space-between, center, center);
+
+                .row {
+                    background: transparent;
+                    height: auto !important;
+                    margin: 0 auto;
+                    max-width: $screen-container;
+                    padding: 0 15px !important;
+                    position: $pr;
+                    width: 100% !important;
+                    @include flexbox(flex, row, wrap, center, flex-start, flex-start);
+                }
+
+                section {
+                    max-width: 100% !important;
+                    padding: 40px 0;
+                    position: $pr;
+                    width: 100% !important;
+                }
+
+                .social-network {
+                    background-color: color(light, light);
+                }
+                .social-list {
+                    align-content: center;
+                    align-items: center;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    text-align: left;
+                    width: 100%;
+
+                    li {
+                        background: none;
+                        display: $df;
+                        margin: 0 5px;
+                        padding: 0;
+
+                        &.ico {
+                            a {
+                                align-items: center;
+                                background-color: color(primary);
+                                display: $df;
+                                height: 45px;
+                                justify-content: center;
+                                width: 45px;
+
+                                @include radius($rf);
+
+                                &:before {
+                                    color: color(light, light);
+                                    @include social-icon($fa-var-facebook-f, pxtorem(20px) !important);
+                                }
+
+                                @include hover {
+                                    background-color: color(secondary);
+                                }
+                            }
+                        }
+
+                        &.facebook {
+                            a {
+                                &:before {
+                                    @include social-icon($fa-var-facebook-f, pxtorem(20px));
+                                }
+                            }
+                        }
+
+                        &.instagram {
+                            a {
+                                &:before {
+                                    @include social-icon($fa-var-instagram, pxtorem(20px));
+                                }
+                            }
+                        }
+
+                        &.twitter {
+                            a {
+                                &:before {
+                                    @include social-icon($fa-var-twitter, pxtorem(20px));
+                                }
+                            }
+                        }
+
+                        &.pinterest {
+                            a {
+                                &:before {
+                                    @include social-icon($fa-var-pinterest, pxtorem(20px));
+                                }
+                            }
+                        }
+
+                        &.youtube {
+                            a {
+                                &:before {
+                                    @include social-icon($fa-var-youtube, pxtorem(20px));
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .newsletter {
+                    background: color(primary);
+                    border-bottom: 1px solid color(light);
+                    border-top: 1px solid color(light);
+                    margin: 0;
+                    order: 0;
+                    overflow: visible;
+                    padding: 20px 0;
+                    position: $pr;
+                    right: 0;
+                    top: 0;
+                    width: 100%;
+
+                    #bot_pnlEmailMarketing {
+                        align-content: center;
+                        align-items: center;
+                        border: none;
+                        display: $df;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        margin: 0 auto;
+                        max-width: 100%;
+                        padding: 10px 0;
+                        text-align: center;
+                        width: 100%;
+                        @include radius($rn);
+                    }
+
+                    h3 {
+                        align-items: center;
+                        color: color(light, light);
+                        display: $df;
+                        flex-direction: row;
+                        font-size: pxtorem(18px);
+                        font-weight: $bold;
+                        margin-bottom: 0;
+                        text-align: left;
+                        text-transform: none;
+                        // width: 50%;
+
+                        &:before {
+                            color: color(light, light);
+                            content: $fa-var-envelope;
+                            font-family: $icons;
+                            font-size: pxtorem(24px);
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .inpts {
+                        width: 40%;
+                        @include flexbox(flex, row, nowrap, center, center, center);
+
+                        .box-input {
+                            margin-right: 20px;
+                            width: 100%;
+                            @include flexbox(flex, row, wrap, space-between, center, center);
+
+                            input {
+                                border: none !important;
+                                text-align: left;
+                                width: 48%;
+                                @include radius($rs);
+                            }
+                        }
+
+                        .box-button {
+                            width: 150px;
+                            .btn {
+                                background-color: color(secondary);
+                                border: 1px solid color(light, light) !important;
+                                color: color(light, light);
+                                font-weight: $bold;
+                                text-transform: lowercase;
+                                width: 100%;
+
+                                @include hover {
+                                    background-color: color(primary, dark) !important;
+                                    color: color(light, light);
+                                }
+
+                                &:after {
+                                    background: color(secondary);
+                                    display: $dn;
+                                    padding: 5px 7px;
+                                    @include set-icon($fa-var-arrow-right, pxtorem(20px), $solid, color(primary));
+                                    @include radius($rf);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .institucional-info {
+                    background-color: #f5f5f5;
+                    padding: 40px 0;
+
+                    .box-institucional {
+                        align-content: flex-start;
+                        align-items: flex-start;
+                        display: $df;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        text-align: left;
+                        width: 25%;
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+
+                        h3 {
+                            color: color(primary);
+                            display: $df;
+                            font-size: pxtorem(18px);
+                            font-weight: $regular;
+                            margin-bottom: 20px;
+                            text-transform: uppercase;
+                            width: 100%;
+                        }
+
+                        .institucional-list {
+                            align-content: flex-start;
+                            align-items: flex-start;
+                            display: $df;
+                            flex-direction: column;
+                            flex-wrap: wrap;
+                            justify-content: flex-start;
+                            width: 100%;
+
+                            &.address-list {
+                                flex-direction: column;
+                                margin-top: 0;
+                            }
+
+                            li {
+                                align-content: center;
+                                align-items: center;
+                                display: $df;
+                                flex-direction: row;
+                                flex-wrap: wrap;
+                                justify-content: flex-start;
+                                margin-bottom: 5px;
+                                padding: 5px 0;
+
+                                a:not(.btn) {
+                                    color: color(dark);
+                                    display: $db !important;
+                                    font-size: pxtorem(14px);
+                                    font-weight: $regular;
+                                    padding: 0 !important;
+                                    text-transform: capitalize !important;
+
+                                    @include hover {
+                                        color: color(primary);
+                                    }
+                                }
+
+                                i {
+                                    font-size: pxtorem(20px);
+                                    margin-right: 10px;
+                                    text-align: left;
+                                    width: 20px;
+                                }
+
+                                p {
+                                    align-content: center;
+                                    align-items: center;
+                                    color: color(dark);
+                                    display: $df;
+                                    font-size: pxtorem(14px);
+                                    font-weight: $regular;
+                                    justify-content: flex-start;
+                                    line-height: 1.2;
+                                    margin-bottom: 0;
+                                    text-transform: none;
+
+                                    strong {
+                                        color: color(dark);
+                                        font-size: pxtorem(14px);
+                                        margin-right: 5px;
+                                        text-transform: capitalize;
+                                    }
+
+                                    span {
+                                        color: color(dark);
+                                        font-size: pxtorem(14px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .cards-security {
+                    .row {
+                        flex-wrap: nowrap;
+                        justify-content: space-between;
+                    }
+
+                    .boxblock {
+                        align-content: center;
+                        align-items: center;
+                        display: $df;
+                        flex-direction: row;
+                        justify-content: center;
+                        width: 50%;
+
+                        &:first-child {
+                            justify-content: flex-start;
+                        }
+
+                        &:last-child {
+                            justify-content: flex-end;
+                        }
+
+                        h3 {
+                            color: color(primary);
+                            display: $dn;
+                            font-size: pxtorem(15px);
+                            font-weight: $bold;
+                            margin-right: 10px;
+                            text-transform: capitalize;
+                        }
+                    }
+
+                    .cards-list {
+                        align-content: center;
+                        align-items: center;
+                        display: $df;
+                        flex-direction: row;
+                        justify-content: flex-start;
+
+                        li {
+                            display: $db;
+                            padding: 0;
+
+                            &.ico {
+                                background-color: transparent;
+                                background-position: center !important;
+                                background-repeat: no-repeat !important;
+                                background-size: 32px;
+                                // filter: grayscale(1);
+                                height: 32px;
+                                margin: 0px;
+                                padding: 0;
+                                width: 50px;
+                            }
+
+                            &.visa {
+                                background-image: url(/static/locales/custom/img/cards/visa.png) !important;
+                            }
+
+                            &.mastercard {
+                                background-image: url(/static/locales/custom/img/cards/master.png) !important;
+                            }
+
+                            &.amex {
+                                background-image: url(/static/locales/custom/img/cards/amex.png) !important;
+                            }
+
+                            &.elo {
+                                background-image: url(/static/locales/custom/img/cards/elo.png) !important;
+                            }
+
+                            &.hipercard {
+                                background-image: url(/static/locales/custom/img/cards/hiper.png) !important;
+                            }
+
+                            &.boleto {
+                                background-image: url(/static/locales/custom/img/cards/boleto.png) !important;
+                            }
+                        }
+                    }
+
+                    .certificates-list {
+                        margin: 0;
+                        padding: 0;
+                        li {
+                            display: $dib;
+                            margin: 0 3px;
+                            padding: 5px 0;
+                            text-align: center;
+
+                            img {
+                                display: $db;
+                                -webkit-filter: grayscale(1);
+                                filter: grayscale(1);
+                                height: 25px;
+                            }
+                        }
+                    }
+                }
+
+                .info-cli {
+                    border-top: 1px solid color(light);
+                    margin: 0;
+                    padding: 20px 0;
+                    text-align: center;
+
+                    .row {
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+
+                    p {
+                        color: color(dark);
+                        font-size: pxtorem(14px);
+                        line-height: 1.4;
+                        margin-bottom: 0px;
+                    }
+
+                    a {
+                        display: $dib;
+                        margin: 0 10px;
+
+                        img {
+                            display: $db;
+                            width: 175px;
+                        }
+                    }
+                }
+
+                .copy {
+                    display: $dn;
+                }
+            }
+        }
+
+        &.core-search,
+        &.rksearch {
+            .newsletter {
+                display: $dn !important;
+            }
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+        .bottom #footer {
+            .container {
+                .row {
+                    background: transparent;
+                    height: auto !important;
+                    margin: 0 auto;
+                    max-width: $screen-container;
+                    padding: 0 15px !important;
+                    position: $pr;
+                    width: 100% !important;
+                    @include flexbox(flex, row, wrap, center, flex-start, flex-start);
+                }
+
+                .social-network {
+                    padding: 20px 0;
+                }
+
+                .social-list {
+                    justify-content: center;
+                    li {
+                        &.ico {
+                            a {
+                                &:before {
+                                    font-size: pxtorem(18px) !important;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .newsletter {
+                    #bot_pnlEmailMarketing {
+                        flex-direction: column;
+                    }
+
+                    h3 {
+                        flex-direction: column;
+                        font-size: pxtorem(12px);
+                        margin-bottom: 10px;
+                        text-align: center;
+                        width: 100%;
+
+                        &:before {
+                            display: $db;
+                            font-size: pxtorem(18px);
+                            margin: 0;
+                        }
+                    }
+
+                    p {
+                        font-size: pxtorem(12px);
+                        margin-bottom: 0;
+                    }
+
+                    .inpts {
+                        flex-direction: column;
+                        width: 250px;
+
+                        .box-input {
+                            flex-direction: column;
+                            margin-bottom: 15px;
+                            margin-right: 0;
+
+                            input {
+                                margin-bottom: 5px;
+                                width: 100%;
+                            }
+                        }
+
+                        .box-button {
+                            margin: 0 auto;
+                            width: 100%;
+
+                            .btn {
+                                width: 100% !important;
+                            }
+                        }
+                    }
+                }
+
+                .institucional-info {
+                    padding: 20px 0;
+                    .box-institucional {
+                        width: 100%;
+
+                        h3 {
+                            font-size: pxtorem(15px);
+                            justify-content: center;
+                            margin-bottom: 10px;
+                            padding-bottom: 10px;
+
+                            &.drop {
+                                border-bottom: 1px solid color(primary);
+                                justify-content: center;
+                                position: $pr;
+                                &:after {
+                                    background-color: color(primary);
+                                    color: color(light, light);
+                                    content: $fa-var-plus;
+                                    font-family: $icons;
+                                    font-size: pxtorem(15px);
+                                    font-weight: $solid;
+                                    padding: 0px 5px;
+                                    position: $pa;
+                                    right: 0;
+                                }
+                            }
+                        }
+
+                        .institucional-list {
+                            display: $dn;
+                            justify-content: flex-start;
+                            margin-bottom: 15px;
+                            width: 100%;
+
+                            li {
+                                display: $df;
+                                justify-content: center;
+                                padding: 5px 0;
+                                text-align: center;
+                                width: 100%;
+
+                                a:not(.btn) {
+                                    font-size: pxtorem(12px);
+                                    line-height: 1.4;
+                                }
+
+                                p {
+                                    font-size: pxtorem(12px);
+                                    text-align: left;
+                                }
+
+                                strong {
+                                    font-size: pxtorem(12px);
+                                    text-align: left;
+                                }
+
+                                span {
+                                    font-size: pxtorem(12px);
+                                    text-align: left;
+                                }
+                            }
+
+                            &.address-list {
+                                display: $db;
+                            }
+                        }
+
+                        &.active {
+                            .institucional-list {
+                                display: $db;
+                            }
+
+                            h3 {
+                                &.drop {
+                                    &:after {
+                                        content: $fa-var-minus;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.add {
+                            justify-content: center;
+                            margin-top: 20px;
+
+                            h3 {
+                                justify-content: center;
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+
+                .cards-security {
+                    background-color: #f5f5f5;
+                    padding: 20px 0;
+
+                    .row {
+                        flex-wrap: wrap;
+                        justify-content: center;
+                    }
+
+                    .boxblock {
+                        align-content: center;
+                        align-items: center;
+                        display: $df;
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                        justify-content: center;
+                        margin-bottom: 10px;
+                        width: 100%;
+
+                        &:first-child {
+                            justify-content: center;
+                        }
+
+                        &:last-child {
+                            justify-content: center;
+                        }
+
+                        h3 {
+                            font-size: pxtorem(14px);
+                            margin-right: 0;
+                            text-align: center;
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .info-cli {
+                    .row {
+                        justify-content: center;
+                    }
+                    p {
+                        font-size: pxtorem(12px);
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

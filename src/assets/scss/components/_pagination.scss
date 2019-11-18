@@ -1,0 +1,199 @@
+#main {
+	.container {
+		@include global {
+			.pagination {
+				align-content: center;
+				align-items: center;
+				display: flex;
+				height: auto;
+				justify-content: flex-end;
+				margin: 0;
+				overflow: auto;
+				padding: 10px 0;
+				width: auto;
+
+				&.top {
+					flex-direction: row;
+					flex-wrap: wrap;
+					justify-content: space-between;
+
+					> p {
+						font-size: pxtorem(14px);
+						justify-content: center;
+						margin: 0;
+						width: auto;
+
+						strong {
+							margin: 0 2px;
+						}
+					}
+				}
+
+				ul {
+					float: $fn;
+					@include flexbox(flex, row, nowrap, flex-end, center, center);
+
+					li {
+						color: transparent;
+						float: $fn;
+						font-size: pxtorem(14px);
+						height: auto;
+						line-height: 1.4;
+						margin-left: 5px;
+						margin-right: 5px;
+
+						a {
+							background-color: transparent;
+							border: none !important;
+							color: color(dark);
+							float: $fn;
+							font-size: pxtorem(14px);
+							font-weight: $bold;
+							height: auto;
+							line-height: 1.4;
+							margin: 0 5px;
+
+							@include hover {
+								color: color(primary);
+
+								&:before {
+									color: color(primary) !important;
+								}
+							}
+
+							&#lnkPrimeiraInferior,
+							&#lnkPrimeira {
+								font-size: 0 !important;
+								&:before {
+									@include set-icon($fa-var-angle-double-left, pxtorem(18px), $solid, color(dark));
+								}
+							}
+
+							&#lnkAnteriorInferior,
+							&#lnkAnterior {
+								color: color(dark);
+								font-size: pxtorem(0);
+								&:before {
+									@include set-icon($fa-var-angle-left, pxtorem(18px), $solid, color(dark));
+								}
+							}
+
+							&#lnkProximaInferior,
+							&#lnkProxima {
+								color: color(dark);
+								font-size: pxtorem(0);
+								&:before {
+									@include set-icon($fa-var-angle-right, pxtorem(18px), $solid, color(dark));
+								}
+							}
+
+							&#lnkUltimaInferior,
+							&#lnkUltima {
+								font-size: 0 !important;
+								&:before {
+									@include set-icon($fa-var-angle-double-right, pxtorem(18px), $solid, color(dark));
+								}
+							}
+						}
+
+						&.set-prev {
+							a {
+								font-size: 0 !important;
+								&:before {
+									@include set-icon($fa-var-angle-double-left, pxtorem(18px), $solid, color(dark));
+								}
+							}
+						}
+
+						&.prev,
+						&.next {
+							a {
+								color: color(dark);
+								font-size: pxtorem(0);
+							}
+						}
+
+						&.prev {
+							a {
+								&:before {
+									@include set-icon($fa-var-angle-left, pxtorem(18px), $solid, color(dark));
+								}
+							}
+						}
+
+						&.next {
+							a {
+								color: color(dark);
+								font-size: pxtorem(0);
+
+								&:before {
+									@include set-icon($fa-var-angle-right, pxtorem(18px), $solid, color(dark));
+								}
+							}
+						}
+
+						&.set-next {
+							a {
+								font-size: 0 !important;
+								&:before {
+									@include set-icon($fa-var-angle-double-right, pxtorem(18px), $solid, color(dark));
+								}
+							}
+						}
+
+						&.numbers {
+							a {
+								color: color(dark);
+								display: $dib;
+
+								@include hover {
+									color: color(primary, dark);
+								}
+
+								&.selected {
+									color: color(primary);
+								}
+							}
+						}
+
+						&.page {
+							display: $dn;
+						}
+					}
+				}
+			}
+		}
+
+		@include desktop {
+		}
+
+		@include mobile {
+			.pagination {
+				border-bottom: 1px solid transparent;
+				border-top: 1px solid color(light);
+				margin: 15px 0;
+				padding: 5px 0;
+				@include flexbox(flex, row, nowrap, center, center, center);
+
+				&.top {
+					flex-direction: column;
+					flex-wrap: wrap;
+					justify-content: center;
+
+					> p {
+						font-size: pxtorem(12px);
+					}
+				}
+
+				ul {
+					li {
+						margin: 0;
+						a {
+							margin: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

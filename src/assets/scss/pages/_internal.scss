@@ -1,0 +1,162 @@
+body.institucional.internal {
+	@include global {
+		#main {
+			.nav {
+				border-right: 1px solid color(light);
+				margin: 0;
+				margin-right: 20px;
+				padding-right: 20px;
+				padding-top: 40px;
+
+				> ul {
+					padding-right: 0;
+					@include flexbox(flex, column, wrap, flex-start, flex-start, center);
+
+					li {
+						margin-bottom: 20px;
+						width: 100%;
+					}
+				}
+			}
+
+			.text {
+				color: color(dark);
+				font-size: pxtorem(14px);
+				line-height: 1.4;
+
+				* {
+					color: color(dark);
+					font-size: pxtorem(14px);
+					line-height: 1.4;
+					text-align: center;
+				}
+
+				h2 {
+					color: color(dark) !important;
+					font-size: pxtorem(18px);
+					font-weight: $bold;
+					text-align: center;
+				}
+
+				h4,
+				h4 u {
+					color: color(dark) !important;
+					font-size: pxtorem(15px);
+				}
+
+				.contactsSubTitle,
+				.contactsInformation {
+					color: color(dark) !important;
+					text-align: center;
+				}
+
+				p {
+					* {
+						color: color(dark) !important;
+						text-align: center;
+					}
+				}
+
+				.form.box {
+					background-color: color(light, light);
+					margin: 20px auto;
+					max-width: 400px;
+					padding: 10px 0;
+					width: 100%;
+
+					.field {
+						display: $dib;
+						margin: 0 !important;
+						padding: 10px !important;
+						width: 100% !important;
+
+						label {
+							display: $db;
+							width: 100%;
+							span {
+								display: $db;
+								float: $fn;
+								height: auto;
+								line-height: 1;
+								margin: 0 0 2px;
+								text-align: left;
+								width: auto;
+
+								.req {
+									display: $dib;
+								}
+							}
+
+							input,
+							select,
+							textarea {
+								display: $db;
+								float: $fn;
+								margin: 0;
+								text-align: left;
+								width: 100% !important;
+							}
+
+							.phone {
+								display: $df;
+								flex-direction: row;
+								flex-wrap: wrap;
+								justify-content: space-between;
+								padding: 0;
+								text-align: left;
+								.ddd {
+									float: $fn;
+									position: $pr !important;
+									text-align: center;
+									width: 15% !important;
+								}
+								.number {
+									margin-left: 0;
+									padding: 0 !important;
+									position: $pr;
+									text-align: left;
+									width: 80% !important;
+								}
+							}
+						}
+					}
+
+					.actions {
+						text-align: center;
+						width: 100% !important;
+
+						.btn {
+							background: color(primary) !important;
+							border: none;
+							color: color(light, light) !important;
+							float: $fn !important;
+							font-family: $base;
+							margin: 0 auto;
+							text-indent: 0;
+							width: 100px;
+
+							@include hover {
+								background-color: color(primary, light) !important;
+								color: color(light, light) !important;
+							}
+
+							&:before {
+								display: $dn;
+							}
+						}
+					}
+				}
+			}
+
+			.open-mob-institucional {
+				top: 35%;
+			}
+		}
+	}
+
+	@include desktop {
+	}
+
+	@include mobile {
+	}
+}

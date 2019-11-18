@@ -1,0 +1,128 @@
+// -------------------------------------
+// Media Queries
+// -------------------------------------
+@mixin global {
+    @media screen {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 980px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: 979px) {
+        @content;
+    }
+}
+
+@mixin safari {
+    @media not all and (min-resolution: 0.001dpcm) {
+        @media {
+            @content;
+        }
+    }
+}
+
+@mixin edge {
+    @supports (-ms-ime-align: auto) {
+        @content;
+    }
+}
+
+@mixin ie {
+    @media screen and (min-width: 0\0) and (min-resolution: +72dpi) {
+        @content;
+    }
+}
+
+@mixin hover {
+    &:hover,
+    &:focus,
+    &:active {
+        @content;
+    }
+}
+
+@mixin radius($radius: 5px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin flexbox($fb-display, $fb-direction, $fb-wrap, $fb-justify, $fb-align-items, $fb-align-content) {
+    //align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+    -webkit-align-content: $fb-align-content;
+    -moz-align-content: $fb-align-content;
+    -ms-align-content: $fb-align-content;
+    -o-align-content: $fb-align-content;
+    align-content: $fb-align-content;
+
+    //align-items: flex-start | flex-end | center | baseline | stretch;
+    -webkit-align-items: $fb-align-items;
+    -moz-align-items: $fb-align-items;
+    -ms-align-items: $fb-align-items;
+    -o-align-items: $fb-align-items;
+    align-items: $fb-align-items;
+
+    //display: flex or inline-flex */
+    display: -webkit-$fb-display;
+    display: -moz-$fb-display;
+    display: -ms-$fb-display;
+    display: -webkit-$fb-display;
+    display: $fb-display;
+
+    //flex-direction: row | row-reverse | column | column-reverse;
+    -webkit-flex-direction: $fb-direction;
+    -moz-flex-direction: $fb-direction;
+    -ms-flex-direction: $fb-direction;
+    -o-flex-direction: $fb-direction;
+    flex-direction: $fb-direction;
+
+    //flex-wrap: nowrap | wrap | wrap-reverse;
+    -webkit-flex-wrap: $fb-wrap;
+    -moz-flex-wrap: $fb-wrap;
+    -ms-flex-wrap: $fb-wrap;
+    -o-flex-wrap: $fb-wrap;
+    flex-wrap: $fb-wrap;
+
+    //justify-content: flex-start | flex-end | center | space-between | space-around;
+    -webkit-justify-content: $fb-justify;
+    -moz-justify-content: $fb-justify;
+    -ms-justify-content: $fb-justify;
+    -o-justify-content: $fb-justify;
+    justify-content: $fb-justify;
+}
+
+@mixin social-icon($content: $fa-var-facebook, $size: 18px) {
+    content: $content;
+    font-family: $brands;
+    font-size: $size;
+    font-weight: normal;
+}
+
+@mixin set-icon($content: $fa-var-smile, $size: 20px, $weight: $solid, $color: #000, $brand: '') {
+    background: none;
+    color: $color;
+    content: $content;
+    font-size: $size;
+    font-weight: $weight;
+    text-indent: 0;
+    @if ($brand != '') {
+        font-family: $brands;
+    } @else {
+        font-family: $icons;
+    }
+}
+
+@mixin transition($property: all, $duration: 0.2s, $ease: ease) {
+    -webkit-transition: $property $duration $ease;
+    -moz-transition: $property $duration $ease;
+    -o-transition: $property $duration $ease;
+    transition: $property $duration $ease;
+}

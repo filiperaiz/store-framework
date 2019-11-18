@@ -1,0 +1,59 @@
+body.consult-delivery {
+	@include global {
+		.delivery-opt {
+			display: $dn !important;
+		}
+
+		#pnlHomeDelivery {
+			.form.cep {
+				display: $db;
+
+				&:before {
+					color: color(dark);
+					content: 'CEP';
+					display: $db;
+					font-size: pxtorem(14px);
+					margin-bottom: 5px;
+				}
+
+				.field {
+					display: $dib;
+					float: $fn;
+					margin: 0;
+					padding: 0;
+					vertical-align: top;
+					width: 130px;
+
+					span {
+						display: $dn;
+					}
+
+					input {
+						text-align: left;
+						width: 100% !important;
+					}
+				}
+
+				.actions {
+					display: $dib;
+					float: $fn;
+					margin: 0;
+					text-align: right;
+					vertical-align: top;
+					width: auto;
+
+					.btn {
+						padding: 5px 15px !important;
+						width: auto;
+					}
+				}
+			}
+		}
+	}
+
+	@include desktop {
+	}
+
+	@include mobile {
+	}
+}

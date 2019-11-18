@@ -1,0 +1,27 @@
+.voltar-top {
+	background: color(primary);
+	bottom: -35px;
+	cursor: pointer;
+	height: 35px;
+	position: $pf;
+	right: 10px;
+	text-align: center;
+	width: 35px;
+	z-index: 9999;
+	opacity: 0;
+	@include transition;
+
+	.fas {
+		color: color(light, light);
+		font-size: 25px;
+	}
+
+	&.active {
+		bottom: 0px;
+		opacity: 1;
+	}
+}
+
+.go-top-btn {
+	display: $dn;
+}

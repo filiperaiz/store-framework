@@ -1,0 +1,10 @@
+@model LookDetailModel
+
+<div id="BlocoEntrega" class="delivery">
+    <a id="hypShippingSimulation" 
+        class="iframe"
+        href="@Url("~/consultarPrazoEntrega.aspx")">
+        Calcule sua entrega
+    </a>
+    <input type="hidden" id="hdnShippingSimulation" value="@Model.General.ShippingSimulationCode" />
+</div>

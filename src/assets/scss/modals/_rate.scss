@@ -1,0 +1,111 @@
+body {
+    @include desktop {
+        #fancybox-wrap {
+            &.fancybox-rating {
+                height: 680px !important;
+            }
+        }
+    }
+
+    &.rate {
+        @include global {
+            position: $pr;
+            .form {
+                .field {
+                    display: $db;
+                    margin-bottom: 0px;
+                    width: 100%;
+
+                    label {
+                        font-size: pxtorem(12px);
+                        @include flexbox(flex, row, wrap, flex-start, center, center);
+
+                        span {
+                            display: $db;
+                            float: $fn;
+                            margin-bottom: 2px;
+                            margin-right: 0;
+                            width: 100%;
+                        }
+                        .validacao {
+                            color: color(danger);
+                            left: 0;
+                            margin: 0;
+                            padding: 0 0 0 !important;
+                            position: $pr;
+                            right: 0;
+                            text-align: left;
+                            top: 0px;
+                        }
+                    }
+
+                    &.rating {
+                        a {
+                            display: $dib;
+                            float: $fn;
+                            margin: 0;
+                            text-align: left;
+                            width: 25px;
+
+                            img {
+                                display: $db;
+                                width: 20px;
+                            }
+                        }
+                    }
+
+                    &.checkbox {
+                        width: 100%;
+                        margin-bottom: 20px;
+                        label {
+                            align-content: flex-start;
+                            align-items: flex-start;
+                        }
+
+                        input {
+                            display: $dib;
+                            margin-top: -1px !important;
+                            vertical-align: middle;
+                            width: 15px !important;
+                        }
+
+                        span {
+                            display: $dib;
+                            font-size: pxtorem(12px);
+                            line-height: 1.4;
+                            width: 80%;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                .actions {
+                    display: $db;
+                    float: $fn !important;
+                    margin-bottom: 15px;
+                    text-align: center;
+                    width: 100%;
+
+                    .btn {
+                        float: $fn !important;
+                    }
+                }
+            }
+
+            .sucess {
+                color: color(dark);
+                display: $db;
+                font-size: pxtorem(14px);
+                font-weight: $bold;
+                line-height: 1.4;
+                margin-top: 50px;
+            }
+        }
+
+        @include desktop {
+        }
+
+        @include mobile {
+        }
+    }
+}

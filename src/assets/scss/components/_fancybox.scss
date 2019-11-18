@@ -1,0 +1,88 @@
+body {
+    @include global {
+        #fancybox-wrap {
+            background-color: color(light, light);
+            border: none !important;
+            left: 0 !important;
+            margin: 0 auto !important;
+            max-width: 450px;
+            min-height: 450px;
+            position: $pf;
+            right: 0 !important;
+            top: 50% !important;
+            transform: translate(0, -50%);
+            width: 100% !important;
+
+            #fancybox-outer {
+                bottom: 0;
+                height: 100% !important;
+                left: 0;
+                position: $pa;
+                right: 0;
+                top: 0;
+                width: 100% !important;
+                @include radius($rn);
+            }
+
+            #fancybox-content {
+                border: none !important;
+                height: 100% !important;
+                padding: 40px 10px 10px 10px;
+                width: 100% !important;
+            }
+        }
+
+        a#fancybox-close {
+            background: transparent url('/static/locales/global/img/fancybox/close.png') 0 0;
+            background-color: transparent;
+            background-image: none !important;
+            cursor: pointer;
+            display: $db !important;
+            height: auto !important;
+            position: $pa;
+            right: 8px;
+            text-align: center;
+            top: 2px;
+            width: auto !important;
+            z-index: 1103;
+            @include radius($rn);
+
+            &:before {
+                line-height: 1.2;
+                @include set-icon($fa-var-times, 30px, $solid, #9b9b9b);
+            }
+        }
+
+        #fancybox-close-2 {
+            display: $dn;
+        }
+
+        .return.return-msg-password {
+            padding-top: 50px !important;
+
+            p {
+                color: color(dark);
+                font-size: pxtorem(14px);
+            }
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+        #fancybox-wrap {
+            height: 100% !important;
+            position: $pf;
+            top: 0 !important;
+            transform: translate(0, 0);
+            width: 100% !important;
+        }
+
+        #fancybox-close {
+            right: 10px !important;
+            top: 2px !important;
+            z-index: 9999 !important;
+        }
+    }
+}

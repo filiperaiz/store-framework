@@ -1,0 +1,86 @@
+@model HeadBaseModel
+
+<div class="box-loader">
+   <div class="loader">
+       <div class="inner one"></div>
+       <div class="inner two"></div>
+   </div>
+   <img class="logo" src="/static/locales/custom/img/loader.svg" alt="">
+</div>
+
+
+
+<div class="wrapper">
+    <div id="header">
+        <div class="header_top">
+            <div class="container">
+                <nav class="navlist">
+                    <ul class="list-infos" >
+                        <li class="item">
+                            <i class="fas fa-phone"></i>  11 9000.0000 | 11 0000.0000
+                        </li>
+                        <li class="item">
+                            <i class="fas fa-envelope"></i>contato@email.com
+                        </li>
+                    </ul>
+                   <ul class="iconav">
+
+                        <li class="iconav-user">
+                            @Include("welcome", Model.Welcome, ViewBag)
+                        </li>
+
+                        <li class="iconav-wishlist">
+                            <a class="icon" href="@Url(Model.ListUrl)"></a>
+                            <a class="icon btn-wishlist-mobile" href="@Url(Model.ListUrl)"></a>
+                        </li>
+
+                        <li class="iconav-cart @(Model.SummaryBasketItemsCount == 0 ? "empty" : "")">
+                            <a class="icon basket" href="@UrlSecure("basket/index.aspx")">
+                                 <span class="basket-count-number">
+                                    @Model.SummaryBasketItemsCount.ToString("00")
+                                </span>
+                            </a>
+
+
+                            @if (Model.SummaryBasketEnabled)
+                            {
+                                <ul class="dropdown mini-car" id="divSummaryBasket">
+                                    @Include("summaryBasket", Model, ViewBag)
+                                </ul>
+                            }
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="header_center">
+            <div class="container">
+                <div class="flex-between">
+                    <div id="logo" itemscope itemtype="http://schema.org/Attorney">
+                        <a itemprop="url" href="@Url()" title="@ViewBag.StoreName">
+                            <img itemprop="logo" src="/static/locales/custom/img/logo.png" alt="@ViewBag.StoreName" title="@ViewBag.StoreName" />
+                        </a>
+                    </div>
+
+                      <nav class="navbar">
+                        @Include("horizontalCategories", Model, ViewBag)
+                    </nav>
+
+                    <fieldset id="header_busca_container" class="search">
+                        <label for="cabecalho_txtBusca">Digite o que você está procurando...</label>
+
+                        <input type="text" id="cabecalho_txtBusca" placeholder="Digite o que você está procurando..."  class="search-input" />
+                        <a id="cabecalho_Buscar_Topo" class="@string.Concat("btn ir search-btn", ViewBag.CssClassSearch)" href="#" title="Buscar" rel="nofollow"></a>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*FILTRO AVANÇADO*@
+    @if (Model.AdvancedSearchFilterEnabled)
+    {
+        @Include("advancedSearchFilter", Model, ViewBag)
+    }
+

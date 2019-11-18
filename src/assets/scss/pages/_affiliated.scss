@@ -1,0 +1,480 @@
+body.affiliates {
+	@include global {
+		#main {
+			.container {
+				background: transparent !important;
+				height: auto !important;
+				margin: 0 auto;
+				max-width: 1200px !important;
+				width: 100% !important;
+			}
+
+			.main-content {
+				margin-bottom: 50px;
+			}
+
+			.content {
+				overflow: visible;
+			}
+
+			.atention {
+				color: color(danger);
+				font-size: pxtorem(14px);
+				margin: 0 0 20px 0;
+				padding: 0;
+				text-align: center;
+				width: 100%;
+			}
+
+			.form {
+				padding: 0;
+				.box {
+					background-color: color(light, light);
+					border: 1px solid color(light);
+					margin: 20px auto;
+					max-width: 400px;
+					padding: 10px;
+					width: 100%;
+
+					fieldset {
+						padding: 0;
+
+						.title {
+							color: color(dark);
+							font-size: pxtorem(15px);
+							font-weight: $bold;
+							margin: 0 0 20px 0 !important;
+						}
+
+						.field {
+							display: $df;
+							flex-direction: column;
+							flex-wrap: nowrap;
+							height: auto;
+							justify-content: center;
+							margin: 0 auto 5px;
+							text-align: center;
+
+							&:before,
+							&:after {
+								display: $dn;
+							}
+
+							&.radio {
+								flex-direction: row;
+
+								label {
+									align-content: center;
+									align-items: center;
+									justify-content: flex-start;
+									width: 50%;
+
+									input {
+										display: $dib;
+										vertical-align: middle;
+										width: 18px !important;
+									}
+
+									span {
+										display: $dib;
+										font-size: pxtorem(14px);
+										width: auto;
+									}
+								}
+							}
+
+							&.checkbox {
+								right: 0;
+								width: 100%;
+								input {
+									display: $dib;
+									vertical-align: middle;
+									width: 30px !important;
+								}
+
+								span {
+									display: $dib;
+									font-size: pxtorem(14px);
+									vertical-align: top;
+									width: 80%;
+								}
+							}
+
+							span {
+								display: $db;
+								float: $fn;
+								font-size: pxtorem(14px);
+								height: auto;
+								line-height: 1;
+								margin-bottom: 2px;
+								text-align: left;
+								width: 100%;
+
+								.req {
+									color: color(dark);
+									display: $dib;
+									font-weight: normal;
+									width: auto;
+								}
+								.req::first-letter {
+									color: color(danger);
+								}
+							}
+
+							label {
+								display: $db;
+								float: $fn;
+								text-align: left;
+
+								input,
+								select {
+									display: $db;
+									float: $fn;
+									margin: 0;
+									text-align: left;
+									width: 100% !important;
+								}
+							}
+
+							.ie {
+								width: 100% !important;
+							}
+
+							.exempting {
+								display: $db;
+								margin-left: 0;
+								margin-top: 15px;
+								width: 100% !important;
+
+								input {
+									display: $dib;
+									vertical-align: middle;
+									width: 25px !important;
+								}
+
+								span:not(.validacao) {
+									display: $dib;
+								}
+							}
+
+							.date {
+								display: $db;
+								float: $fn;
+								margin: 0;
+								text-align: left;
+								width: 100%;
+								input {
+									display: $dib;
+									float: $fn;
+									padding: 0 !important;
+									text-align: center;
+									width: 45px;
+								}
+							}
+
+							.phone {
+								display: $db;
+								float: $fn;
+								margin: 0;
+								padding: 0;
+								text-align: left;
+								width: 100%;
+								input {
+									display: $dib;
+									float: $fn;
+									position: $pr;
+									text-align: left;
+									width: 150px;
+
+									&:first-child {
+										text-align: center;
+										width: 45px;
+									}
+
+									&:nth-child(3) {
+										text-align: center;
+										width: 45px;
+									}
+								}
+							}
+						}
+					}
+				}
+				.actions {
+					text-align: center;
+					.btn {
+						float: $fn !important;
+					}
+				}
+			}
+
+			.affiliates-nav {
+				background-color: color(light, light);
+				border: 1px solid color(light);
+				border-radius: $rn;
+				display: $db;
+				margin: 0 auto 20px;
+				padding: 0;
+				width: 100%;
+
+				> ul {
+					align-content: center;
+					align-items: center;
+					display: $df;
+					flex-direction: row;
+					flex-wrap: nowrap;
+					justify-content: space-between;
+					margin: 0;
+					width: 100%;
+
+					li {
+						background: color(light, light);
+						border-left: 1px solid color(light);
+						display: $db;
+						line-height: 1.4;
+						margin: 0;
+						padding: 0;
+						position: $pr;
+						width: 100%;
+
+						&:first-child {
+							border: none;
+						}
+
+						&.with-sub-nav {
+							&:after {
+								display: $dn;
+							}
+							> a {
+								&:after {
+									color: color(dark);
+									content: $fa-var-angle-down;
+									display: $db;
+									font-family: $icons;
+									font-size: pxtorem(14px);
+									font-weight: $solid;
+									margin-left: 10px;
+								}
+							}
+						}
+
+						.affiliates-subnav {
+							background-color: color(light, light);
+							border: 1px solid color(light);
+							left: 0;
+							position: $pa;
+							top: 38px;
+							width: 100%;
+
+							li {
+								border-left: none;
+							}
+						}
+
+						> a {
+							align-content: center;
+							align-items: center;
+							background: color(light, light);
+							color: color(dark);
+							display: $df;
+							flex-direction: row;
+							font-family: $base;
+							font-size: pxtorem(14px);
+							justify-content: center;
+							padding: 10px;
+							text-transform: none;
+						}
+
+						@include hover {
+							> a {
+								background: color(primary);
+								color: color(light, light);
+
+								&:after {
+									color: color(light, light);
+								}
+							}
+						}
+					}
+				}
+			}
+			.reports {
+				.field {
+					margin: 0;
+					padding: 0;
+				}
+				label > span {
+					color: color(dark);
+					display: block;
+					font-size: pxtorem(14px);
+					margin-bottom: 10px;
+					width: 100%;
+				}
+
+				.date {
+					align-content: center;
+					align-items: center;
+					display: $df;
+					flex-direction: row;
+					flex-wrap: wrap;
+					justify-content: flex-start;
+					margin-right: 15px;
+					span {
+						margin: 0 5px;
+					}
+					input {
+						margin: 0;
+						width: 60px;
+					}
+				}
+			}
+
+			.aside {
+				.block {
+					align-content: flex-start;
+					align-items: flex-start;
+					background-color: color(light, light);
+					border-radius: $rs;
+					box-shadow: 0px 0px 1px 1px color(light);
+					display: $df;
+					flex-direction: column;
+					justify-content: flex-start;
+					overflow: hidden;
+					padding: 0;
+					> span {
+						align-content: center;
+						align-items: center;
+						background-color: color(primary);
+						display: $df;
+						justify-content: center;
+						padding: 10px;
+						width: 100%;
+
+						.title {
+							background: transparent;
+							color: color(light, light);
+							font-family: $base;
+							font-size: pxtorem(14px);
+							padding: 0;
+							text-transform: capitalize;
+						}
+					}
+
+					ul {
+						align-content: flex-start;
+						align-items: flex-start;
+						display: $df;
+						flex-direction: column;
+						justify-content: flex-start;
+						margin: 0;
+						width: 100%;
+
+						li {
+							background: color(light, light);
+							border-bottom: 1px solid color(light);
+							margin: 0;
+							padding: 0;
+							width: 100%;
+
+							&:last-child {
+								border: none;
+							}
+
+							a {
+								background: color(light, light);
+								color: color(dark);
+								font-family: $base;
+								font-size: pxtorem(14px);
+								padding: 10px;
+								text-transform: none;
+
+								@include hover {
+									background: color(light);
+									color: color(dark);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include desktop {
+		#main {
+			.aside {
+				display: $df;
+				margin-top: 40px;
+
+				.nav {
+					margin: 0;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	@include mobile {
+		#main {
+			.affiliates-nav {
+				width: 100%;
+				> ul {
+					align-content: flex-start;
+					align-items: flex-start;
+					background-color: color(light, light);
+					border: none;
+					flex-direction: column;
+					flex-wrap: wrap;
+					justify-content: flex-start;
+					padding: 0;
+
+					li {
+						background: color(light, light);
+						border-left: none;
+						border-top: 1px solid color(light);
+						display: $db;
+						line-height: 1.4;
+						margin: 0;
+						padding: 0;
+						position: $pr;
+						width: 100%;
+
+						&:first-child {
+							border: none;
+						}
+
+						.affiliates-subnav {
+							background-color: color(light, light);
+							border: none;
+							left: 0;
+							padding: 0;
+							position: $pr;
+							top: 0;
+							width: 100%;
+
+							li {
+								padding: 0 0 0 20px;
+							}
+						}
+
+						> a {
+							background: color(light, light);
+							color: color(dark);
+							justify-content: flex-start;
+						}
+					}
+				}
+			}
+
+			.reports {
+				.date {
+					margin: 0;
+					input {
+						margin: 0 0 10px;
+						width: 80px;
+					}
+				}
+			}
+		}
+	}
+}

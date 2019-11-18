@@ -1,0 +1,87 @@
+// Normalize
+@import 'config';
+
+// Normalize
+@import 'base/normalize';
+
+// Variables
+@import 'variables/breakpoints';
+@import 'variables/colors';
+@import 'variables/fonts';
+@import 'variables/fa';
+@import 'variables/variables';
+
+// Mixins and Functions
+@import 'mixins/mixins';
+@import 'mixins/functions';
+
+// Base
+@import 'base/body';
+@import 'base/links';
+@import 'base/loader';
+@import 'base/margins';
+@import 'base/scrolltop';
+
+// Pages
+@import 'pages/account';
+@import 'pages/addresses';
+@import 'pages/affiliated';
+@import 'pages/basket';
+@import 'pages/catalog';
+@import 'pages/checkout';
+@import 'pages/compare';
+@import 'pages/confirmation';
+@import 'pages/currentaccount';
+@import 'pages/detaillook';
+@import 'pages/detailproduct';
+@import 'pages/exchange';
+@import 'pages/home';
+@import 'pages/institucional';
+@import 'pages/internal';
+@import 'pages/login';
+@import 'pages/mylists';
+@import 'pages/myrequests';
+@import 'pages/mycards';
+@import 'pages/register';
+@import 'pages/searchrequests';
+@import 'pages/search';
+@import 'pages/sitemap';
+@import 'pages/vitrine';
+@import 'pages/wishlist';
+
+// Modals
+@import 'modals/basketgift';
+@import 'modals/changepassword';
+@import 'modals/consultdelivery';
+@import 'modals/forgotpassword';
+@import 'modals/indicatefriend';
+@import 'modals/quickbasket';
+@import 'modals/quickview';
+@import 'modals/rate';
+
+// Components
+@import 'components/alerts';
+@import 'components/aside-look';
+@import 'components/abas-dropdown';
+@import 'components/breadcrumbs';
+@import 'components/buttons';
+@import 'components/fancybox';
+@import 'components/inputs';
+@import 'components/image-thumbs';
+@import 'components/instagram';
+@import 'components/list-products';
+@import 'components/minicar';
+@import 'components/order-filters';
+@import 'components/owl-carousel';
+@import 'components/pagination';
+@import 'components/products-indicator';
+@import 'components/search';
+@import 'components/stars';
+@import 'components/titles';
+@import 'components/tabs-block';
+@import 'components/visibility';
+
+// Header and Footer
+@import 'components/header';
+@import 'components/navmobile';
+@import 'components/footer';

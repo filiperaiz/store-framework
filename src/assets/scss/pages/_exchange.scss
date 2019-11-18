@@ -1,0 +1,83 @@
+body.exchange {
+    @include global {
+        #main {
+            .box {
+                .exchange-form {
+                    margin-top: 25px;
+                    .exchange-reason {
+                        ul {
+                            li {
+                                label {
+                                    margin-right: 10px;
+                                    margin-top: 2px;
+                                    padding-left: 25px !important;
+                                }
+                            }
+                        }
+                    }
+                    .exchange-product {
+                        label {
+                            margin-right: 10px;
+                        }
+                    }
+                    .collect-txt {
+                        margin: 0 !important;
+                        position: $pr !important;
+                    }
+                }
+            }
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+        #main {
+            .box {
+                .exchange-form {
+                    margin-top: 25px;
+                    .exchange-reason {
+                        ul {
+                            li {
+                                input {
+                                    margin-top: 4px !important;
+                                }
+                                label {
+                                    margin-right: 10px;
+                                    margin-top: 2px;
+                                    padding-left: 25px !important;
+                                    padding-top: 0 !important;
+                                }
+                            }
+                        }
+                        .collect-txt {
+                            margin: 0 !important;
+                        }
+                    }
+                    .exchange-product {
+                        label {
+                            margin-left: 5px;
+                            margin-right: 10px;
+                        }
+                    }
+                    .exchange-group {
+                        label {
+                            display: $di !important;
+                            margin: 0 10px 0 0px;
+                        }
+                    }
+                    .exchange-button {
+                        .btn {
+                            width: 100%;
+                        }
+                    }
+                    .collect-txt {
+                        padding-left: 0 !important;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

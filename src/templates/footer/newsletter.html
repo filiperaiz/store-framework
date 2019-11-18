@@ -1,0 +1,16 @@
+@{ var containerId = string.Concat(ViewBag.Prefix, "pnlEmailMarketing"); var inputName = string.Concat(ViewBag.Prefix, "txtRecebaNomeMenu"); var inputEmail = string.Concat(ViewBag.Prefix,
+"txtRecebaEmailMenu"); }
+
+<div id="@containerId">
+	<h3>Cadastre-se e receba as novidades e ofertas por email</h3>
+
+	<div class="inpts">
+		<div class="box-input">
+			<input type="text" name="txtRecebaNomeMenu" id="@inputName" class="placeholder" maxlength="128" value="Nome" />
+			<input type="email" name="txtRecebaEmailMenu" id="@inputEmail" class="placeholder" maxlength="128" value="E-mail" />
+		</div>
+		<div class="box-button">
+			<a href="#" class="btn ir" title="Cadastrar" rel="nofollow">Cadastrar</a>
+		</div>
+	</div>
+</div>

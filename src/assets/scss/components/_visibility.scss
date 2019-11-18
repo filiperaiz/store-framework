@@ -1,0 +1,14 @@
+@include global {
+}
+
+@include desktop {
+	.onlyMobile {
+		display: $dn !important;
+	}
+}
+
+@include mobile {
+	.onlyDesktop {
+		display: $dn !important;
+	}
+}

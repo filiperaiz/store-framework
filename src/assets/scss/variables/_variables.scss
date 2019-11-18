@@ -1,0 +1,33 @@
+// -------------------------------------
+// Displays
+// -------------------------------------
+$db: block !default;
+$di: inline !default;
+$dib: inline-block !default;
+$df: flex !default;
+$dif: inline-flex !default;
+$dn: none !default;
+
+// -------------------------------------
+// Radius
+// -------------------------------------
+$rf: 100px !default;
+$rs: 5px !default;
+$rn: 0 !default;
+
+// -------------------------------------
+// Positions
+// -------------------------------------
+$ps: static !default;
+$pr: relative !default;
+$pa: absolute !default;
+$pf: fixed !default;
+$pu: unset !default;
+$pt: sticky !default;
+
+// -------------------------------------
+// Floats
+// -------------------------------------
+$fl: left !default;
+$fr: right !default;
+$fn: none !default;

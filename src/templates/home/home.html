@@ -1,0 +1,103 @@
+@model StorefrontHomeModel
+<!--  -->
+@*HOME PADRAO*@
+
+<section class="section block-banners topo">
+    <div class="row fullscreen">
+        @Include("general.bannerarea", Model.BannerArea1, ViewBag) @Include("general.bannerarea", Model.BannerArea1Mobile, ViewBag)
+    </div>
+</section>
+
+<section class="section block-banners principal">
+    <div class="row">
+        @Include("general.bannerarea", Model.BannerArea2, ViewBag) @Include("general.bannerarea", Model.BannerArea2Mobile, ViewBag)
+    </div>
+</section>
+
+<section class="section block-products vit-one">
+    <div class="row">
+        @Include("storefrontProducts", Model.Type1, ViewBag, new { FixedCssSection = "section vitrine-1", ShowThumb = true, RenderReview = Model.RenderReview, PurchaseQuantity =
+        Model.PurchaseQuantity, ShowSkuCatalog = Model.ShowSkuCatalog, MessageProductCatalog = Model.MessageProductCatalog, StorefrontArea = "type1", PurchaseQuantityWithoutSKU =
+        Model.PurchaseQuantityWithoutSKU })
+    </div>
+</section>
+
+<section class="section block-banners entre-vitrines entre-one">
+    <div class="row">
+        @Include("general.bannerarea", Model.BannerArea6_Storefront1, ViewBag) @Include("general.bannerarea", Model.BannerArea6_Storefront1Mobile, ViewBag)
+    </div>
+</section>
+
+<section class="section block-banners lojas-especiais content">
+    <div class="row">
+        @Include("general.bannerarea", Model.BannerArea4, ViewBag) @Include("general.bannerarea", Model.BannerArea4Mobile, ViewBag)
+    </div>
+</section>
+
+<section class="section block-products vit-two">
+    <div class="row">
+        @Include("storefrontProducts", Model.Type2, ViewBag, new { FixedCssSection = "section vitrine-2", ShowThumb = true, RenderReview = Model.RenderReview, PurchaseQuantity =
+        Model.PurchaseQuantity, ShowSkuCatalog = Model.ShowSkuCatalog, MessageProductCatalog = Model.MessageProductCatalog, StorefrontArea = "type2", PurchaseQuantityWithoutSKU =
+        Model.PurchaseQuantityWithoutSKU })
+    </div>
+</section>
+
+<section class="section block-banners entre-vitrines entre-two">
+    <div class="row">
+        @Include("general.bannerarea", Model.BannerArea6_Storefront2, ViewBag) @Include("general.bannerarea", Model.BannerArea6_Storefront2Mobile, ViewBag)
+    </div>
+</section>
+
+<section class="section block-products vit-three">
+    <div class="row">
+        @Include("storefrontProducts", Model.Type3, ViewBag, new { FixedCssSection = "section vitrine-3", ShowThumb = true, RenderReview = Model.RenderReview, PurchaseQuantity =
+        Model.PurchaseQuantity, ShowSkuCatalog = Model.ShowSkuCatalog, MessageProductCatalog = Model.MessageProductCatalog, StorefrontArea = "type3", PurchaseQuantityWithoutSKU =
+        Model.PurchaseQuantityWithoutSKU })
+    </div>
+</section>
+
+<section class="section block-banners entre-vitrines entre-three">
+    <div class="row">
+        @Include("general.bannerarea", Model.BannerArea6_Storefront3, ViewBag) @Include("general.bannerarea", Model.BannerArea6_Storefront3Mobile, ViewBag)
+    </div>
+</section>
+
+<section class="section block-products vit-four">
+    <div class="row">
+        @Include("storefrontProducts", Model.Type4, ViewBag, new { FixedCssSection = "section vitrine-4", ShowThumb = true, RenderReview = Model.RenderReview, PurchaseQuantity =
+        Model.PurchaseQuantity, ShowSkuCatalog = Model.ShowSkuCatalog, MessageProductCatalog = Model.MessageProductCatalog, StorefrontArea = "type4", PurchaseQuantityWithoutSKU =
+        Model.PurchaseQuantityWithoutSKU })
+    </div>
+</section>
+
+<section class="section block-banners entre-vitrines entre-four">
+    <div class="row">
+        @Include("general.bannerarea", Model.BannerArea6_Storefront4, ViewBag) @Include("general.bannerarea", Model.BannerArea6_Storefront4Mobile, ViewBag)
+    </div>
+</section>
+
+<section class="section block-banners inferior">
+    <div class="row">
+        @Include("general.bannerarea", Model.BannerArea7, ViewBag) @Include("general.bannerarea", Model.BannerArea7Mobile, ViewBag)
+    </div>
+</section>
+
+<section class="section block-products vit-look">
+    <div class="row">
+        @Include("storefrontLooks", Model.Looks, ViewBag, new { FixedCssSection = "section vitrine-5", RenderReview = Model.RenderReview, LookCatalogBuy = Model.LookCatalogBuy })
+        @Include("facebookMoreComments", new { }, ViewBag, new { IsFacebookMoreCommentsEnabled = true })
+    </div>
+</section>
+
+<section class="section block-products vit-history">
+    <div class="row">
+        @Include("general.navigationhistory", Model.NavigationHistory, ViewBag)
+    </div>
+</section>
+
+<section class="section block-instagram">
+    <div class="row">
+        @Include("general.instagram", Model.Instagram, ViewBag)
+    </div>
+</section>
+@*FIM HOME PADRAO*@

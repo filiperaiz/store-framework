@@ -1,0 +1,220 @@
+﻿body {
+    @include global {
+        #breadcrumbs {
+            background: transparent;
+            border-bottom: 1px solid color(light);
+            margin: 0;
+            padding: 20px 0;
+            @include flexbox(flex, row, nowrap, flex-start, center, center);
+        }
+
+        &:not(.core-search) {
+            #breadcrumbs {
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    @include flexbox(flex, row, wrap, flex-start, center, center);
+                }
+
+                li {
+                    align-content: center;
+                    align-items: center;
+                    display: $df;
+                    justify-content: flex-start;
+                    margin: 0;
+                    padding: 0;
+
+                    &:after {
+                        color: color(dark);
+                        content: $fa-var-chevron-right;
+                        font-family: $icons;
+                        font-size: pxtorem(10px);
+                        font-weight: $solid;
+                        margin: 0 5px;
+                    }
+
+                    &:first-child,
+                    &:last-child {
+                        &:after {
+                            display: $dn;
+                        }
+                    }
+                }
+
+                p {
+                    color: color(dark);
+                    font-size: pxtorem(12px);
+                    font-weight: $regular;
+                    line-height: 1.4;
+                    margin-bottom: 0;
+                    margin-right: 5px;
+                    margin-top: 0;
+                    text-transform: none;
+                }
+
+                .item {
+                    color: color(dark);
+                    font-size: pxtorem(12px);
+                    font-weight: $bold;
+                    line-height: 1.4;
+                    margin: 0;
+                    max-width: 300px;
+                    overflow: hidden;
+                    padding: 0;
+                    text-overflow: unset;
+                    text-transform: none;
+                    white-space: nowrap;
+
+                    &.link {
+                        font-weight: $regular;
+
+                        @include hover {
+                            color: color(primary);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.core-search {
+            #breadcrumbs {
+                &:before {
+                    color: color(dark);
+                    content: 'Você está em:';
+                    font-size: pxtorem(12px);
+                    font-weight: $regular;
+                    line-height: 1.4;
+                    margin-bottom: 0;
+                    margin-right: 5px;
+                    margin-right: 5px;
+                    margin-top: 0;
+                    text-transform: none;
+                }
+
+                span {
+                    align-content: center;
+                    align-items: center;
+                    background: transparent;
+                    color: color(dark);
+                    display: $df;
+                    flex-direction: row;
+                    font-size: pxtorem(12px);
+                    justify-content: flex-start;
+                    margin: 0;
+                    max-width: 300px;
+                    overflow: hidden;
+                    padding: 0;
+                    text-overflow: unset;
+                    text-transform: none;
+                    white-space: nowrap;
+
+                    @include hover {
+                        a {
+                            span {
+                                color: color(secondary);
+                            }
+                        }
+                    }
+
+                    &:after {
+                        color: color(dark);
+                        content: $fa-var-chevron-right;
+                        font-family: $icons;
+                        font-size: pxtorem(10px);
+                        font-weight: $solid;
+                        margin: 0 5px;
+                    }
+
+                    a {
+                        color: color(dark);
+                        display: $dib;
+                        float: $fn;
+                        margin: 0;
+                        padding: 0;
+
+                        span {
+                            margin: 0;
+                            padding: 0;
+                            &:after {
+                                display: $dn;
+                            }
+                        }
+                    }
+
+                    &:last-child {
+                        span {
+                            color: color(dark);
+                            font-weight: $bold;
+
+                            &:after {
+                                color: color(dark);
+                                content: $fa-var-chevron-right;
+                                font-family: $icons;
+                                font-size: pxtorem(10px);
+                                font-weight: $solid;
+                                margin: 0 5px;
+                            }
+                        }
+
+                        &:after {
+                            color: color(dark);
+                            content: $fa-var-chevron-right;
+                            font-family: $icons;
+                            font-size: pxtorem(10px);
+                            font-weight: $solid;
+                            margin: 0 5px;
+                        }
+                    }
+                }
+
+                h1 {
+                    background: transparent;
+                    font-size: pxtorem(11px) !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    text-align: left !important;
+                    text-transform: uppercase;
+                    width: auto;
+
+                    &:after {
+                        display: $dn;
+                    }
+
+                    span {
+                        color: color(dark);
+                        font-weight: $bold;
+                        margin: 0;
+                        padding: 0;
+                        &:after {
+                            display: $dn;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+        &.core-search {
+            #breadcrumbs {
+                span {
+                    a {
+                        display: $dib;
+                        span {
+                            &:after {
+                                display: $dn;
+                            }
+                        }
+
+                        &:after {
+                            display: $dn;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

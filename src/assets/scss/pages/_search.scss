@@ -1,0 +1,162 @@
+body.core-search.type-busca {
+    @include global {
+        #main {
+            .aside {
+                &.sidebar {
+                    .cp-search-side {
+                        @include radius(0);
+                        border: 1px solid #696969;
+                    }
+                    .clean-btn-por {
+                        color: color(dark);
+                        font-size: pxtorem(14px);
+                        font-weight: $bold;
+                    }
+                }
+            }
+
+            .content {
+                .main-content {
+                    width: 100%;
+
+                    .lista-catalogo {
+                        padding: 0 !important;
+                    }
+                }
+
+                .refine-sua-busca {
+                    .title-refine {
+                        a {
+                            color: color(dark);
+                            font-size: pxtorem(14px);
+                            font-weight: $bold;
+                        }
+                    }
+                    .form-refine {
+                        background: color(light);
+                        border: solid 1px color(light);
+                        border-radius: 5px;
+
+                        .form-group {
+                            display: $dib;
+                            float: $fn;
+                        }
+
+                        label {
+                            font-size: pxtorem(14px);
+                        }
+                        .form-button {
+                            background-color: color(dark);
+                            background-image: none;
+                            border-radius: 5px;
+                            height: 40px;
+                            margin: 25px 0 0 10px;
+                            text-indent: inherit;
+                            text-shadow: none;
+                            width: 50px;
+                            &:before {
+                                color: color(light, light);
+                                content: 'OK';
+                                font-size: pxtorem(14px);
+                                font-weight: $bold;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+
+                .resumo-resultado {
+                    display: $dn;
+                    p {
+                        color: color(dark);
+                        font-size: pxtorem(14px);
+                        font-weight: $bold;
+                        text-transform: none;
+                        strong {
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+    }
+}
+
+body.rksearch,
+body.type-busca {
+    .store-content {
+        padding-top: 160px;
+    }
+
+    .result-naoencontrado {
+        .retorno {
+            color: color(dark);
+            font-size: pxtorem(18px);
+            padding-bottom: 30px;
+
+            strong {
+                color: color(primary);
+            }
+        }
+
+        .form-comment {
+            border: 1px solid color(light);
+            border-radius: 0px;
+            padding: 15px;
+
+            legend {
+                display: $dn;
+            }
+
+            .title-sugestao {
+                color: color(dark);
+                font-size: pxtorem(18px);
+                padding-bottom: 15px;
+                text-transform: uppercase;
+            }
+
+            .txt-sugestao {
+                color: color(dark);
+                font-size: pxtorem(14px);
+                line-height: 1.4;
+                padding-bottom: 25px;
+                text-transform: none;
+
+                strong {
+                    display: $db;
+                    margin-bottom: 0;
+                }
+            }
+
+            .lbl-form {
+                color: color(dark);
+                font-size: pxtorem(14px);
+                line-height: 1.4;
+                padding-bottom: 15px;
+            }
+
+            .form-button {
+                background: color(primary) !important;
+                border: none;
+                border-radius: 5px !important;
+                color: color(light, light) !important;
+                display: $db !important;
+                float: $fr !important;
+                font-family: $base;
+                font-size: pxtorem(14px) !important;
+                margin: 0;
+                padding: 12px 15px !important;
+
+                @include hover {
+                    background: color(primary, light) !important;
+                }
+            }
+        }
+    }
+}

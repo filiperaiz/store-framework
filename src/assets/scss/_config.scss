@@ -1,0 +1,44 @@
+// -------------------------------------
+// Colors
+// -------------------------------------
+$config-color-primary: #113182 !default;
+$config-color-secondary: #000000 !default;
+
+// -------------------------------------
+// Screen Container
+// -------------------------------------
+$config-screen-container: 1260px;
+
+// -------------------------------------
+// Quantity list products
+// -------------------------------------
+$config-list-products-desktop: 4;
+$config-list-products-catalog-desktop: 3;
+$config-list-products-vitrine-desktop: 4;
+
+$config-list-products-mobile: 2;
+$config-list-products-catalog-mobile: 2;
+$config-list-products-vitrine-mobile: 2;
+
+// -------------------------------------
+// Fonts
+// -------------------------------------
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+$config-font-base: ('Roboto', sans-serif);
+$config-font-title: ('Roboto', sans-serif);
+
+// -------------------------------------
+// Titles Size
+// -------------------------------------
+$config-title-desktop: 25px;
+$config-title-mobile: 18px;
+
+// -------------------------------------
+// Margins Size
+// -------------------------------------
+$config-header-height-desktop: '144px';
+$config-headerbuy-height-desktop: '80px';
+$config-header-height-mobile: '107px';
+$config-headerbuy-height-mobile: '80px';
+$config-height-extra-top: '30px';

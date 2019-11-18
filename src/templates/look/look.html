@@ -1,0 +1,61 @@
+@model LookDetailModel
+<!--  -->
+@{ var classCss = Model.Look.SkuGrid ? "look-with-grid" : String.Empty; }
+
+<div class="container @classCss">
+	@Include("general.bannerarea", Model.BannerArea1, ViewBag) @Include("general.bannerarea", Model.BannerArea1Mobile, ViewBag) @Include("general.breadcrumb", Model.Breadcrumb, ViewBag)
+
+	<div class="content">
+		<div class="main-content">
+			<div id="info-product" class="hproduct">
+				<div class="info-left">
+					<div class="images">
+						@Include("look.images", Model, ViewBag)
+					</div>
+
+					@* Imgs Responsivo *@
+					<div class="responsive-prod-images"></div>
+					@* Fim IMG Responsivo *@
+
+					<div class="js-social-append-desktop"></div>
+					<div class="onlyDesktop">
+						@Include("look.socialmedia", Model, ViewBag)
+					</div>
+				</div>
+
+				<div class="info-right">
+					@Include("look.name", Model, ViewBag)
+
+					<div class="info-prices">
+						<div class="infos">
+							@Include("look.brand", Model, ViewBag) @Include("look.stamps", Model, ViewBag) @Include("look.rating", Model, ViewBag)
+						</div>
+
+						<div class="prices">
+							@Include("look.prices", Model, ViewBag)
+						</div>
+					</div>
+
+					<div class="aside js-nomove">
+						@Include("look.products", Model, ViewBag) @Include("look.tools", Model, ViewBag)
+					</div>
+
+					<div class="js-social-append-mobile"></div>
+					<div class="onlyMobile">
+						@Include("look.socialmedia", Model, ViewBag)
+					</div>
+				</div>
+			</div>
+
+			<div class="info-texts">
+				@Include("look.description", Model, ViewBag) @Include("look.longpage", Model, ViewBag) @Include("look.comments", Model, ViewBag)
+			</div>
+
+			<div id="ajaxDescriptionPreview">
+				@Include("look.descriptionpreview", Model, ViewBag)
+			</div>
+
+			@Include("look.AlsoSaw", Model, ViewBag) @Include("general.navigationhistory", Model.NavigationHistory, ViewBag) @Include("general.instagram", Model.Instagram, ViewBag)
+		</div>
+	</div>
+</div>

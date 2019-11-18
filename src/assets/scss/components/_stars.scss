@@ -1,0 +1,116 @@
+#main {
+	.container {
+		@include global {
+			.reviewaggregate {
+				align-content: center;
+				align-items: center;
+				display: $df;
+				flex-direction: row;
+				justify-content: center;
+
+				.item {
+					display: $dn;
+				}
+
+				> a {
+					background-image: url('/static/locales/custom/img/star.png');
+					background-position: 0 -15px;
+					background-repeat: repeat-x;
+					background-size: 15px;
+					cursor: pointer;
+					display: $dib;
+					float: $fn;
+					height: 15px;
+					margin: 0 10px;
+					text-indent: -9999px;
+					width: 75px;
+
+					.rating {
+						background-image: url('/static/locales/custom/img/star.png');
+						background-position: 0 0px;
+						background-repeat: repeat-x;
+						background-size: 15px;
+						display: $db;
+						float: $fn;
+						height: 15px;
+						margin: 0;
+						width: auto;
+					}
+				}
+
+				.count {
+					background: none;
+					color: color(primary);
+					display: $dib;
+					float: $fn;
+					font-size: pxtorem(14px);
+					font-weight: $regular;
+					height: auto;
+					line-height: 1;
+					margin-right: 0;
+					text-indent: 0;
+
+					.value {
+						background: transparent;
+						color: color(primary);
+						display: $di !important;
+						float: $fn;
+						font-size: pxtorem(14px);
+						margin-right: 5px;
+						text-indent: 0;
+						vertical-align: middle;
+					}
+
+					#hplAmountAssessments {
+						color: color(dark);
+						font-size: pxtorem(14px);
+						font-weight: $regular;
+
+						@include hover {
+							color: color(primary);
+						}
+					}
+
+					.anchor-opinion {
+						font-weight: $regular;
+						line-height: 1.2 !important;
+					}
+				}
+			}
+
+			.hreview {
+				.rating {
+					background-image: url('/static/locales/custom/img/star.png');
+					background-position: 0 -15px;
+					background-repeat: repeat-x;
+					background-size: 15px;
+					cursor: pointer;
+					display: $dib;
+					float: $fn;
+					height: 15px;
+					margin: 0;
+					text-indent: -9999px;
+					width: 75px;
+
+					.value {
+						background-image: url('/static/locales/custom/img/star.png');
+						background-position: 0 0px;
+						background-repeat: repeat-x;
+						background-size: 15px;
+						display: $db !important;
+						float: $fn;
+						height: 15px;
+						margin: 0;
+						width: auto;
+					}
+				}
+			}
+		}
+
+		@include desktop {
+		}
+
+		@include mobile {
+		}
+	}
+}

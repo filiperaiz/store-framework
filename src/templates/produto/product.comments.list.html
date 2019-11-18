@@ -1,0 +1,25 @@
+@model ProductDetailModel.CommentsModel
+
+<h2>
+    <span>Avaliações dos clientes</span>
+</h2>
+
+@for (int i = 0; i < Model.Reviews.Count; i++)
+{
+    var review = Model.Reviews[i];
+            
+    <div id="panOpiniao" class="@(i == 0 ? "hreview first" : "hreview")">
+        <div class="header">
+            <div class="name">
+                @Raw(String.IsNullOrEmpty(review.Email) ? review.Name : string.Format("{0}", review.Name)) -
+                @review.Date.ToString("dd/MM/yyyy")
+            </div>
+            <!-- <div class="date">@review.Date.ToString("dd/MM/yyyy")</div> -->
+        </div>
+        
+        <div class="body">
+            <p>@Raw(review.Comment)</p>
+            <div class="rating"><span class="value" style='width:@review.ScorePercentage%'>@review.ScorePercentage%</span></div>
+        </div>
+    </div>
+}

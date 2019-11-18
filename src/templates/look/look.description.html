@@ -1,0 +1,13 @@
+@model LookDetailModel
+<!--  -->
+@if (!string.IsNullOrWhiteSpace(Model.Look.Description)){
+<div ID="description" class="section about description">
+    <h2>
+        <span>Descrição</span>
+    </h2>
+
+    <div id="descriptionContent">
+        @Raw(Model.Look.Description)
+    </div>
+</div>
+}

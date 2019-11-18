@@ -1,0 +1,64 @@
+body {
+	@include desktop {
+		#fancybox-wrap {
+			&.fancybox-courtesyitems {
+				height: 400px !important;
+			}
+		}
+	}
+
+	&.basket-gift {
+		@include global {
+			.wrap-basket-gift {
+				padding: 0;
+			}
+
+			.gift-product {
+				margin: 10px 0 !important;
+				display: $df;
+				flex-direction: row;
+				justify-content: flex-start;
+				align-items: flex-start;
+				align-content: flex-start;
+				padding: 0;
+			}
+
+			.gift-product-image {
+				float: $fn;
+				width: 90px;
+				height: 90px;
+				position: $pr;
+				margin: 0 10px 0 0;
+				left: 0;
+			}
+
+			.gift-product-details {
+				width: 70%;
+
+				.name {
+					color: color(primary);
+					font-size: pxtorem(14px);
+					span {
+						color: color(primary);
+						font-size: pxtorem(14px);
+						font-weight: $bold;
+						line-height: 1.4;
+						display: $db;
+
+						&.promo-msg {
+							font-size: pxtorem(12px);
+							font-weight: $regular;
+							margin-top: 10px;
+						}
+					}
+				}
+			}
+		}
+
+		@include desktop {
+		}
+
+		@include mobile {
+		}
+	}
+}

@@ -1,0 +1,168 @@
+@include global {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    figure,
+    ul,
+    ol,
+    dl,
+    address {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    fieldset {
+        margin: 0;
+        padding: 0;
+    }
+
+    #frm {
+        display: flex;
+        flex-direction: column;
+
+        .wrapper {
+            flex: 1 0 auto;
+        }
+
+        .bottom {
+            flex-shrink: 0;
+        }
+    }
+
+    .container {
+        background: transparent !important;
+        height: auto !important;
+        margin: 0 auto;
+        max-width: $screen-container;
+        padding: 0 10px !important;
+        width: 100% !important;
+    }
+
+    .section {
+        border: none !important;
+        clear: both;
+        overflow: hidden;
+        padding: 40px 0 !important;
+    }
+}
+
+@include desktop {
+    body {
+        #main {
+            padding-top: calc(#{$config-headerbuy-height-desktop});
+        }
+    }
+
+    body {
+        &.basketpage,
+        &.checkout,
+        &.comparepage,
+        &.mycards,
+        &.my-lists {
+            #main {
+                padding-top: calc(#{$config-header-height-desktop} + #{$config-height-extra-top});
+            }
+        }
+
+        &.op-checkout,
+        &.contaCorrente,
+        &.op-confirmation,
+        &.search-pedidos,
+        &.meuspedidos,
+        &.loginpage {
+            #main {
+                padding-top: calc(#{$config-headerbuy-height-desktop} + #{$config-height-extra-top});
+            }
+        }
+
+        &.catalog,
+        &.institucional,
+        &.sitemap,
+        &.affiliates,
+        &.core-search,
+        &.catalog,
+        &.look,
+        &.lookDetalhe,
+        &.product:not(.quickview),
+        &.home,
+        &.type-busca,
+        &.register,
+        &.account,
+        &.internal,
+        &.delivery-address:not(.checkout:not(.register)),
+        &.page-wishlist,
+        &.globalId.loginpage,
+        &.simple,
+        &.request.loginpage,
+        &.vitrine {
+            #main {
+                padding-top: #{$config-header-height-desktop};
+            }
+        }
+    }
+}
+
+@include mobile {
+    body {
+        #main {
+            padding-top: calc(#{$config-header-height-mobile});
+        }
+    }
+
+    body {
+        &.basketpage,
+        &.checkout,
+        &.comparepage,
+        &.page-wishlist,
+        &.account,
+        &.internal,
+        &.institucional,
+        &.sitemap,
+        &.affiliates,
+        &.delivery-address:not(.checkout:not(.register)),
+        &.register,
+        &.type-busca,
+        &.mycards,
+        &.simple.mobile-state,
+        &.request.loginpage,
+        &.my-lists {
+            #main {
+                padding-top: calc(#{$config-header-height-mobile} + #{$config-height-extra-top});
+            }
+        }
+
+        &.contaCorrente,
+        &.op-checkout,
+        &.op-confirmation,
+        &.search-pedidos,
+        &.meuspedidos,
+        &.loginpage {
+            #main {
+                padding-top: calc(#{$config-headerbuy-height-mobile} + #{$config-height-extra-top});
+            }
+        }
+
+        &.catalog,
+        &.core-search,
+        &.catalog,
+        &.look,
+        &.lookDetalhe,
+        &.product:not(.quickview),
+        &.home,
+        &.globalId.loginpage,
+        &.vitrine {
+            #main {
+                padding-top: #{$config-header-height-mobile};
+            }
+        }
+    }
+
+    .section {
+        padding: 20px 0 !important;
+    }
+}

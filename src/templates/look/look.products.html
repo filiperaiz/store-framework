@@ -1,0 +1,218 @@
+@model LookDetailModel
+@{
+    var buyClick = String.Format("Look().verificarItens('{0}');", @Model.General.LookCode);
+}
+
+@if (Model.Look.Available && !Model.Look.IsRequiredCustomizationUnavailable){
+    <a id="hplBuySup" class="buy selected ir btn" href="javascript:;" onclick="@buyClick" style="@(Model.Look.SkuGrid ? "display:none" : String.Empty)">
+        Comprar
+    </a>
+}
+
+@if (Model.Look.IsRequiredCustomizationUnavailable){
+    <span class="title">
+        Estoque de personalização obrigatória esgotado.
+    </span>
+    <br />
+}
+
+<div id="piecesLook" class="pieces">
+    <div class="pieces-header">
+        <span class="title">
+            Peças do @Model.General.LookLabel
+        </span>
+    
+        <a id="hplSelectAll" class="btn ir select-look" href="javascript:;" onclick="Look().selecionarTodos();" style="@(Model.Look.CompleteBuy ? "display:none" : string.Empty)">
+            Clique aqui para selecionar todos os itens
+        </a>
+    </div>
+
+    <ul>
+        @foreach (var product in Model.Look.LookProducts.Select((info, i) => new { i, info })){
+            <li>
+                <div class="figure">
+                    @if (product.info.Type == 1){
+                        <a title="@product.info.Name" href="@product.info.Url" class="url">
+                            <img ID="imgProduct" productId="@product.info.Id.ToString()" alt="@product.info.Name" src="@product.info.MainSkuThumbImageURL" class="photo" />
+                        </a>
+                    } else {
+                        <img ID="imgProduct" productId="@product.info.Id.ToString()" alt="@product.info.Name" src="@product.info.MainSkuThumbImageURL" class="photo" />
+                    }
+
+                    <input type="checkbox"
+                           id="chkProduct"
+                           @(product.info.MainSkuAvailableComplete ? "checked=\"checked\"" : Model.Look.CompleteBuy || !product.info.MainSkuAvailable ? "disabled=\"disabled\"" : String.Empty)
+                           style="@(Model.Look.CompleteBuy ? "display:none" : string.Empty)"
+                           productId="@product.info.Id.ToString()"
+                           productName="@product.info.Name"
+                           skuId="@product.info.MainSkuCode"
+                           virtualProduct="@(Convert.ToInt32(product.info.IsVirtualProduct))" 
+                           isRequiredCustomization="@Convert.ToInt32(product.info.CustomizationAdvanced.IsRequiredCustomization)"/>
+
+                    <span id="productInTheBag"></span>
+                </div>
+
+                <fieldset class="info">
+                    <div class="name">
+                        <label>
+                            <span>@product.info.Name</span>
+                        </label>
+                    </div>
+
+                    @if (!Model.Look.SkuGrid) {
+                        foreach (var feature in product.info.Features.Select((info, i) => new { i, info })) {
+                            <div class="field">
+                                <p class="title">
+                                    <span>
+                                        @feature.info.Name
+                                    </span>
+                                </p>
+                                <label>
+
+                                    @if (feature.info.IsColor || Model.Look.SkuLookExhibitionType.Equals(Rakuten.ECService.Scope.Enumerators.SkuExhibitionType.Item.ToString())){
+                                        <ul class="skus-cores jcarousel-skin-tango">
+                                            @foreach (var option in feature.info.Variations.Select((info, i) => new { i, info })){
+                                                var cssClass = feature.info.SelectedVariation == option.info.Id ? "selected" : string.Empty;
+
+                                                <li class="@cssClass">
+                                                    <a href="javascript:;"
+                                                       onclick="Look().selecionarCaracteristicaCor('@product.info.Id.ToString()','@option.info.Id', '@feature.info.Id');"
+                                                       name="@option.info.Id"
+                                                       title="@option.info.Name"
+                                                       id="hplFeatureColor"
+                                                       productId="@product.info.Id.ToString()"
+                                                       featureId="@feature.info.Id">
+                                                        @if (option.info.HasThumb){
+                                                            <img alt="@option.info.Name" src="@option.info.ThumbImageUrl" />
+                                                        } else {
+                                                            @option.info.Name
+                                                        }
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    } else {
+                                        <select onchange="Look().selecionarCaracteristica('@product.info.Id.ToString()');"id="ddlFeature" productId="@product.info.Id.ToString()">
+                                            @foreach (var option in feature.info.Variations){
+                                                <option value="@option.Id" @(feature.info.SelectedVariation == option.Id ? "selected=\"selected\"" : "")>@option.Name</option>
+                                            }
+                                        </select>
+                                    }
+                                </label>
+                            </div>
+                        }
+
+                        <div class="field txtQuantity">
+                             <p class="title">
+                                <span> quantidade</span>
+                            </p>
+
+                            <label class="lbl-quantity">
+                                <input type="text" id="txtQuantityProduct" class="ipt-quantity" productId="@product.info.Id.ToString()" title="quantidade"
+                                       value="@product.info.Quantity.ToString()"
+                                       data-minimumQuantity="@(Model.Look.CompleteBuy ? product.info.Quantity.ToString() : "0")"
+                                       @((Model.Look.CompleteBuy && !Model.Look.CustomerChoosesQuantity) || !product.info.MainSkuAvailable ? "disabled=\"disabled\"" : String.Empty) />
+                            </label>
+                        </div>
+                    }
+
+                    @if (Model.Look.SkuGrid) {
+                        @*GRADE SKU Minimo*@
+                        <span class="qtd-min-look">
+                            Mínimo de <strong>@product.info.Quantity @(product.info.Quantity > 1 ? "unidades" : "unidade")</strong>
+                        </span>
+                    }
+
+                    <div class="details">
+                        <span ID="lblOfferSku" productId="@product.info.Id" class="offers" style="@(!product.info.MainSkuAvailable && !Model.Look.SkuGrid ? "display:none" : "")">
+                            @if (product.info.MainSkuFinalPrice < product.info.MainSkuInitialPrice && product.info.MainSkuFinalPrice > 0){
+                                <span id="lblRegularSku" productId="@product.info.Id" class="regular price-from">
+                                    <em>de: </em><span id="lblPriceOfSku" productId="@product.info.Id">@product.info.MainSkuInitialPrice.FormatPrice()</span>
+                                </span>
+                            } else {
+                                <span id="lblRegularSku" productId="@product.info.Id" class="regular price-from" style="display:none">
+                                    <em>de: </em><span id="lblPriceOfSku" productId="@product.info.Id"></span>
+                                </span>
+                            }
+
+                            <span class="price sale price-to">
+                                <em>por: </em>
+                                <span id="lblPriceForSku" productId="@product.info.Id"></span>
+                                <strong>@product.info.MainSkuFinalPrice.FormatPrice()</strong>
+                            </span>
+
+                            <span class="regular desconto-avista percent-a-vista">
+                                <span id="lblValueAtSightSku" productId="@product.info.Id" class="preco-avista value-sight" runat="server">@Raw(product.info.MainSkuValueAtSight)</span>
+                                <span id="lblPercentageAtSightSku" productId="@product.info.Id">@Raw(product.info.MainSkuPercentageAtSight)</span>
+                                <span id="lblPaymentMethodsAtSightSku" productId="@product.info.Id">@Raw(product.info.MainSkuPaymentMethodsAtSight)</span>
+                            </span>
+
+                            <span ID="lblConvertedPriceSku" productId="@product.info.Id" class="converted-price look-products">@Raw(product.info.MainSkuConvertedPrice)</span>
+                        </span>
+
+                        @if (!Model.Look.SkuGrid) {
+                            <span id="lblUnavailableSku" productId="@product.info.Id" style="@(product.info.MainSkuAvailable || product.info.MainSkuCode == 0 ? "display:none" : "")">
+                               
+                                <fieldset class="@(Model.Notify.ShowOtherFields ? "notifyme form notifyme-look-product show-other-fields" : "notifyme form notifyme-look-product")" pid="@product.info.Id" sid="@product.info.MainSkuCode">
+                                    
+                                    <span class="notifyLabel">
+                                        <p>Indisponível</p>
+                                        <span>Avise-me quando chegar</span>
+                                    </span>
+
+                                    <label>
+                                        <input id="txtEmailNotify_@product.info.Id" type="text" style="width:130px;" class="notifyme-field field-email" maxlength="128" value="@Model.Notify.Email" placeholder="Digite seu e-mail" />
+
+                                        @if (Model.Notify.ShowOtherFields) {
+                                            <input type="text" id="txtNameNotify_@product.info.Id" class="notifyme-field field-name" maxlength="128" value="@Model.Notify.Name" placeholder="Digite seu nome" />
+                                            <input type="text" id="txtPhoneNotify_@product.info.Id" class="notifyme-field field-fome" value="@Model.Notify.Phone" placeholder="Digite seu telefone" />
+                                        }
+                                    </label>
+                                    <a href="#" class="btn send ir">Enviar</a>
+                                </fieldset>
+                            </span>
+
+                            <span id="lblOptionUnavailable" productId="@product.info.Id" class="unavailable" style="@(product.info.MainSkuCode != 0 ? "display:none" : "")">
+                                Opção Indisponível
+                            </span>
+                        }
+                    </div>
+
+                    @*Grade SKU Table*@
+
+                    @if (Model.Look.SkuGrid){
+                        var id = String.Format("divProductGrid{0}", @product.info.Id.ToString());
+                        <div class="content grid" id="@id" data-productId="@product.info.Id.ToString()"></div>
+                    }
+                </fieldset>
+                @Include("look.product.customizationadvanced", product.info, ViewBag)
+            </li>
+        }
+    </ul>
+
+	<div class="pieces-actions">
+		@if (Model.Look.Available && !Model.Look.IsRequiredCustomizationUnavailable){
+			<a id="hplBuy" class="buy selected ir btn" href="javascript:;" onclick="@buyClick" style="@(Model.Look.SkuGrid ? "display:none" : String.Empty)">
+				Comprar
+            </a>
+            
+            @Include("look.shippingsimulation", Model, ViewBag)
+		}
+		
+		
+	</div>
+</div>
+
+@Include("look.messagelosediscount", Model, ViewBag)
+
+
+
+
+@if (Model.Look.IsRequiredCustomizationUnavailable) {
+    <span class="title">
+        Estoque de personalização obrigatória esgotado.
+    </span>
+}
+
+<div id="divGridScripts"></div>
+

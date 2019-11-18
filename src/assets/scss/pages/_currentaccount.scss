@@ -1,0 +1,118 @@
+body.contaCorrente {
+	@include global {
+		.box.form {
+			padding: 0;
+
+			fieldset {
+				padding: 0;
+
+				.title {
+					text-align: left;
+				}
+
+				.field {
+					margin-bottom: 10px !important;
+					padding: 10px 0;
+
+					span {
+						display: $dib;
+						float: $fn;
+						font-size: pxtorem(15px);
+						margin: 0 2px;
+						vertical-align: middle;
+					}
+
+					input[type='radio'] {
+						display: $dib;
+						float: $fn;
+						left: 0;
+						margin: 0 5px 0 0;
+						position: $pr;
+						top: 0;
+						vertical-align: middle;
+					}
+
+					label {
+						display: $db;
+						float: $fn;
+						margin-left: 0;
+						padding: 0;
+					}
+
+					.btn {
+						display: $db;
+						float: $fn !important;
+						margin-top: 20px;
+						width: 200px;
+					}
+
+					.date {
+						display: $dib;
+						float: $fn;
+						margin-left: 10px;
+						overflow: visible;
+						position: $pr;
+						top: 0;
+						vertical-align: middle;
+
+						input {
+							display: $dib;
+							float: $fn;
+							margin-bottom: 0;
+							margin-left: 0 !important;
+							margin-right: 0;
+							margin-top: 0;
+							padding: 10px 2px !important;
+							vertical-align: middle;
+							width: 50px !important;
+						}
+					}
+				}
+			}
+		}
+
+		.info {
+			margin: 10px 0;
+			padding: 0;
+		}
+
+		.account {
+			padding: 15px 0;
+		}
+	}
+
+	@include desktop {
+	}
+
+	@include mobile {
+		.box.form {
+			fieldset {
+				.field {
+					margin-bottom: 0 !important;
+					padding: 10px 0;
+
+					label {
+						display: $db;
+						float: $fn;
+						margin-left: 0;
+					}
+
+					.date {
+						display: $db;
+						margin-left: 0px;
+						text-align: center;
+						input {
+							padding: 5px !important;
+							width: 50px !important;
+						}
+					}
+
+					.search {
+						display: $db !important;
+						margin: 15px auto;
+					}
+				}
+			}
+		}
+	}
+}

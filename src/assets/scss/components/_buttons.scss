@@ -1,0 +1,60 @@
+body {
+    .btn,
+    .btn.ir,
+    .btn.buy,
+    .btn.calculate,
+    .compare .btn,
+    .compare .btn.ir.delete,
+    .coupon .btn.utilize,
+    .btn.ir.buy,
+    .bt-login,
+    .bt-cadastro,
+    .send-bt,
+    .see-category,
+    .bt-full,
+    .address-bt,
+    .print-boleto a,
+    .bt-yes,
+    .bt-no,
+    .next-page,
+    &.meuspedidos .actions a,
+    &.quickBasquet .actions a {
+        align-content: center;
+        align-items: center;
+        background-color: color(primary) !important;
+        background-image: none !important;
+        border: none !important;
+        border-radius: $rs !important;
+        color: color(light, light);
+        display: $dif !important;
+        float: $fn !important;
+        font-family: $base !important;
+        font-size: pxtorem(14px);
+        font-weight: $bold;
+        height: auto !important;
+        justify-content: center;
+        letter-spacing: 0;
+        line-height: 2 !important;
+        margin: 0;
+        min-height: 42px;
+        min-width: 42px;
+        padding: 0.375rem 0.75rem !important;
+        text-align: center;
+        text-indent: 0 !important;
+        text-transform: uppercase;
+        transition: all 0.2s ease-in-out;
+        user-select: none;
+        vertical-align: middle;
+
+        @include hover {
+            background-color: color(primary, dark) !important;
+            color: color(light, light) !important;
+        }
+
+        i {
+            display: $dib;
+            position: $pr;
+            vertical-align: middle;
+        }
+    }
+}

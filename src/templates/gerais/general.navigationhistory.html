@@ -1,0 +1,79 @@
+@model NavigationHistoryModel
+<!--  -->
+@if (Model.ShowHistory) {
+<div id="divHistoricoNavegacao" class="prod-view section history">
+	<h2>
+		<span>Produtos vistos</span>
+	</h2>
+	<ul class="list-products">
+		@foreach (var product in Model.VisitedProducts) {
+		<li>
+			<div class="hproduct">
+				<div class="figure">
+					<a id="hypImagemProduto" href="@product.URL" class="link url" rel="product" title="@product.Name">
+						<img id="imgProduto" style="border-width:0px;" class="photo" src="@product.ImageURL" alt="@product.Name" />
+					</a>
+				</div>
+				<div class="details">
+					<a id="hypProduto" href="@product.URL" class="link url" rel="product">
+						<span id="spanNome" class="fn name">@product.Name</span>
+						@if (product.Available && product.ShowPrice) {
+						<div id="infoPrices">
+							<span class="offers">
+								<span class="currency priceCurrency">@GlobalizationExtensions.GetISOCurrencySymbol()</span>
+
+								@{ var unitMeasure = @CalculatorHelper.GetUnitMeasureLabel(product.CalculatorSM.Enabled, product.CalculatorWL.Enabled, product.CalculatorWL.UnitMeasureLabel); } @if
+								(product.StartingPrice) {
+								<span id="spanPrecoDe" class="regular price-since"><em>a partir de:</em></span>
+								<span id="spanPrecoPor" class="price sale"
+									><span class="value">@product.FinalPrice</span> <strong>@String.Format("{0}{1}", product.FinalPrice.FormatPrice(), unitMeasure)</strong></span
+								>
+								} else { if (product.FinalPrice < product.InitialPrice && product.FinalPrice > 0) {
+								<span id="spanPrecoDe" class="regular"><em>de </em><del>@String.Format("{0}{1}", product.InitialPrice.FormatPrice(), unitMeasure)</del></span>
+								}
+								<span id="spanPrecoPor" class="price sale"
+									><span class="value">@product.FinalPrice</span> <em>por </em><strong>@String.Format("{0}{1}", product.FinalPrice.FormatPrice(), unitMeasure)</strong></span
+								>
+								} @if (!string.IsNullOrEmpty(product.ConvertedPrice)) {
+								<span id="spanConvertedPrice" class="converted-price catalog-product">@Raw(product.ConvertedPrice)</span>
+								}
+
+								<span class="percent-a-vista">
+									@Raw(product.ValueAtSight) @Raw(product.PercentageAtSight) @Raw(product.PaymentMethodsAtSight)
+								</span>
+							</span>
+
+							@if (!string.IsNullOrEmpty(product.HTMLInstallment1)) {
+							<span id="spanParcelamento" class="parcel">
+								<span id="spanParcelamento1">@Raw(product.HTMLInstallment1)</span>
+								<span id="spanParcelamento2">@Raw(product.HTMLInstallment2)</span>
+							</span>
+							}
+
+							<div class="stamp">
+								<div id="ulSelos">
+									@foreach (var stamp in product.Stamps) {
+									<a id="hypSelo" href="@stamp.LinkUrl" title="@stamp.LinkToolTip" class="@stamp.LinkCssClass">
+										<img src="@stamp.ImageUrl" alt="@stamp.ImageAlt" title="@stamp.ImageToolTip" id="imgSelo" />
+									</a>
+									}
+								</div>
+							</div>
+						</div>
+						}
+					</a>
+				</div>
+
+				@if (!product.Available && !product.IsCatalogProduct) {
+				<span id="spanIndisponivel" class="stamp unavailable">
+					Produto Indisponível
+				</span>
+				} @if (product.IsCatalogProduct) {
+				<span>@Raw(product.ProductCatalogMessage)</span>
+				}
+			</div>
+		</li>
+		}
+	</ul>
+</div>
+}

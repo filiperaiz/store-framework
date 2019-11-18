@@ -1,0 +1,167 @@
+@model FooterBaseModel
+<section class="newsletter">
+    <div class="row">
+        @IncludePrefix("newsLetter", "bot_", null, ViewBag)
+    </div>
+</section>
+
+<section class="institucional-info">
+    <div class="row">
+        <div class="box-institucional">
+            <h3 class="drop">Central de ajuda</h3>
+            <ul class="institucional-list links-list" >
+                <li>
+                    <a href="@Url("~/institucionais/index.aspx")" rel="nofollow">
+                        Central de atendimento
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url("~/institucionais/Comprando/ServicoEntrega.aspx")" rel="nofollow">
+                        Envio e entrega
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url("~/institucionais/AntesCompra/ComoNavegar.aspx")" rel="nofollow">
+                        Navegando e comprando
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url("~/institucionais/PosCompra/TrocasDevolucoes.aspx")" rel="nofollow">
+                        Trocas e Devoluções
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url("~/institucionais/faleconosco.aspx")" rel="nofollow">
+                        Fale conosco
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url("~/mapa-do-site.aspx")" rel="nofollow">
+                        Mapa do site
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="box-institucional">
+            <h3 class="drop">Institucional</h3>
+            <ul class="institucional-list links-list" >
+                <li>
+                    <a href="@Url("~/institucionais/AntesCompra/QuemSomos.aspx")" rel="nofollow">
+                        Quem somos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url("~/institucionais/AntesCompra/NossasLojas.aspx")" rel="nofollow">
+                        Nossas lojas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url("~/institucionais/AntesCompra/PoliticaPrivacidade.aspx")" rel="nofollow">
+                        Politica de privacidade
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url("~/loginafiliado.aspx")" rel="nofollow">
+                        Afiliados
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="box-institucional add">
+            <h3 class="">Atendimento</h3>
+            <ul class="institucional-list address-list">
+                <li>
+                    <i class="fal fa-phone"></i>
+                    <p><strong>televendas:</strong> <span>(11) 0000-0000</span></p>
+                </li>
+                <li>
+                    <i class="fab fa-whatsapp"></i>
+                    <p><strong>whatsapp:</strong> <span>(11) 0000-0000</span></p>
+                </li>
+                <li>
+                    <i class="fal fa-envelope"></i>
+                    <p><strong>email:</strong> <span>contato@rktwo.com.br</span></p>
+                </li>
+                <li>
+                    <p><strong>Horário de Atendimento:</strong> </p>
+                    <p><span>De segunda a sexta das 00 as 00</span></p>
+                </li>
+            </ul>
+        </div>
+
+         <div class="box-institucional">
+             <h3 class="">Siga-nos</h3>
+            <ul class="social-list">
+                @if (!string.IsNullOrWhiteSpace(Model.FacebookUrl)){
+                    <li class="facebook ico">
+                        <a href="@Model.FacebookUrl" target="_blank"></a>
+                    </li>
+                }
+                @if (!string.IsNullOrWhiteSpace(Model.InstagramUrl)){
+                    <li class="instagram ico">
+                        <a href="@Model.InstagramUrl" target="_blank"></a>
+                    </li>
+                }
+                @if (!string.IsNullOrWhiteSpace(Model.TwitterUrl)){
+                    <li class="twitter ico">
+                        <a href="@Model.TwitterUrl" target="_blank"></a>
+                    </li>
+                }
+                @if (!string.IsNullOrWhiteSpace(Model.PinterestUrl)){
+                    <li class="pinterest ico">
+                        <a href="@Model.PinterestUrl" target="_blank"></a>
+                    </li>
+                }
+                @if (!string.IsNullOrWhiteSpace(Model.YoutubeUrl)){
+                    <li class="youtube ico">
+                        <a href="@Model.YoutubeUrl" target="_blank"></a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="cards-security">
+    <div class="row">
+        <div class="boxblock">
+            <h3>pagamento</h3>
+            <ul class="institucional-list cards-list">
+                <li class="ico visa"></li>
+                <li class="ico mastercard"></li>
+                <li class="ico amex"></li>
+                <li class="ico elo"></li>
+                <li class="ico hipercard"></li>
+                <li class="ico boleto"></li>
+            </ul>
+        </div>
+
+        <div class="boxblock">
+            <h3>Certificados</h3>
+            <ul class="institucional-list certificates-list">
+                <li><img src="/static/locales/custom/img/selo_positive.png" alt=""></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="info-cli">
+        <div class="row">
+            <p>© Copyright 2019 - Todos os direitos reservados</p>
+
+            <a href="https://digitalcommerce.rakuten.com.br/"  target="_blank">
+                <img src="/static/locales/custom/img/rakuten-logo.svg"  alt="">
+            </a>
+        </div>
+</section>
+

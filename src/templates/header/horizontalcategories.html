@@ -1,0 +1,81 @@
+@model HeadBaseModel
+
+@{ var FloatMenu = ViewBag.FloatMenu == null ? "nav" : "navFloatMenu"; }
+
+<ul id="@FloatMenu">
+    @foreach (var father in Model.Categories){
+        <li><a href="@Url(father.Link)">@father.Name</a>
+            @if (father.Children.Count > 0)
+            {
+                <div class="sub-nav">
+                    <div class="container">
+                        @foreach (var childColumn in father.Children)
+                        {
+                            
+                            <div class="collum">
+                                @if (childColumn.Value.Count > 0)
+                                {
+                                    <ul>
+                                        @foreach (var child in childColumn.Value)
+                                        {
+                                            <li><a href="@Url(child.Link)">@child.Name</a> </li>
+                                        }
+                                    </ul>
+                                }
+                            </div>
+    
+                        }
+    
+                        @if (father.MenuImages.Count > 0)
+                        {
+                            <div class="collum imagem">
+                                @foreach (var img in father.MenuImages)
+                                {
+                                
+                                    <a href="@Url(img.ImageLink)">
+                                        <img src="@Url(@img.ImageUrl)">
+                                    </a>
+                                
+                                }
+                            </div>
+                        }
+                        else if (!IsEmpty(father.ImageUrl))
+                        {
+                            <div class="collum imagem">
+                                <a href="@Url(father.ImageLink)">
+                                    <img src="@Url(father.ImageUrl)">
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+            else if (father.MenuImages.Count > 0)
+            {
+                <div class="sub-nav">
+                    <div class="collum imagem">
+                        @foreach (var img in father.MenuImages)
+                        {
+                    
+                            <a href="@Url(img.ImageLink)">
+                                <img src="@Url(img.ImageUrl)">
+                            </a>
+                    
+                        }
+                    </div>
+                </div>
+            }
+            else if (!IsEmpty(father.ImageUrl))
+            {
+                
+                <div class="sub-nav">
+                    <div class="collum imagem">
+                        <a href="@Url(father.ImageLink)">
+                            <img src="@Url(father.ImageUrl)">
+                        </a>
+                    </div>
+                </div>
+            }
+        </li>
+    }
+</ul>

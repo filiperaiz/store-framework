@@ -1,0 +1,1463 @@
+﻿#main {
+    @include global {
+        .b-top {
+            float: $fn;
+            margin: 0px auto 10px;
+            max-width: 100%;
+            padding: 0;
+            width: 100%;
+
+            ul {
+                img {
+                    display: $db;
+                    height: auto;
+                    width: 100%;
+                }
+
+                li {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .aside {
+            display: $db;
+            margin: 0 20px 0 0;
+            overflow: visible;
+            padding: 0;
+            width: 220px;
+
+            #divMain {
+                background-color: color(light);
+                border-radius: $rs;
+                display: $db;
+                padding: 15px 10px;
+
+                #divFilters {
+                    background-color: transparent;
+                    border: 0;
+                    display: $db;
+                    margin-bottom: 0;
+
+                    .title {
+                        color: color(dark);
+                        display: $db;
+                        font-family: $title;
+                        font-size: pxtorem(0);
+                        line-height: 1.4;
+                        margin: 0;
+                        padding: 0 0 10px;
+                        text-transform: capitalize;
+
+                        &:before {
+                            color: color(dark);
+                            content: 'Filtros selecionados';
+                            font-family: $title;
+                            font-size: pxtorem(16px);
+                            line-height: 1.4;
+                        }
+                    }
+
+                    fieldset {
+                        float: $fn;
+                        line-height: inherit;
+                        overflow: visible;
+                        padding: 0;
+                        width: 100%;
+
+                        #pFilters {
+                            display: $dn;
+                        }
+                    }
+
+                    ul {
+                        align-content: flex-start;
+                        align-items: flex-start;
+                        display: $df;
+                        flex-direction: column;
+                        float: $fn;
+                        justify-content: flex-start;
+                        margin: 0;
+
+                        li {
+                            background-color: color(primary);
+                            background-image: none;
+                            border-radius: $rs;
+                            float: $fn;
+                            height: auto;
+                            line-height: inherit;
+                            margin: 0 0 5px 0;
+                            padding: 5px;
+                            position: $pr;
+                            width: 100%;
+
+                            span {
+                                align-content: center;
+                                align-items: center;
+                                color: color(light, light);
+                                display: $df;
+                                flex-direction: row;
+                                flex-wrap: wrap;
+                                float: $fn;
+                                font-size: pxtorem(14px);
+                                height: auto;
+                                justify-content: space-between;
+                                line-height: inherit;
+                                line-height: 1.4;
+                                margin: 0;
+                                padding: 0 10px 0 0;
+                                text-align: left;
+                                text-decoration: none;
+                                text-transform: capitalize;
+                                width: 100%;
+
+                                span {
+                                    margin: 0;
+                                    padding: 0;
+                                    position: $ps;
+                                }
+
+                                &:before {
+                                    display: $dn;
+                                    margin-right: 5px;
+                                    @include set-icon($fa-var-chevron-right, pxtorem(12px), $solid, color(dark));
+                                }
+
+                                &.type {
+                                    display: $dn;
+                                    &:before {
+                                        display: $dn;
+                                    }
+                                }
+                            }
+
+                            .delete {
+                                background: none;
+                                background-position: 0;
+                                display: $dib;
+                                float: $fn;
+                                font-size: 0;
+                                height: auto;
+                                line-height: 1;
+                                margin: 0;
+                                position: $pa;
+                                right: 0;
+                                text-decoration: none;
+                                text-indent: 0;
+                                top: 50%;
+                                transform: translate(0px, -50%);
+                                vertical-align: middle;
+                                width: auto;
+
+                                &:before {
+                                    @include set-icon($fa-var-times, pxtorem(14px), $solid, color(light, light));
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .block {
+                    background-color: transparent;
+                    border: 0;
+                    border-top: 1px solid color(light, dark);
+                    display: $db;
+                    margin-top: 20px;
+                    overflow: visible;
+                    padding-top: 20px;
+                    position: $pr;
+
+                    &:first-child {
+                        border: none;
+                        margin-top: 0;
+                        padding-top: 0;
+                    }
+
+                    .title {
+                        background: transparent;
+                        color: color(dark);
+                        display: $db;
+                        font-family: $title;
+                        font-size: pxtorem(16px);
+                        font-weight: $bold;
+                        padding: 0;
+                        text-transform: capitalize;
+
+                        .ico {
+                            background: transparent;
+                            padding-left: 0;
+                        }
+                    }
+
+                    .clean-btn {
+                        padding: 0;
+                        position: $pa;
+                        right: 0;
+                        top: 5px;
+                    }
+
+                    ul {
+                        font: inherit;
+                        height: auto;
+                        margin: 15px 0 0;
+                        padding: 0;
+                        li {
+                            background: none;
+                            display: $db;
+                            margin: 0;
+                            padding: 0;
+
+                            span {
+                                background: transparent;
+                                color: color(dark);
+                                font-size: pxtorem(14px);
+                                font-weight: $bold;
+                                margin-bottom: 10px;
+                                padding: 0;
+                                text-transform: capitalize;
+                            }
+
+                            ul {
+                                margin: 0;
+                                padding: 0;
+
+                                li {
+                                    color: color(dark);
+                                    float: $fn;
+                                    font-size: pxtorem(14px);
+                                    margin: 0 0 10px;
+                                    text-transform: capitalize;
+                                    width: 100%;
+
+                                    &.sub {
+                                        display: $dn;
+                                    }
+
+                                    @include hover {
+                                        a {
+                                            color: color(primary);
+                                        }
+                                    }
+
+                                    a {
+                                        align-content: center;
+                                        align-items: center;
+                                        background: transparent;
+                                        border: none;
+                                        color: color(dark);
+                                        display: $df;
+                                        flex-direction: row;
+                                        font-size: pxtorem(14px);
+                                        justify-content: flex-start;
+                                        margin: 0;
+                                        padding: 0 0 0 20px;
+                                        position: $pr;
+                                        text-transform: capitalize;
+                                        width: 100%;
+
+                                        &:before {
+                                            left: 0;
+                                            position: $pa;
+                                            top: 1px;
+                                            @include set-icon($fa-var-square, pxtorem(12px), $regular, color(dark));
+                                        }
+
+                                        i {
+                                            display: $dn;
+                                        }
+                                        small {
+                                            margin-left: 5px;
+                                        }
+
+                                        img {
+                                            float: none;
+                                            margin-right: 10px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.link-list {
+                            li > span {
+                                display: $dn;
+                            }
+                        }
+                    }
+
+                    &.custom {
+                        display: $db;
+
+                        ul {
+                            li {
+                                padding-top: 0;
+
+                                a {
+                                    background: transparent;
+                                    color: color(dark);
+                                    font-size: pxtorem(14px);
+                                    margin: 0;
+                                    padding: 0;
+                                    text-transform: capitalize;
+                                }
+
+                                @include hover {
+                                    a {
+                                        color: color(primary);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .show-more {
+                        display: $dn;
+                    }
+
+                    .side-search {
+                        display: $dn;
+                    }
+                }
+
+                #divOptionsSearch {
+                    order: 1;
+                }
+            }
+
+            #pnlEmailMarketing {
+                display: $dn;
+            }
+        }
+
+        .categ-desc {
+            color: color(dark);
+            font-size: pxtorem(15px);
+            line-height: 1.4;
+            margin: 0 auto 20px;
+            max-width: 100%;
+            padding: 10px 0;
+            text-align: left;
+            width: 100%;
+        }
+
+        .vs-mode {
+            align-content: center;
+            align-items: center;
+            color: color(dark);
+            display: $df;
+            flex-grow: 1;
+            float: $fn;
+            font-size: pxtorem(14px);
+            height: auto;
+            justify-content: flex-start;
+            line-height: 1.2;
+            margin: 0;
+            order: 0;
+            padding: 0;
+            width: auto;
+
+            span {
+                color: color(dark);
+                display: $dib;
+                font-size: pxtorem(14px);
+                font-weight: $regular;
+                height: auto;
+                line-height: 1;
+                margin-right: 10px;
+                vertical-align: top;
+            }
+
+            ul {
+                align-content: center;
+                align-items: center;
+                color: color(dark);
+                display: $df;
+                flex-direction: row;
+                float: $fn;
+                font-size: pxtorem(14px);
+                height: auto;
+                justify-content: center;
+                line-height: 1;
+                width: auto;
+                li {
+                    background: none;
+                    color: color(dark);
+                    float: $fn;
+                    font-size: pxtorem(14px);
+                    height: auto;
+                    line-height: 1;
+                    margin-left: 0;
+                    margin-right: 10px;
+                    padding: 0;
+                    width: auto;
+
+                    @include hover {
+                        a {
+                            color: color(primary);
+                            &:before {
+                                color: color(primary);
+                            }
+                        }
+                    }
+
+                    a {
+                        align-content: center;
+                        align-items: center;
+                        background: transparent;
+                        color: color(dark);
+                        display: flex;
+                        float: $fn;
+                        font-size: pxtorem(14px);
+                        font-weight: $regular;
+                        justify-content: flex-start;
+                        margin: 0;
+                        padding: 0;
+                        text-decoration: none;
+                        text-transform: capitalize;
+
+                        &:before {
+                            color: color(dark);
+                            content: $fa-var-plus;
+                            font-family: $icons;
+                            font-size: pxtorem(18px);
+                            font-weight: $solid;
+                            margin-right: 5px;
+                        }
+
+                        &.selected {
+                            color: color(primary);
+                            &:before {
+                                color: color(primary) !important;
+                            }
+                        }
+
+                        &#table {
+                            &:before {
+                                content: $fa-var-th-large;
+                            }
+                        }
+
+                        &#list {
+                            &:before {
+                                content: $fa-var-th-list;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #divSort,
+        #ordena_produtos {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid color(light);
+            margin-bottom: 0;
+            min-height: 60px;
+            padding: 10px 0;
+            @include flexbox(flex, row, nowrap, flex-start, center, center);
+
+            span {
+                color: color(dark);
+                font-size: pxtorem(14px);
+                font-weight: $regular;
+                height: auto;
+                line-height: 1.1;
+                margin-right: 10px;
+                min-width: 60px;
+            }
+
+            fieldset {
+                flex-grow: 1;
+                float: $fn;
+                height: auto;
+                line-height: 1;
+                position: $pr;
+                width: auto;
+
+                ul {
+                    margin: 0;
+
+                    li {
+                        background: transparent;
+                        display: $dib;
+                        float: $fn;
+                        height: auto;
+                        line-height: 1.2;
+                        margin: 0;
+                        padding: 0;
+                        vertical-align: top;
+                        width: auto;
+
+                        @include hover {
+                            a {
+                                color: color(primary);
+                            }
+                        }
+
+                        a {
+                            color: color(dark);
+                            display: $dib;
+                            float: $fn;
+                            font-size: pxtorem(14px);
+                            font-weight: $regular;
+                            height: auto;
+                            line-height: 1.2;
+                            text-transform: capitalize;
+                            width: auto;
+
+                            &.selected {
+                                color: color(primary);
+                                font-weight: $regular;
+                            }
+                        }
+
+                        &:after {
+                            margin: 0 5px;
+                            @include set-icon('|', pxtorem(14px), $solid, color(dark));
+                        }
+
+                        &:last-child {
+                            &:after {
+                                @include set-icon('|', pxtorem(14px), $solid, transparent);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .itens-page {
+                display: $db;
+            }
+
+            .compare {
+                background: color(primary);
+                border: none;
+                // box-shadow: 0px 3px 0px 0px #78b500;
+                display: $dn !important;
+                font-size: pxtorem(0px) !important;
+                height: 28px !important;
+                left: unset;
+                line-height: 1.4 !important;
+                min-height: 1px !important;
+                padding: 5px 15px !important;
+                position: $pa;
+                right: 0;
+                top: -8px;
+                width: auto;
+
+                &:before {
+                    color: color(light, light);
+                    content: 'comparar produtos';
+                    font-size: pxtorem(14px) !important;
+                    font-weight: $bold;
+                }
+
+                @include hover {
+                    background-color: color(primary, dark);
+                    color: color(light, light);
+                }
+            }
+        }
+
+        .filter-details {
+            background: transparent;
+            border-bottom: 1px solid color(light);
+            margin-bottom: 0;
+            min-height: 50px;
+            padding: 10px 0;
+            @include flexbox(flex, row, nowrap, flex-start, center, center);
+
+            .itens-page {
+                align-items: center;
+                display: $df;
+                float: $fn;
+                height: auto;
+                line-height: 1;
+                margin-right: 20px;
+                order: 2;
+                overflow: visible;
+
+                span {
+                    color: color(dark);
+                    display: $dib;
+                    font-size: pxtorem(14px);
+                    font-weight: $regular;
+                    height: auto;
+                    line-height: 1;
+                    margin-right: 10px;
+                    vertical-align: top;
+                }
+
+                select {
+                    margin-left: 0;
+                }
+            }
+
+            p {
+                color: color(dark);
+                display: $db;
+                float: $fn;
+                font-size: pxtorem(14px);
+                height: auto;
+                line-height: 1.2;
+                margin: 0;
+                order: 3;
+                padding: 0;
+                width: auto;
+
+                strong {
+                    color: color(dark);
+                    font-size: pxtorem(14px);
+                    font-weight: $bold;
+                }
+            }
+        }
+
+        .filter-horizontal {
+            &#divMain,
+            &#divSort,
+            &#ordena_produtos {
+                .filtro-horizontal {
+                    border: none;
+                    display: $db;
+                    margin: 0;
+                    min-height: 25px;
+                    overflow: visible;
+                    padding: 0;
+
+                    .content-filters {
+                        align-content: center;
+                        align-items: center;
+                        display: $df;
+                        flex-direction: row;
+                        justify-content: flex-start;
+
+                        .horizontal-title {
+                            background-color: transparent;
+                            color: color(dark);
+                            float: $fn;
+                            font-size: pxtorem(12px);
+                            font-weight: $bold;
+                            height: auto;
+                            line-height: 1;
+                            margin: 0;
+                            padding: 0 20px 0 0;
+                            width: auto;
+                        }
+
+                        .spnFiltro {
+                            background-color: color(light, light) !important;
+                            border: 1px solid color(light) !important;
+                            color: color(dark);
+                            float: $fn !important;
+                            font-size: pxtorem(14px) !important;
+                            font-weight: $bold;
+                            line-height: 1.6;
+                            min-height: 42px;
+                            min-width: 42px;
+                            outline: 0;
+                            padding: 10px 30px 10px 10px !important;
+                            width: 100%;
+                            @include radius($rs);
+                            &:after {
+                                height: auto;
+                                position: $pa;
+                                right: 10px;
+                                top: 10px;
+                                @include set-icon($fa-var-caret-down, pxtorem(18px), $solid, color(dark));
+                                @include transition();
+                            }
+                        }
+
+                        .filterBlock {
+                            background: color(light, light);
+                            border: 1px solid color(light);
+                            border-bottom-left-radius: 4px;
+                            border-bottom-right-radius: 4px;
+                            border-top: none;
+                            display: $dn;
+                            list-style: none;
+                            margin-top: -3px;
+                            padding: 10px;
+                            position: $pa;
+                            width: 100%;
+                            z-index: 15;
+                        }
+
+                        .filterSku1 {
+                            .filterBlock.open {
+                                @include flexbox(flex, row, wrap, flex-start, flex-start, flex-start);
+                                > li {
+                                    height: auto;
+                                    margin: 5px;
+                                    min-width: auto;
+                                    padding: 0px;
+                                    width: auto;
+                                }
+                                li > a {
+                                    height: 25px;
+                                    line-height: inherit;
+                                    min-width: auto;
+                                    padding: 0px;
+                                    text-align: center;
+                                    width: 25px;
+
+                                    &:hover {
+                                        border: 1px solid color(light);
+                                        text-decoration: none;
+                                    }
+                                }
+                            }
+                        }
+
+                        > ul,
+                        .side-filters,
+                        .horizontal-list {
+                            float: $fn;
+                            margin: 0;
+                            min-width: 210px;
+                            padding: 0 20px 0 0;
+                            width: auto;
+
+                            &:last-child {
+                                margin: 0;
+                                padding: 0;
+                            }
+
+                            li {
+                                background: none;
+                                display: $db;
+                                float: $fn;
+                                font-size: pxtorem(14px);
+                                height: auto;
+                                line-height: inherit;
+                                margin: 0;
+                                padding: 0;
+                                position: $pr;
+                                width: 100%;
+
+                                a {
+                                    align-content: center;
+                                    align-items: center;
+                                    border: none;
+                                    color: color(dark);
+                                    display: $df;
+                                    float: $fn;
+                                    float: none;
+                                    font-size: pxtorem(14px);
+                                    height: auto;
+                                    justify-content: flex-start;
+                                    line-height: inherit;
+                                    margin-bottom: 10px;
+                                    text-decoration: none;
+                                    text-transform: capitalize;
+                                    width: 100%;
+
+                                    &.selected {
+                                        color: color(secondary);
+                                    }
+
+                                    @include hover {
+                                        color: color(secondary);
+                                    }
+
+                                    img {
+                                        float: none;
+                                        margin-right: 10px;
+                                    }
+                                }
+
+                                &.open {
+                                    .spnFiltro {
+                                        &:after {
+                                            // border-top: 5px solid color(dark);
+                                            @include set-icon($fa-var-caret-down, pxtorem(18px), $solid, color(dark));
+                                            -webkit-transform: rotate(180deg);
+                                            transform: rotate(180deg);
+                                            @include transition();
+                                        }
+                                    }
+
+                                    .filterBlock {
+                                        display: $db;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#divMain {
+                background-color: transparent;
+                display: $db;
+                padding: 10px 0;
+                .horizontal-selecionados {
+                    align-content: center;
+                    align-items: center;
+                    display: $df;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    margin: 0 0 10px;
+                    overflow: visible;
+                    padding: 0 0 10px;
+
+                    .title {
+                        background-color: transparent;
+                        color: color(dark);
+                        float: $fn;
+                        font-size: pxtorem(12px);
+                        font-weight: $bold;
+                        height: auto;
+                        line-height: 1;
+                        margin: 0;
+                        padding: 0 20px 0 0;
+                        width: auto;
+                    }
+
+                    fieldset {
+                        float: $fn;
+                        line-height: inherit;
+                        overflow: visible;
+                        padding: 0;
+                        width: auto;
+                    }
+
+                    ul {
+                        align-content: center;
+                        align-items: center;
+                        display: $df;
+                        flex-direction: row;
+                        float: $fn;
+                        justify-content: flex-start;
+                        margin: 0;
+
+                        li {
+                            background-color: color(primary);
+                            border-radius: $rs;
+                            float: $fn;
+                            height: auto;
+                            line-height: inherit;
+                            margin-right: 5px;
+                            padding: 5px 10px;
+                            width: auto;
+
+                            span {
+                                color: color(light, light);
+                                display: $dib;
+                                float: $fn;
+                                height: auto;
+                                line-height: inherit;
+                                margin-right: 0;
+                                text-align: left;
+                                text-decoration: none;
+                                text-transform: capitalize;
+                                width: auto;
+
+                                &:before {
+                                    display: $dn;
+                                    margin-right: 5px;
+                                    @include set-icon($fa-var-chevron-right, pxtorem(12px), $solid, color(dark));
+                                }
+
+                                &.type {
+                                    display: $dn;
+                                    &:before {
+                                        display: $dn;
+                                    }
+                                }
+                            }
+
+                            .delete {
+                                background: none;
+                                background-position: 0;
+                                display: $dib;
+                                float: $fn;
+                                font-size: 0;
+                                height: auto;
+                                line-height: 1;
+                                margin: -3px 0 0 5px;
+                                text-decoration: none;
+                                text-indent: 0;
+                                vertical-align: middle;
+                                width: auto;
+
+                                &:before {
+                                    @include set-icon($fa-var-times, pxtorem(14px), $solid, color(light, light));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#divSort,
+            &#ordena_produtos {
+                background-color: color(light);
+                border-bottom: none;
+                border-radius: $rs;
+                display: $df;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin: 0;
+                padding: 10px 10px;
+
+                > p {
+                    font-size: pxtorem(12px);
+                    font-weight: $bold;
+                    order: 1;
+                }
+
+                .itens-page {
+                    display: $db;
+                    float: $fn;
+                    height: auto;
+                    left: 0;
+                    line-height: inherit;
+                    margin: 0;
+                    order: 2;
+                    position: $pr;
+                    top: 0;
+
+                    span {
+                        float: $fn;
+                        font-size: pxtorem(12px);
+                        font-weight: 600;
+                    }
+
+                    select {
+                        width: 100px;
+                    }
+                }
+
+                .filtro-horizontal {
+                    order: 3;
+                }
+
+                fieldset {
+                    display: $db;
+                }
+
+                > span {
+                    display: $dn;
+                }
+            }
+
+            &.filter-details {
+                display: $dn;
+            }
+        }
+
+        .resumo-resultado {
+            display: $dn;
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+        .categ-desc {
+            text-align: center;
+        }
+
+        .box-filter {
+            align-content: center;
+            align-items: center;
+            display: $df;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .vs-mode {
+            justify-content: center;
+            margin: 10px 0 15px;
+            width: 100%;
+        }
+
+        .filter-details {
+            background: color(light, light);
+            border: none;
+            min-height: 1px;
+            padding: 0;
+            width: 49%;
+
+            &.open {
+                .open-mob-filters {
+                    background: color(light, light);
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                    display: $db;
+
+                    .on {
+                        display: $dn;
+                    }
+
+                    .off {
+                        display: $db;
+                    }
+
+                    &:after {
+                        -webkit-transform: rotate(180deg);
+                        transform: rotate(180deg);
+                        @include transition();
+                    }
+                }
+
+                #divMain {
+                    display: $db;
+                }
+            }
+
+            .open-mob-filters {
+                background: color(light, light);
+                border: 1px solid color(light);
+                color: color(dark);
+                cursor: pointer;
+                display: $db;
+                font-size: pxtorem(0);
+                height: auto;
+                line-height: 1.4;
+                margin: 0;
+                padding: 10px;
+                position: $pr;
+                text-align: left;
+                width: 100%;
+                z-index: 1;
+                @include radius($rs);
+
+                &:before {
+                    color: color(dark);
+                    content: 'Filtrar por:';
+                    display: $db;
+                    font-size: pxtorem(12px);
+                }
+
+                &:after {
+                    position: $pa;
+                    right: 10px;
+                    top: 8px;
+                    @include set-icon($fa-var-caret-down, pxtorem(16px), $solid, color(dark));
+                    @include transition();
+                }
+
+                span {
+                    display: $dn !important;
+                }
+            }
+
+            .btn-mob-compare {
+                display: $dn !important;
+            }
+
+            #divMain {
+                background: color(light, light);
+                border: 1px solid color(light);
+                border-bottom-left-radius: $rs;
+                border-bottom-right-radius: $rs;
+                display: $dn;
+                left: 0;
+                margin: 0;
+                padding: 0;
+                position: $pa;
+                text-align: left;
+                top: 37px;
+                width: 270px;
+                z-index: 200;
+
+                #divFilters {
+                    background-color: color(light, light);
+                    border-bottom: 1px solid color(light);
+                    display: $db;
+                    padding: 10px;
+                    width: 100%;
+
+                    .title {
+                        color: color(dark);
+                        cursor: pointer;
+                        display: $db;
+                        font-family: $title;
+                        font-size: pxtorem(12px);
+                        font-weight: $bold;
+                        line-height: 1.4;
+                        margin-bottom: 10px;
+                        padding: 0;
+                        text-transform: capitalize;
+
+                        &:after {
+                            display: $dn;
+                        }
+                    }
+
+                    fieldset {
+                        display: $db;
+                        height: auto;
+                        opacity: 1;
+                        overflow: visible;
+                        padding: 0;
+                        position: $pr;
+                        z-index: 1;
+                    }
+
+                    #pFilters {
+                        display: $dn;
+                        padding-top: 0;
+                        text-align: left;
+                    }
+
+                    ul {
+                        padding: 0;
+
+                        li {
+                            background-color: color(primary);
+                            border-radius: $rs;
+                            float: $fn;
+                            height: auto;
+                            line-height: inherit;
+                            margin-bottom: 5px;
+                            padding: 5px 25px 5px 10px;
+                            position: $pr;
+                            width: auto;
+
+                            span {
+                                align-content: center;
+                                align-items: center;
+                                color: color(light, light);
+                                display: $df;
+                                flex-direction: row;
+                                flex-wrap: wrap;
+                                float: $fn;
+                                font-size: pxtorem(12px);
+                                height: auto;
+                                justify-content: flex-start;
+                                line-height: inherit;
+                                margin-right: 0;
+                                text-align: left;
+                                text-decoration: none;
+                                text-transform: capitalize;
+                                width: auto;
+
+                                &:before {
+                                    display: $dn;
+                                    margin-right: 5px;
+                                    @include set-icon($fa-var-chevron-right, pxtorem(12px), $solid, color(dark));
+                                }
+
+                                &.type {
+                                    display: $dn;
+                                    &:before {
+                                        display: $dn;
+                                    }
+                                }
+                            }
+
+                            .delete {
+                                background: none;
+                                background-position: 0;
+                                display: $dib;
+                                float: $fn;
+                                font-size: 0;
+                                font-weight: $regular;
+                                height: auto;
+                                line-height: 1;
+                                margin: 0;
+                                padding: 0;
+                                position: $pa;
+                                right: 10px;
+                                text-decoration: none;
+                                text-indent: 0;
+                                top: 50%;
+                                transform: translate(0, -50%);
+                                vertical-align: middle;
+                                width: auto;
+
+                                &:before {
+                                    @include set-icon($fa-var-times, pxtorem(14px), $solid, color(light, light));
+                                }
+                            }
+                        }
+                    }
+
+                    .clean-btn-por {
+                        display: $dn;
+                    }
+                }
+
+                .block,
+                .catalog-filters {
+                    align-content: flex-start;
+                    align-items: flex-start;
+                    background: transparent;
+                    border: none;
+                    display: $df;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    left: 0;
+                    padding: 0;
+                    position: $pr;
+                    right: 0;
+                    top: 0 !important;
+
+                    .content-filters {
+                        width: 100%;
+                    }
+
+                    .horizontal-title,
+                    .title {
+                        display: $dn;
+                    }
+
+                    ul,
+                    .side-filters,
+                    .horizontal-list {
+                        border: none;
+                        display: $df;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+
+                        > li {
+                            position: $pr;
+                            text-align: left;
+
+                            span {
+                                align-content: center;
+                                align-items: center;
+                                background: transparent;
+                                border: none !important;
+                                color: color(dark);
+                                display: $df;
+                                font-size: pxtorem(14px);
+                                font-weight: $bold;
+                                justify-content: space-between;
+                                line-height: 1.4;
+                                padding: 10px;
+
+                                &:after {
+                                    color: color(dark);
+                                    content: $fa-var-plus;
+                                    display: $db;
+                                    float: $fn;
+                                    font-family: $icons;
+                                    font-size: pxtorem(10px);
+                                    font-weight: $solid;
+                                    margin: 0;
+                                }
+                            }
+
+                            > ul,
+                            .filterBlock {
+                                align-content: flex-start;
+                                align-items: flex-start;
+                                display: $dn;
+                                flex-direction: column;
+                                justify-content: flex-start;
+                                padding: 0;
+
+                                li {
+                                    border: none !important;
+                                    display: $db;
+                                    margin: 0;
+                                    min-width: auto;
+                                    padding: 0;
+                                    width: 100%;
+
+                                    &.sub {
+                                        display: $dn;
+                                    }
+
+                                    a {
+                                        align-content: center;
+                                        align-items: center;
+                                        color: color(dark);
+                                        display: $df;
+                                        flex-direction: row;
+                                        font-size: pxtorem(14px);
+                                        font-weight: $regular;
+                                        justify-content: flex-start;
+                                        line-height: 1.4;
+                                        padding: 5px 10px;
+                                        position: relative;
+                                        text-transform: capitalize;
+
+                                        img {
+                                            display: $dn;
+                                            margin-top: 5px;
+                                        }
+
+                                        &:before {
+                                            color: color(light);
+                                            content: $fa-var-square;
+                                            display: $db;
+                                            float: $fn;
+                                            font-family: $icons;
+                                            font-size: pxtorem(14px);
+                                            line-height: 1;
+                                            margin-right: 5px;
+                                        }
+
+                                        i {
+                                            display: $dn;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.open {
+                                span {
+                                    color: color(secondary);
+
+                                    &:after {
+                                        color: color(secondary);
+                                    }
+                                }
+
+                                > ul,
+                                .filterBlock {
+                                    display: $df;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .show-more {
+                display: $dn;
+            }
+
+            .side-search {
+                display: $dn;
+            }
+
+            .clean-btn {
+                display: $dn;
+            }
+        }
+
+        #divSort,
+        #ordena_produtos {
+            background: color(light, light);
+            border: none;
+            min-height: 1px;
+            padding: 0;
+            position: $pr;
+            width: 49%;
+
+            &.open {
+                .m-btn-order {
+                    background: color(light, light);
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                    display: $db;
+
+                    &:after {
+                        -webkit-transform: rotate(180deg);
+                        transform: rotate(180deg);
+                        @include transition();
+                    }
+                }
+
+                fieldset {
+                    display: $db;
+                    opacity: 1;
+                }
+            }
+
+            .m-btn-order {
+                background: color(light, light);
+                border: 1px solid color(light);
+                color: color(dark);
+                cursor: pointer;
+                display: $db;
+                font-size: pxtorem(0);
+                height: auto;
+                line-height: 1.4;
+                margin: 0;
+                padding: 10px;
+                position: $pr;
+                text-align: left;
+                width: 100%;
+                z-index: 1;
+                @include radius($rs);
+
+                &:before {
+                    color: color(dark);
+                    content: 'Ordenar por:';
+                    display: $db;
+                    font-size: pxtorem(12px);
+                }
+
+                &:after {
+                    position: $pa;
+                    right: 10px;
+                    top: 8px;
+                    @include set-icon($fa-var-caret-down, pxtorem(16px), $solid, color(dark));
+                    @include transition();
+                }
+            }
+
+            fieldset {
+                background: color(light, light);
+                border: 1px solid color(light);
+                border-bottom-left-radius: $rs;
+                border-bottom-right-radius: $rs;
+                border-top: none;
+                display: $dn;
+                left: 0;
+                margin: 0;
+                padding: 10px;
+                position: $pa;
+                text-align: left;
+                top: 38px !important;
+                width: 100%;
+                z-index: 200;
+
+                ul {
+                    margin: 0;
+
+                    li {
+                        background: transparent;
+                        display: $db;
+
+                        a {
+                            &.selected {
+                                color: color(secondary);
+                                font-weight: $bold;
+                            }
+
+                            &:after {
+                                display: $dn;
+                            }
+                        }
+                        &:after {
+                            display: $dn;
+                        }
+                    }
+                }
+            }
+
+            .itens-page {
+                background-color: color(light, light);
+                border-top: 1px solid color(dark);
+                display: $dn;
+                margin-top: 10px;
+                padding: 10px 0 0 0;
+                position: $pr;
+                span {
+                    display: $db;
+                    font-size: pxtorem(14px);
+                    margin-bottom: 10px;
+                    margin-right: 0;
+                    text-align: left;
+                    width: auto;
+                }
+            }
+        }
+    }
+}

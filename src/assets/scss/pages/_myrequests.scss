@@ -1,0 +1,261 @@
+body.meuspedidos {
+    @include global {
+        #main {
+            .main-content {
+                .request {
+                    .title {
+                        color: color(dark);
+                        font-size: pxtorem(14px);
+                        font-weight: $bold;
+                        line-height: 1.4;
+                    }
+
+                    .number {
+                        color: color(dark);
+                        font-size: pxtorem(20px);
+                        font-weight: $bold;
+                        line-height: 1.4;
+                        margin: 20px 0;
+                    }
+
+                    span {
+                        color: color(dark);
+                        font-size: pxtorem(14px);
+                        font-weight: $regular;
+                        line-height: 1.4;
+                    }
+
+                    .warning {
+                        color: color(danger);
+                        margin-top: 10px;
+                    }
+
+                    .actions {
+                        margin-top: 20px;
+                        text-align: center;
+                    }
+                }
+
+                .timeline {
+                    align-content: center;
+                    align-items: center;
+                    background: #fff;
+                    display: $df;
+                    flex-direction: row;
+                    justify-content: center;
+                    padding: 0px !important;
+                    margin-bottom: 30px;
+
+                    li {
+                        background: none;
+                        background-position: 0;
+                        float: $fl;
+                        position: $pr;
+                        width: 20%;
+
+                        &:before {
+                            background: color(success);
+                            content: '';
+                            height: 5px;
+                            position: $pa;
+                            top: 60px;
+                            width: 100%;
+                        }
+
+                        &:first-child {
+                            &:before {
+                                left: 50%;
+                                width: 50%;
+                            }
+                        }
+
+                        &:last-child {
+                            &:before {
+                                left: 0;
+                                width: 50%;
+                            }
+                        }
+
+                        span {
+                            color: color(dark);
+                            font-size: pxtorem(12px);
+                            font-weight: $bold;
+                            line-height: 1.4;
+
+                            &.status {
+                                background: none;
+                                height: 90px;
+                                position: $pr;
+                                width: 80%;
+
+                                &:after {
+                                    align-content: center;
+                                    align-items: center;
+                                    background-color: color(light) !important;
+                                    border-radius: $rf;
+                                    color: color(dark);
+                                    content: $fa-var-clock;
+                                    display: $df;
+                                    font-family: $icons;
+                                    font-size: pxtorem(18px);
+                                    font-weight: $solid;
+                                    height: 42px;
+                                    justify-content: center;
+                                    left: 0;
+                                    margin: 0 auto;
+                                    padding: 0;
+                                    position: $pa;
+                                    right: 0;
+                                    top: 40px;
+                                    width: 42px;
+                                }
+                            }
+                        }
+
+                        &.complete {
+                            .status {
+                                &:after {
+                                    background-color: color(success) !important;
+                                    color: color(light, light);
+                                    content: $fa-var-check;
+                                }
+                            }
+                        }
+
+                        &.in-keep {
+                            .status {
+                                &:after {
+                                    background-color: color(warning) !important;
+                                    color: color(dark, light);
+                                    content: $fa-var-clock;
+                                }
+                            }
+                        }
+
+                        &.cancel {
+                            .status {
+                                &:after {
+                                    background-color: color(danger) !important;
+                                    color: color(light, light);
+                                    content: $fa-var-times;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .basket {
+                    th {
+                        span {
+                            color: color(dark);
+                            font-size: pxtorem(14px);
+                            font-weight: $regular;
+                            line-height: 1.4;
+                        }
+                    }
+                    td {
+                        color: color(dark);
+                        font-size: pxtorem(14px);
+                        font-weight: $regular;
+                        line-height: 1.4;
+                    }
+                }
+
+                .address {
+                    display: $df;
+                    .details {
+                        height: auto !important;
+                        padding: 0 !important;
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+        #main {
+            .main-content {
+                .timeline {
+                    flex-direction: column;
+
+                    li {
+                        background: none;
+                        border: none;
+                        float: none;
+                        margin: 0;
+                        padding: 15px 0 15px 50px;
+                        width: 100%;
+
+                        &:before {
+                            background: color(success);
+                            content: '';
+                            height: 100%;
+                            left: 19px;
+                            position: $pa;
+                            top: 0;
+                            width: 5px;
+                        }
+
+                        &:first-child {
+                            &:before {
+                                left: 19px;
+                                width: 5px;
+                                height: 50%;
+                                top: auto;
+                                bottom: 0;
+                            }
+                        }
+
+                        &:last-child {
+                            &:before {
+                                top: 0;
+                                height: 50%;
+                                left: 19px;
+                                width: 5px;
+                            }
+                        }
+
+                        span {
+                            &.status {
+                                background: none;
+                                height: auto;
+                                width: 100%;
+
+                                &:after {
+                                    left: -50px;
+                                    right: auto;
+                                    top: 0px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .basket.box {
+                    td {
+                        &:before {
+                            color: color(dark);
+                            font-size: pxtorem(14px);
+                            font-weight: $bold;
+                        }
+                    }
+                }
+
+                .address {
+                    display: $df;
+                    flex-wrap: wrap;
+                    padding: 10px;
+
+                    .details {
+                        margin-bottom: 20px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

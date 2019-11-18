@@ -1,0 +1,249 @@
+body.vitrine {
+    @include global {
+        #main {
+            .b-top {
+                float: $fn;
+                margin: 0px auto 10px;
+                max-width: 100%;
+                padding: 0;
+                width: 100%;
+
+                ul {
+                    img {
+                        display: $db;
+                        height: auto;
+                        width: 100%;
+                    }
+
+                    .owl-item {
+                        width: 100% !important;
+                    }
+
+                    li {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .container {
+                .aside {
+                    display: $dn;
+                }
+
+                .b-main {
+                    float: $fn;
+                    margin: 0px auto 10px;
+                    max-width: 100%;
+                    padding: 0;
+                    width: 100%;
+
+                    ul {
+                        li {
+                            margin-bottom: 0;
+                            width: calc(50% - 5px) !important;
+
+                            a {
+                                img {
+                                    display: $db;
+                                    height: auto;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .b-betweenvit,
+                .b-betweenvit-mobile,
+                .b-bottom,
+                .b-bottom-mobile {
+                    background-color: color(light, light);
+                    margin-bottom: 40px;
+                    padding: 0;
+
+                    ul {
+                        display: $df;
+                        float: $fn;
+                        justify-content: space-between;
+                        margin: 0 auto;
+                        max-width: 100%;
+                        padding: 0;
+                        width: 100%;
+
+                        li {
+                            float: $fn;
+                            margin: 0;
+                            max-width: 400px;
+                            padding: 0;
+                            width: 100%;
+                        }
+
+                        a {
+                            cursor: pointer !important;
+                            display: $db;
+
+                            @include hover {
+                                opacity: 0.7;
+                            }
+                        }
+
+                        img {
+                            display: $db;
+                            height: auto;
+                            margin: 0 auto;
+                            width: 100%;
+                        }
+
+                        .owl-carousel {
+                            margin-bottom: 0;
+
+                            .owl-item {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+
+                .instagram-slider {
+                    display: $dn;
+                }
+
+                .list-products {
+                    li {
+                        width: calc(100% / #{$config-list-products-vitrine-desktop});
+                    }
+                    .compare {
+                        display: $dn;
+                    }
+                }
+
+                .categ-desc,
+                .categ-desc-look {
+                    color: color(dark);
+                    font-size: pxtorem(15px);
+                    line-height: 1.4;
+                    margin: 0 auto 20px;
+                    max-width: 100%;
+                    padding: 10px 0;
+                    text-align: left;
+                    width: 100%;
+                }
+
+                #divMain {
+                    display: $dn;
+                }
+
+                .see-category {
+                    background-color: color(light, light) !important;
+                    border: 1px solid color(primary) !important;
+                    color: color(primary);
+                    display: $db !important;
+                    margin: 0 auto 40px;
+                    max-width: 400px;
+                    text-transform: lowercase;
+
+                    @include hover {
+                        background-color: color(primary) !important;
+                        color: color(light, light);
+                    }
+
+                    .see-more-txt {
+                        font-size: pxtorem(14px);
+                        margin-right: 5px;
+                    }
+
+                    &:before {
+                        display: $dn;
+                    }
+                }
+            }
+        }
+    }
+
+    @include desktop {
+    }
+
+    @include mobile {
+        #main {
+            .container {
+                .aside {
+                    display: $dn;
+                }
+
+                .categ-desc,
+                .categ-desc-look {
+                    text-align: center;
+                }
+
+                .b-top-mobile {
+                    float: $fn;
+                    margin: 0px auto 5px;
+                    max-width: 100%;
+                    padding: 0;
+                    width: 100%;
+
+                    ul {
+                        li {
+                            margin-bottom: 0;
+                            a {
+                                img {
+                                    display: $db;
+                                    height: auto;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .b-main-mobile {
+                    float: $fn;
+                    margin: 0px auto 10px;
+                    max-width: 100%;
+                    padding: 0;
+                    width: 100%;
+
+                    ul {
+                        li {
+                            margin-bottom: 5px;
+                            padding: 0;
+                            width: 100% !important;
+
+                            a {
+                                img {
+                                    display: $db;
+                                    height: auto;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .b-betweenvit-mobile,
+                .b-bottom-mobile {
+                    float: $fn;
+                    margin: 0px auto 40px;
+                    max-width: 100%;
+                    padding: 0;
+                    width: 100%;
+
+                    ul {
+                        flex-direction: column;
+                        justify-content: center;
+
+                        li {
+                            margin: 0 0 10px;
+                        }
+                    }
+                }
+
+                .list-products {
+                    li {
+                        width: calc(100% / #{$config-list-products-vitrine-mobile});
+                    }
+                }
+            }
+        }
+    }
+}
